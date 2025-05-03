@@ -21,7 +21,7 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-app.use(CONFIG.expressPicPath, express.static(CONFIG.savePicPathBase));
+app.use(CONFIG.expressPicPath, express.static(CONFIG.picPath));
 app.use(routes);
 
 app.listen(CONFIG.port);
