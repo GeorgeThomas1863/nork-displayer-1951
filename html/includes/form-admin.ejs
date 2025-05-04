@@ -3,7 +3,7 @@
   <li id="command-list-item">
     <label for="command-type">Command</label>
     <select name="command-type" id="command-type">
-      <option value="start-scrape" id="start-scrape" selected>Start Scrape</option>
+      <option value="start-scrape-new" id="start-scrape" selected>Start Scrape</option>
       <option value="stop-scrape" id="stop-scrape">Stop Scrape</option>
       <option value="scrape-status" id="scrape-status">Get Scrape Status</option>
     </select>
@@ -18,7 +18,7 @@
     </select>
   </li>
 
-  <li id="article-type-list-item">
+  <li id="article-type-list-item" class="hidden">
     <label for="article-type">Article Type</label>
     <select name="article-type" id="article-type">
       <option value="all-type" id="all-type" selected>All</option>
@@ -31,20 +31,17 @@
     </select>
   </li>
 
-  <!-- <li id="urlInput-list-item" class="hidden">
-    <label for="urlInput">URL</label>
-    <input type="text" name="urlInput" id="urlInput" />
-  </li>
-  <li id="howMany-list-item">
-    <label for="howMany">How Many?</label>
-    <input type="text" name="howMany" id="howMany" placeholder="[Defaults to 1 (most recent)]" />
-  </li>
-  <li id="newData-list-item">
-    <label for="pullNewData">Re-Scrape?</label>
-    <select name="pullNewData" id="pullNewData">
-      <option value="noNewData" id="noNewData" selected>No</option>
-      <option value="yesNewData" id="yesNewData">Yes [will take a few min]</option>
+  <li id="upload-tg-list-item">
+    <label for="command-type">Upload TG</label>
+    <select name="command-type" id="command-type">
+      <option value="start-scrape-new" id="start-scrape" selected>No</option>
+      <option value="stop-scrape" id="stop-scrape">Yes</option>
     </select>
-  </li> -->
+  </li>
+
+  <li id="tgId-list-item" class="hidden">
+    <label for="tgId">TG Chat ID</label>
+    <input type="text" name="tgId" id="tgId" />
+  </li>
 </ul>
 <button id="admin-submit-button">Submit</button>

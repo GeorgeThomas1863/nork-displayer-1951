@@ -29,6 +29,9 @@ const d = {
   externalNews: document.getElementById("external-news"),
   anecdote: document.getElementById("anecdote"),
   people: document.getElementById("people"),
+
+  //button
+  adminSubmitButton: document.getElementById("admin-submit-button"),
 };
 
 //add in array to obj

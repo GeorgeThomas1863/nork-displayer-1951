@@ -1,6 +1,7 @@
 //import modules
+import { hideArray, unhideArray } from "../util.js";
 import d from "./define-things-admin.js";
-import { runArticleTypeDisplay } from "./display-admin.js";
+// import { runArticleTypeDisplay } from "./display-admin.js";
 // import { buildInputParams, sendToBack } from "./submit.js";
 
 const adminSubmit = async (e) => {
@@ -21,12 +22,17 @@ const adminSubmit = async (e) => {
 
 const changeArticleTypeDisplay = async (e) => {
   e.preventDefault();
-  const eventElement = e.target;
-  const buttonClickedId = eventElement.id;
-  const buttonClickedValue = eventElement.value;
 
-  if (buttonClickedId === d.articlesSelect.id) {
-    await runArticleTypeDisplay(buttonClickedValue);
+  const buttonClicked = e.target.value;
+  await hideArray([d.articleTypeListItem]);
+
+  //unhide everything
+
+  console.log("AHHHHHHHHH");
+  console.log(buttonClicked);
+
+  if (buttonClicked === d.articlesSelect.id) {
+    await unhideArray(d.listItemArray);
   }
 };
 
@@ -35,8 +41,7 @@ const changeArticleTypeDisplay = async (e) => {
 // d.trackCryptoActionButton.addEventListener("click", changeDisplay);
 
 //drop down click listeners
-d.scrapeTypeListItem.addEventListener("click", changeArticleTypeDisplay);
-d.scrapeToListItem.addEventListener("click", changeArticleTypeDisplay);
+d.itemTypeListItem.addEventListener("click", changeArticleTypeDisplay);
 
 //submit event listener
-d.submitButton.addEventListener("click", adminSubmit);
+d.adminSubmitButton.addEventListener("click", adminSubmit);
