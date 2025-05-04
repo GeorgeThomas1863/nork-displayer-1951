@@ -1,24 +1,37 @@
 <h1>ADMIN CONTROL</h1>
 <ul id="admin-wrapper">
   <li id="command-list-item">
-    <label for="commandType">Command</label>
-    <select name="commandType" id="commandType">
-      <option value="startScrape" id="startScrape" selected>Start Scrape</option>
-      <option value="stopScrape" id="stopScrape">Stop Scrape</option>
-      <option value="scrapeStatus" id="scrapeStatus">Get Scrape Status</option>
+    <label for="command-type">Command</label>
+    <select name="command-type" id="command-type">
+      <option value="start-scrape" id="start-scrape" selected>Start Scrape</option>
+      <option value="stop-scrape" id="stop-scrape">Stop Scrape</option>
+      <option value="scrape-status" id="scrape-status">Get Scrape Status</option>
     </select>
   </li>
-  <li id="itemType-list-item">
-    <label for="itemType">Item Type</label>
-    <select name="itemType" id="itemType">
-      <option value="everythingType" id="everythingType" selected>Everything</option>
-      <option value="articlesType" id="articlesType">Just Articles</option>
-      <option value="picsType" id="picsType">Just Pic Sets</option>
-      <option value="vidsType" id="vidsType">Just Vids</option>
+  <li id="item-type-list-item">
+    <label for="item-type">Item Type</label>
+    <select name="item-type" id="item-type">
+      <option value="everything-select" id="everything-select" selected>Everything</option>
+      <option value="articles-select" id="articles-select">Just Articles</option>
+      <option value="picSets-select" id="picSets-select">Just Pic Sets</option>
+      <option value="vidPages-select" id="vidPages-select">Just Vid Pages</option>
     </select>
   </li>
 
-  <li id="urlInput-list-item" class="hidden">
+  <li id="article-type-list-item">
+    <label for="article-type">Article Type</label>
+    <select name="article-type" id="article-type">
+      <option value="all-type" id="all-type" selected>All</option>
+      <option value="fatboy" id="fatboy">Revolutionary Activities</option>
+      <option value="top-news" id="top-news">Top News</option>
+      <option value="latest-news" id="latest-news">Latest News</option>
+      <option value="external-news" id="external-news">External News</option>
+      <option value="anecdote" id="anecdote">Revolutionary Anecdotes</option>
+      <option value="people" id="people">Always in Memory of the People</option>
+    </select>
+  </li>
+
+  <!-- <li id="urlInput-list-item" class="hidden">
     <label for="urlInput">URL</label>
     <input type="text" name="urlInput" id="urlInput" />
   </li>
@@ -29,10 +42,9 @@
   <li id="newData-list-item">
     <label for="pullNewData">Re-Scrape?</label>
     <select name="pullNewData" id="pullNewData">
-      <!-- <option value="" disabled selected>[Defaults to No, will take few min if yes]</option> -->
       <option value="noNewData" id="noNewData" selected>No</option>
       <option value="yesNewData" id="yesNewData">Yes [will take a few min]</option>
     </select>
-  </li>
+  </li> -->
 </ul>
 <button id="admin-submit-button">Submit</button>

@@ -1,0 +1,52 @@
+//import modules
+import d from "./define-things-admin.js";
+// import { runActionButtonDisplay, runScrapeTypeDisplay, runScrapeToDisplay, displayDataReturn } from "./display-main.js";
+// import { buildInputParams, sendToBack } from "./submit.js";
+
+const adminSubmit = async (e) => {
+  e.preventDefault();
+
+  //   //get input params
+  //   const inputParams = await buildInputParams();
+
+  //   //get data
+  //   const data = await sendToBack(inputParams);
+  //   console.dir(data);
+
+  //   //display data
+  //   await displayDataReturn(data);
+};
+
+const changeAdminDisplay = async (e) => {
+  e.preventDefault();
+  const eventElement = e.target;
+  const buttonClickedId = eventElement.id;
+  const buttonClickedValue = eventElement.value;
+
+  //execute function based on event trigger
+  switch (eventElement.id) {
+    case d.scrapeKcnaActionButton.id:
+    case d.trackCryptoActionButton.id:
+      await runActionButtonDisplay(buttonClickedId);
+      break;
+
+    case d.scrapeType.id:
+      await runScrapeTypeDisplay(buttonClickedValue);
+      break;
+
+    case d.scrapeTo.id:
+      await runScrapeToDisplay(buttonClickedValue);
+      break;
+  }
+};
+
+//action button display
+// d.scrapeKcnaActionButton.addEventListener("click", changeDisplay);
+// d.trackCryptoActionButton.addEventListener("click", changeDisplay);
+
+//drop down click listeners
+d.scrapeTypeListItem.addEventListener("click", changeAdminDisplay);
+d.scrapeToListItem.addEventListener("click", changeAdminDisplay);
+
+//submit event listener
+d.submitButton.addEventListener("click", adminSubmit);

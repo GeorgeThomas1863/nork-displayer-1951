@@ -1,18 +1,6 @@
-import d from "./define-things.js";
+import d from "./define-things-main.js";
+import { hideArray, unhideArray } from "../util.js";
 // import { parseDataReturn } from "./display-return/parse-return.js";
-
-const hideArray = async (inputs) => {
-  for (const input of inputs) {
-    input.classList.add("hidden");
-  }
-};
-
-const unhideArray = async (inputs) => {
-  for (const input of inputs) {
-    input.classList.remove("hidden");
-    // input.classList.remove("#fuck-forms li.hidden");
-  }
-};
 
 export const runActionButtonDisplay = async (buttonClicked) => {
   //adult way with switch case
