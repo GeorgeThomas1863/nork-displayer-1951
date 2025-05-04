@@ -2,12 +2,22 @@ import d from "./define-things-admin.js";
 import { hideArray, unhideArray } from "../util.js";
 // import { parseDataReturn } from "./display-return/parse-return.js";
 
-// export const runCommandTypeDisplay = async (buttonClicked) => {
+export const runArticleTypeDisplay = async (buttonClicked) => {
+  //hide everything to start
+  await hideArray([d.articleTypeListItem]);
+
+  if (buttonClicked === d.articlesSelect) {
+    await unhideArray([d.articleTypeListItem]);
+  }
+};
+
+// export const runAdminCommandDisplay = async (buttonClicked) => {
 //   //hide everything to start
 //   await hideArray(d.listItemArray);
 
 //   //claude's version with select case
 //   switch (buttonClicked) {
+//     //unhide everything
 //     case d.restartAuto.id:
 //       await unhideArray([d.tgIdListItem]);
 //       break;

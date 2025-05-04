@@ -10,3 +10,9 @@
 #admin-wrapper {
   margin-top: 2rem;
 }
+
+#admin-submit-button {
+  padding: 1rem 10rem;
+  margin-left: 5rem;
+  margin-top: 2rem;
+}

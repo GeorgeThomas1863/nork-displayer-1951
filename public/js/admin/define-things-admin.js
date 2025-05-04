@@ -13,6 +13,13 @@ const d = {
   stopScrape: document.getElementById("stop-scrape"),
   scrapeStatus: document.getElementById("scrape-status"),
 
+  //item type
+  itemType: document.getElementById("item-type"),
+  everythingSelect: document.getElementById("everything-select"),
+  articlesSelect: document.getElementById("articles-select"),
+  picSetsSelect: document.getElementById("picSets-select"),
+  vidPagesSelect: document.getElementById("vidPages-select"),
+
   //article type
   articleType: document.getElementById("item-type"),
   allType: document.getElementById("all-type"),
@@ -25,6 +32,7 @@ const d = {
 };
 
 //add in array to obj
-// d.listItemArray = [d.urlInputListItem, d.pullNewDataListItem, d.howManyListItem, d.scrapeToListItem, d.tgIdListItem];
+d.listItemArray = [d.commandListItem, d.itemTypeListItem, d.articleTypeListItem];
+d.articleTypeArray = [d.allType, d.fatboy, d.topNews, d.latestNews, d.externalNews, d.anecdote, d.people];
 
 export default d;
