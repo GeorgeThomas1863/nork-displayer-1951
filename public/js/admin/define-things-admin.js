@@ -59,7 +59,7 @@ const d = {
 };
 
 //add in array to obj
-d.listItemArray = [d.commandListItem, d.howMuchListItem, d.urlInputListItem, d.itemTypeListItem, d.articleTypeListItem, d.uploadTGListItem, tgIdListItem]; //prettier-ignore
+d.listItemArray = [d.commandListItem, d.howMuchListItem, d.urlInputListItem, d.itemTypeListItem, d.articleTypeListItem, d.uploadTGListItem, d.tgIdListItem]; //prettier-ignore
 d.articleTypeArray = [d.allType, d.fatboy, d.topNews, d.latestNews, d.externalNews, d.anecdote, d.people];
 
 export default d;
