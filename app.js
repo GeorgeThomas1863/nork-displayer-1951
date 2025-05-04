@@ -24,5 +24,5 @@ app.use(express.static("public"));
 app.use(CONFIG.expressPicPath, express.static(CONFIG.picPath));
 app.use(routes);
 
-app.listen(1965);
+app.listen(1802);
 // app.listen(CONFIG.port);

@@ -3,10 +3,23 @@
   <li id="command-list-item">
     <label for="command-type">Command</label>
     <select name="command-type" id="command-type">
-      <option value="start-scrape-new" id="start-scrape" selected>Start Scrape</option>
+      <option value="start-scrape-new" id="start-scrape" selected>Start NEW Scrape</option>
       <option value="stop-scrape" id="stop-scrape">Stop Scrape</option>
       <option value="scrape-status" id="scrape-status">Get Scrape Status</option>
+      <option value="restart-auto" id="restart-auto">Restart Auto Scraper</option>
     </select>
+  </li>
+  <li id="how-much-list-item">
+    <label for="how-much">How Much?</label>
+    <select name="how-much" id="how-much">
+      <option value="scrape-new" id="scrape-new" selected>Scrape NEW</option>
+      <option value="scrape-all" id="scrape-all">Scrape ALL</option>
+      <option value="scrape-URL" id="scrape-URL">Scrape URL</option>
+    </select>
+  </li>
+  <li id="url-input-list-item" class="hidden">
+    <label for="url-input">URL</label>
+    <input type="text" name="url-input" id="url-input" />
   </li>
   <li id="item-type-list-item">
     <label for="item-type">Item Type</label>
@@ -17,7 +30,6 @@
       <option value="vidPages-select" id="vidPages-select">Just Vid Pages</option>
     </select>
   </li>
-
   <li id="article-type-list-item" class="hidden">
     <label for="article-type">Article Type</label>
     <select name="article-type" id="article-type">
@@ -32,10 +44,10 @@
   </li>
 
   <li id="upload-tg-list-item">
-    <label for="command-type">Upload TG</label>
-    <select name="command-type" id="command-type">
-      <option value="start-scrape-new" id="start-scrape" selected>No</option>
-      <option value="stop-scrape" id="stop-scrape">Yes</option>
+    <label for="upload-tg">Upload TG</label>
+    <select name="upload-tg" id="upload-tg">
+      <option value="no-tg" id="no-tg" selected>No</option>
+      <option value="yes-tg" id="yes-tg">Yes</option>
     </select>
   </li>
 
