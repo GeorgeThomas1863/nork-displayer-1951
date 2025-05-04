@@ -1,0 +1,25 @@
+<h1>ADMIN CONTROL</h1>
+<ul id="admin-wrapper">
+  <li id="scrapeType-list-item">
+    <label for="scrapeType">Scrape Type</label>
+    <select name="scrapeType" id="scrapeType">
+      <option value="scrapeBoth" id="scrapeBoth" selected>Articles and Pics</option>
+    </select>
+  </li>
+  <li id="urlInput-list-item" class="hidden">
+    <label for="urlInput">URL</label>
+    <input type="text" name="urlInput" id="urlInput" />
+  </li>
+  <li id="howMany-list-item">
+    <label for="howMany">How Many?</label>
+    <input type="text" name="howMany" id="howMany" placeholder="[Defaults to 1 (most recent)]" />
+  </li>
+  <li id="newData-list-item">
+    <label for="pullNewData">Re-Scrape?</label>
+    <select name="pullNewData" id="pullNewData">
+      <!-- <option value="" disabled selected>[Defaults to No, will take few min if yes]</option> -->
+      <option value="noNewData" id="noNewData" selected>No</option>
+      <option value="yesNewData" id="yesNewData">Yes [will take a few min]</option>
+    </select>
+  </li>
+</ul>
