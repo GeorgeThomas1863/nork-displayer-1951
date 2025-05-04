@@ -23,10 +23,14 @@ export const changeCommandDisplay = async (buttonClicked) => {
       return;
   }
 
-  //   //figure out if tg chat ID should be hidden
-  //   if (d.scrapeTo.value === displayTG.id) {
-  //     await unhideArray([d.tgIdListItem]);
-  //   }
+  //!!!!
+  //FIX HERE
+  //!!!
+
+  //figure out if tg chat ID should be hidden
+  // if (d.scrapeTo.value === displayTG.id) {
+  //   await unhideArray([d.tgIdListItem]);
+  // }
 };
 
 export const changeHowMuchDisplay = async (buttonClicked) => {
@@ -49,6 +53,16 @@ export const changeItemTypeDisplay = async (buttonClicked) => {
   //unhide if button clicked
   if (buttonClicked === d.articlesSelect.id) {
     await unhideArray([d.articleTypeListItem]);
+  }
+
+  return true;
+};
+
+export const changeTGUploadDisplay = async (buttonClicked) => {
+  await hideArray([d.tgIdListItem]);
+
+  if (buttonClicked === d.yesTG.id) {
+    await unhideArray([d.tgIdListItem]);
   }
 
   return true;

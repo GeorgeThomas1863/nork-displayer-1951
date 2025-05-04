@@ -1,3 +1,13 @@
+//TO DO
+
+//FINISH THE RESPONSIVE ADMIN DISPLAY
+
+//BUILD ADMIN SUBMIT / INPUT PARAMS
+
+//FIGURE OUT HOW TO SEND DATA TO OTHER APP / PORT (point of all this shit)
+
+//REDO MAIN DISPLAY
+
 import { dirname, join } from "path";
 import { fileURLToPath } from "url";
 
@@ -24,5 +34,5 @@ app.use(express.static("public"));
 app.use(CONFIG.expressPicPath, express.static(CONFIG.picPath));
 app.use(routes);
 
-app.listen(1806);
+app.listen(1808);
 // app.listen(CONFIG.port);

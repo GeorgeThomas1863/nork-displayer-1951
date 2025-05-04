@@ -1,7 +1,7 @@
 //import modules
 // import { hideArray, unhideArray } from "../util.js";
 import d from "./define-things-admin.js";
-import { changeCommandDisplay, changeHowMuchDisplay, changeItemTypeDisplay } from "./display-admin.js";
+import { changeCommandDisplay, changeHowMuchDisplay, changeItemTypeDisplay, changeTGUploadDisplay } from "./display-admin.js";
 // import { buildInputParams, sendToBack } from "./submit.js";
 
 const adminSubmit = async (e) => {
@@ -26,9 +26,7 @@ const changeAdminDisplay = async (e) => {
   const buttonClickedId = eventElement.id;
   const buttonClickedValue = eventElement.value;
 
-  //hide everything to start
-  // await hideArray(d.listItemArray);
-
+  //run function based on what list item clicked
   switch (buttonClickedId) {
     case d.commandType.id:
       await changeCommandDisplay(buttonClickedValue);
@@ -41,11 +39,11 @@ const changeAdminDisplay = async (e) => {
     case d.itemType.id:
       await changeItemTypeDisplay(buttonClickedValue);
       return;
-  }
 
-  // if (buttonClicked === d.articlesSelect.id) {
-  //   await unhideArray(d.listItemArray);
-  // }
+    case d.uploadTG.id:
+      await changeTGUploadDisplay(buttonClickedValue);
+      return;
+  }
 };
 
 //action button display
@@ -56,6 +54,7 @@ const changeAdminDisplay = async (e) => {
 d.commandListItem.addEventListener("click", changeAdminDisplay);
 d.howMuchListItem.addEventListener("click", changeAdminDisplay);
 d.itemTypeListItem.addEventListener("click", changeAdminDisplay);
+d.uploadTGListItem.addEventListener("click", changeAdminDisplay);
 
 //submit event listener
 d.adminSubmitButton.addEventListener("click", adminSubmit);
