@@ -1,0 +1,12 @@
+#content-wrapper {
+  /* margin: 0 auto; */
+  text-align: center;
+}
+
+#content-wrapper h1 {
+  font-size: 3rem;
+}
+
+#admin-wrapper {
+  margin-top: 2rem;
+}

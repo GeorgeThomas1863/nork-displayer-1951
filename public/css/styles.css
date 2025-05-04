@@ -9,6 +9,14 @@ p {
   padding: 0;
 }
 
+/* for error pages */
+h3 {
+  margin-top: 3rem;
+  padding: 0;
+  text-align: center;
+  font-size: 3rem;
+}
+
 a {
   text-decoration: none;
   color: black;

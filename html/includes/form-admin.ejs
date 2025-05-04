@@ -1,11 +1,23 @@
 <h1>ADMIN CONTROL</h1>
 <ul id="admin-wrapper">
-  <li id="scrapeType-list-item">
-    <label for="scrapeType">Scrape Type</label>
-    <select name="scrapeType" id="scrapeType">
-      <option value="scrapeBoth" id="scrapeBoth" selected>Articles and Pics</option>
+  <li id="command-list-item">
+    <label for="commandType">Command</label>
+    <select name="commandType" id="commandType">
+      <option value="startScrape" id="startScrape" selected>Start Scrape</option>
+      <option value="stopScrape" id="stopScrape">Stop Scrape</option>
+      <option value="scrapeStatus" id="scrapeStatus">Get Scrape Status</option>
     </select>
   </li>
+  <li id="itemType-list-item">
+    <label for="itemType">Item Type</label>
+    <select name="itemType" id="itemType">
+      <option value="everythingType" id="everythingType" selected>Everything</option>
+      <option value="articlesType" id="articlesType">Just Articles</option>
+      <option value="picsType" id="picsType">Just Pic Sets</option>
+      <option value="vidsType" id="vidsType">Just Vids</option>
+    </select>
+  </li>
+
   <li id="urlInput-list-item" class="hidden">
     <label for="urlInput">URL</label>
     <input type="text" name="urlInput" id="urlInput" />
@@ -23,3 +35,4 @@
     </select>
   </li>
 </ul>
+<button id="admin-submit-button">Submit</button>
