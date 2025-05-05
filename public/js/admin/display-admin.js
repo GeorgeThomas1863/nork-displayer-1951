@@ -90,27 +90,3 @@ export const changeTGUploadDisplay = async (buttonClicked) => {
 
   return true;
 };
-
-// export const runScrapeToDisplay = async (buttonClicked) => {
-//   //hide start
-//   await hideArray([d.tgIdListItem]);
-
-//   switch (buttonClicked) {
-//     case d.displayTG.id: //tgId
-//       await unhideArray([d.tgIdListItem]);
-//   }
-// };
-
-// export const displayDataReturn = async (inputData) => {
-//   //check if data received
-//   if (!inputData || !inputData.dataArray) return;
-
-//   const displayData = await parseDataReturn(inputData);
-
-//   //clear previous input
-//   d.dataReturnElement.innerHTML = "";
-
-//   d.dataReturnElement.appendChild(displayData);
-//   d.dataReturnWrapper.classList.remove("hidden");
-//   return;
-// };
