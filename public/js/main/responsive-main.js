@@ -1,5 +1,5 @@
 //import modules
-import d from "./define-things.js";
+import d from "./define-things-main.js";
 import { runActionButtonDisplay, runScrapeTypeDisplay, runScrapeToDisplay, displayDataReturn } from "./display-main.js";
 // import { buildInputParams, sendToBack } from "./submit.js";
 

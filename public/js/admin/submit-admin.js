@@ -1,4 +1,3 @@
-import axios from "axios";
 import d from "./define-things-admin.js";
 
 export const buildAdminParams = async () => {
@@ -16,17 +15,20 @@ export const buildAdminParams = async () => {
 };
 
 export const sendAdminToBack = async (inputParams) => {
-  console.log("INPUT PARAMS");
-  console.log(inputParams);
+  // console.log(inputParams);
   const route = inputParams.route;
   //send all to backend
   try {
-    const res = await axios.post(route, inputParams);
-    console.log("RES");
-    console.log(res);
-
-    return res.data;
-  } catch (e) {
-    console.log(e);
+    const res = await fetch(route, {
+      method: "POST",
+      body: JSON.stringify(inputParams),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const data = await res.json();
+    return data;
+  } catch (error) {
+    console.log(error);
   }
 };
