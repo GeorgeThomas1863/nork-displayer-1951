@@ -2,22 +2,22 @@
 // import { hideArray, unhideArray } from "../util.js";
 import d from "./define-things-admin.js";
 import { changeCommandDisplay, changeHowMuchDisplay, changeItemTypeDisplay, changeTGUploadDisplay } from "./display-admin.js";
-// import { buildInputParams, sendToBack } from "./submit.js";
+import { buildAdminParams, sendAdminToBack } from "./submit-admin.js";
 
 const adminSubmit = async (e) => {
   e.preventDefault();
 
   console.log("FUCK YOU FAGGOT");
 
-  //   //get input params
-  //   const inputParams = await buildInputParams();
+  //get input params
+  const adminParams = await buildAdminParams();
 
-  //   //get data
-  //   const data = await sendToBack(inputParams);
-  //   console.dir(data);
+  //get data
+  const adminData = await sendAdminToBack(adminParams);
+  console.dir(adminData);
 
-  //   //display data
-  //   await displayDataReturn(data);
+  //display data
+  // await displayDataReturn(data);
 };
 
 const changeAdminDisplay = async (e) => {

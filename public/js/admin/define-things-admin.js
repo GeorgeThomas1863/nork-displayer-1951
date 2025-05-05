@@ -51,8 +51,6 @@ const d = {
 
   //tgId
   tgId: document.getElementById("tgId"),
-  noTG: document.getElementById("no-tg"),
-  yesTG: document.getElementById("yes-tg"),
 
   //button
   adminSubmitButton: document.getElementById("admin-submit-button"),
