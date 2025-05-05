@@ -3,7 +3,7 @@ import { hideArray, unhideArray } from "../util.js";
 // import { parseDataReturn } from "./display-return/parse-return.js";
 
 export const changeCommandDisplay = async (buttonClicked) => {
-  //hide everything to start
+  //hide everything first
   await hideArray(d.listItemArray);
 
   //display based on Scrape Command clicked
@@ -11,26 +11,29 @@ export const changeCommandDisplay = async (buttonClicked) => {
     //unhide everything
     case d.startScrape.id:
       await unhideArray([d.commandListItem, d.howMuchListItem, d.itemTypeListItem, d.uploadTGListItem]);
-      return;
+      break;
 
     case d.stopScrape.id:
       await unhideArray([d.commandListItem]);
-      return;
+      break;
 
     case d.scrapeStatus.id:
     case d.restartAuto.id:
       await unhideArray([d.commandListItem, d.itemTypeListItem]);
-      return;
+      break;
   }
 
-  //!!!!
-  //FIX HERE
-  //!!!
+  //figure out if article Type should be hidden
+  if (buttonClicked !== d.stopScrape.id && d.itemType.value === d.articlesSelect.id) {
+    await unhideArray([d.articleTypeListItem]);
+  }
 
   //figure out if tg chat ID should be hidden
-  // if (d.scrapeTo.value === displayTG.id) {
-  //   await unhideArray([d.tgIdListItem]);
-  // }
+  if (buttonClicked !== d.stopScrape.id && d.uploadTG.value === d.yesTG.id) {
+    await unhideArray([d.uploadTGListItem, d.tgIdListItem]);
+  }
+
+  return true;
 };
 
 export const changeHowMuchDisplay = async (buttonClicked) => {
@@ -38,10 +41,20 @@ export const changeHowMuchDisplay = async (buttonClicked) => {
   await hideArray([d.urlInputListItem]);
   await unhideArray([d.itemTypeListItem]);
 
-  //unhide it if right button clicked
+  //unhide URL if right button clicked
   if (buttonClicked === d.scrapeURL.id) {
     await unhideArray([d.urlInputListItem]);
     await hideArray([d.itemTypeListItem]);
+  }
+
+  //figure out if article Type should be hidden
+  if (d.itemType.value === d.articlesSelect.id) {
+    await unhideArray([d.articleTypeListItem]);
+  }
+
+  //figure out if tg chat ID should be hidden
+  if (d.uploadTG.value === d.yesTG.id) {
+    await unhideArray([d.uploadTGListItem, d.tgIdListItem]);
   }
 
   return true;
@@ -55,6 +68,11 @@ export const changeItemTypeDisplay = async (buttonClicked) => {
     await unhideArray([d.articleTypeListItem]);
   }
 
+  //figure out if tg chat ID should be hidden
+  if (d.uploadTG.value === d.yesTG.id) {
+    await unhideArray([d.uploadTGListItem, d.tgIdListItem]);
+  }
+
   return true;
 };
 
@@ -63,6 +81,11 @@ export const changeTGUploadDisplay = async (buttonClicked) => {
 
   if (buttonClicked === d.yesTG.id) {
     await unhideArray([d.tgIdListItem]);
+  }
+
+  //figure out if article Type should be hidden
+  if (d.itemType.value === d.articlesSelect.id) {
+    await unhideArray([d.articleTypeListItem]);
   }
 
   return true;
