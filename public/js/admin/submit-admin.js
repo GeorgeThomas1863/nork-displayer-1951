@@ -22,6 +22,9 @@ export const sendAdminToBack = async (inputParams) => {
   //send all to backend
   try {
     const res = await axios.post(route, inputParams);
+    console.log("RES");
+    console.log(res);
+
     return res.data;
   } catch (e) {
     console.log(ejs);
