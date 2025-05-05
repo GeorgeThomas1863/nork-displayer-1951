@@ -27,6 +27,6 @@ export const sendAdminToBack = async (inputParams) => {
 
     return res.data;
   } catch (e) {
-    console.log(ejs);
+    console.log(e);
   }
 };
