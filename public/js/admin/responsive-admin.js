@@ -24,35 +24,28 @@ const changeAdminDisplay = async (e) => {
   const buttonClickedId = eventElement.id;
   const buttonClickedValue = eventElement.value;
 
-  //run function based on what list item clicked
-  switch (buttonClickedId) {
-    case d.commandType.id:
-      await changeCommandDisplay(buttonClickedValue);
-      return;
-
-    case d.howMuch.id:
-      await changeHowMuchDisplay(buttonClickedValue);
-      return;
-
-    case d.itemType.id:
-      await changeItemTypeDisplay(buttonClickedValue);
-      return;
-
-    case d.uploadTG.id:
-      await changeTGUploadDisplay(buttonClickedValue);
-      return;
+  if (adminDisplayMap[buttonClickedId]) {
+    await adminDisplayMap[buttonClickedId](buttonClickedValue);
+    return;
   }
 };
 
-//action button display
-// d.scrapeKcnaActionButton.addEventListener("click", changeDisplay);
-// d.trackCryptoActionButton.addEventListener("click", changeDisplay);
+const adminDisplayMap = {
+  [d.commandType.id]: changeCommandDisplay,
+  [d.howMuch.id]: changeHowMuchDisplay,
+  [d.itemType.id]: changeItemTypeDisplay,
+  [d.uploadTG.id]: changeTGUploadDisplay,
+};
+
+for (const button of d.listItemArray) {
+  button.addEventListener("click", changeAdminDisplay);
+}
 
 //drop down click listeners
-d.commandListItem.addEventListener("click", changeAdminDisplay);
-d.howMuchListItem.addEventListener("click", changeAdminDisplay);
-d.itemTypeListItem.addEventListener("click", changeAdminDisplay);
-d.uploadTGListItem.addEventListener("click", changeAdminDisplay);
+// d.commandListItem.addEventListener("click", changeAdminDisplay);
+// d.howMuchListItem.addEventListener("click", changeAdminDisplay);
+// d.itemTypeListItem.addEventListener("click", changeAdminDisplay);
+// d.uploadTGListItem.addEventListener("click", changeAdminDisplay);
 
 //submit event listener
 d.adminSubmitButton.addEventListener("click", adminSubmit);
