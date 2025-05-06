@@ -12,9 +12,11 @@ const adminSubmit = async (e) => {
   //get input params
   const adminParams = await buildAdminParams();
 
+  console.log("ADMIN PARAMS");
+  console.dir(adminParams);
+
   //get data
   const adminData = await sendAdminToBack(adminParams);
-  console.dir(adminData);
 
   //display data
   // await displayDataReturn(data);

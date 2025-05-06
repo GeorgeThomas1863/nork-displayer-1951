@@ -15,8 +15,8 @@ export const buildAdminParams = async () => {
 };
 
 export const sendAdminToBack = async (inputParams) => {
-  // console.log(inputParams);
-  const route = inputParams.route;
+  const { route } = inputParams;
+
   //send all to backend
   try {
     const res = await fetch(route, {
