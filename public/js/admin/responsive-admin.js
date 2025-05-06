@@ -7,19 +7,15 @@ import { buildAdminParams, sendAdminToBack } from "./submit-admin.js";
 const adminSubmit = async (e) => {
   e.preventDefault();
 
-  console.log("FUCK YOU FAGGOT");
-
   //get input params
   const adminParams = await buildAdminParams();
 
-  console.log("ADMIN PARAMS");
-  console.dir(adminParams);
-
   //get data
   const adminData = await sendAdminToBack(adminParams);
+  console.log("ADMIN DATA");
+  console.log(adminData);
 
-  //display data
-  // await displayDataReturn(data);
+  return adminData;
 };
 
 const changeAdminDisplay = async (e) => {

@@ -6,6 +6,7 @@ import { parseAdminCommand } from "../controllers/commands.js";
 
 const router = express.Router();
 
+//send admin data out
 router.post("/admin-submit-route", parseAdminCommand);
 
 // router.post("/scrape-submit-route", parseCommand);
