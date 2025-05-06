@@ -30,22 +30,17 @@ const changeAdminDisplay = async (e) => {
   }
 };
 
-const adminDisplayMap = {
-  [d.commandType.id]: changeCommandDisplay,
-  [d.howMuch.id]: changeHowMuchDisplay,
-  [d.itemType.id]: changeItemTypeDisplay,
-  [d.uploadTG.id]: changeTGUploadDisplay,
-};
-
-for (const button of d.listItemArray) {
-  button.addEventListener("click", changeAdminDisplay);
+//build map
+const adminDisplayMap = {};
+const displayFunctionsArray = [changeCommandDisplay, changeHowMuchDisplay, changeItemTypeDisplay, changeTGUploadDisplay];
+for (let i = 0; i < d.displayItemsArray.length; i++) {
+  adminDisplayMap[d.displayItemsArray[i].id] = displayFunctionsArray[i];
 }
 
-//drop down click listeners
-// d.commandListItem.addEventListener("click", changeAdminDisplay);
-// d.howMuchListItem.addEventListener("click", changeAdminDisplay);
-// d.itemTypeListItem.addEventListener("click", changeAdminDisplay);
-// d.uploadTGListItem.addEventListener("click", changeAdminDisplay);
+//click listeners for responsive display
+for (const button of d.displayItemsArray) {
+  button.addEventListener("click", changeAdminDisplay);
+}
 
 //submit event listener
 d.adminSubmitButton.addEventListener("click", adminSubmit);

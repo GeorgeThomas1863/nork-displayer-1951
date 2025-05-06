@@ -19,8 +19,13 @@ export const changeCommandDisplay = async (buttonClicked) => {
 
     case d.scrapeStatus.id:
     case d.restartAuto.id:
-      await unhideArray([d.commandListItem, d.itemTypeListItem]);
+      await unhideArray([d.commandListItem, d.itemTypeListItem, d.uploadTGListItem]);
       break;
+  }
+
+  //figure out if url should be hidden
+  if (buttonClicked === d.startScrape.id && d.howMuch.value === d.scrapeURL.id) {
+    await unhideArray([d.urlInputListItem]);
   }
 
   //figure out if article Type should be hidden
