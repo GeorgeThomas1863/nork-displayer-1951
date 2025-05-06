@@ -1,12 +1,8 @@
 //TO DO
 
-//FINISH THE RESPONSIVE ADMIN DISPLAY
+//PARSE ADMIN COMMANDS IN SCRAPER
 
-//BUILD ADMIN SUBMIT / INPUT PARAMS
-
-//FIGURE OUT HOW TO SEND DATA TO OTHER APP / PORT (point of all this shit)
-
-//REDO MAIN DISPLAY
+//REDO MAIN DISPLAY / COMMANDS
 
 import { dirname, join } from "path";
 import { fileURLToPath } from "url";
