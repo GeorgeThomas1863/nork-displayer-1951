@@ -1,9 +1,3 @@
-/**
- * Renders the main index/home page
- * @function indexDisplay
- * @param req - Express request object
- * @param res - Express response object
- */
 export const indexDisplay = (req, res) => {
   res.render("index");
 };

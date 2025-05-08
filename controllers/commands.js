@@ -1,4 +1,4 @@
-import CONFIG from "../config/display-config.js";
+import CONFIG from "../config/config.js";
 
 export const parseAdminCommand = async (req, res) => {
   const inputParams = req.body;
