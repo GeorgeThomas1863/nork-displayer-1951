@@ -17,7 +17,7 @@ import express from "express";
 import cors from "cors";
 // import session from "express-session";
 
-import CONFIG from "./config/display-config.js";
+import CONFIG from "./config/config.js";
 import routes from "./routes/routes.js";
 // import * as db from "./data/db.js";
 
