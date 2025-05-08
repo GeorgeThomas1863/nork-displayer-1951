@@ -1,5 +1,7 @@
 //TO DO
 
+//KEEP GOING IN SCRAPER
+
 //BUILD STATS LOOKUP by:
 // first in SCRAPER send stats to stats collection
 //in displayer get stats by querying collection, send to display
