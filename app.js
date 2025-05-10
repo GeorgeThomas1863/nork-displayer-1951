@@ -1,6 +1,6 @@
 //TO DO
 
-//KEEP GOING IN SCRAPER
+//FIX ADMIN CONTROLLER
 
 //BUILD STATS LOOKUP by:
 // first in SCRAPER send stats to stats collection

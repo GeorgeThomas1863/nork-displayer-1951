@@ -1,7 +1,7 @@
 import express from "express";
 
 import { indexDisplay, adminDisplay, display404, display500 } from "../controllers/display.js";
-import { sendAdminCommand } from "../controllers/admin.js";
+import { sendAdminCommand } from "../src/api.js";
 
 const router = express.Router();
 
