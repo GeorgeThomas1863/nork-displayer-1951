@@ -1,6 +1,7 @@
 import CONFIG from "../config/config.js";
 
-export const parseAdminCommand = async (req, res) => {
+//sends command to other app
+export const sendAdminCommand = async (req, res) => {
   const inputParams = req.body;
 
   //send to other app for parsing
