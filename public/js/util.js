@@ -18,13 +18,13 @@ export const unhideArray = async (inputs) => {
 export const buildAdminParams = async () => {
   const params = {
     route: "/admin-submit-route",
-    commandType: d.commandType.value,
-    howMuch: d.howMuch.value,
-    urlInput: d.urlInput.value,
-    itemType: d.itemType.value,
-    articleType: d.articleType.value,
-    uploadTG: d.uploadTG.value,
-    tgId: d.tgId.value,
+    commandType: d.adminCommandType.value,
+    howMuch: d.adminHowMuch.value,
+    urlInput: d.adminUrlInput.value,
+    itemType: d.adminItemType.value,
+    articleType: d.adminArticleType.value,
+    uploadTG: d.adminUploadTG.value,
+    tgId: d.adminTgId.value,
   };
   return params;
 };
