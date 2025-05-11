@@ -1,96 +1,96 @@
-import d from "./admin/define-things-admin.js";
+import d from "../define-things.js";
 import { hideArray, unhideArray } from "../util.js";
-// import { parseDataReturn } from "./display-return/parse-return.js";
+import { parseAdminDataReturn } from "../display-return/parse-return.js";
 
-export const changeCommandDisplay = async (buttonClicked) => {
+export const adminCommandDisplay = async (buttonClicked) => {
   //hide everything first
-  await hideArray(d.listItemArray);
+  await hideArray(d.adminListItemArray);
 
   //display based on Scrape Command clicked
   switch (buttonClicked) {
     //unhide everything
     case d.startScrape.id:
-      await unhideArray([d.commandListItem, d.howMuchListItem, d.itemTypeListItem, d.uploadTGListItem]);
+      await unhideArray([d.adminCommandListItem, d.adminHowMuchListItem, d.adminItemTypeListItem, d.adminUploadTGListItem]);
       break;
 
     case d.stopScrape.id:
-      await unhideArray([d.commandListItem]);
+      await unhideArray([d.adminCommandListItem]);
       break;
 
     case d.scrapeStatus.id:
     case d.restartAuto.id:
-      await unhideArray([d.commandListItem, d.itemTypeListItem, d.uploadTGListItem]);
+      await unhideArray([d.adminCommandListItem, d.adminItemTypeListItem, d.adminUploadTGListItem]);
       break;
   }
 
   //figure out if url should be hidden
-  if (buttonClicked === d.startScrape.id && d.howMuch.value === d.scrapeURL.id) {
-    await unhideArray([d.urlInputListItem]);
+  if (buttonClicked === d.adminStartScrape.id && d.adminHowMuch.value === d.adminScrapeURL.id) {
+    await unhideArray([d.adminUrlInputListItem]);
   }
 
   //figure out if article Type should be hidden
-  if (buttonClicked !== d.stopScrape.id && d.itemType.value === d.articlesSelect.id) {
-    await unhideArray([d.articleTypeListItem]);
+  if (buttonClicked !== d.adminStopScrape.id && d.adminItemType.value === d.adminArticlesSelect.id) {
+    await unhideArray([d.adminArticleTypeListItem]);
   }
 
   //figure out if tg chat ID should be hidden
-  if (buttonClicked !== d.stopScrape.id && d.uploadTG.value === d.yesTG.id) {
-    await unhideArray([d.uploadTGListItem, d.tgIdListItem]);
+  if (buttonClicked !== d.adminStopScrape.id && d.adminUploadTG.value === d.adminYesTG.id) {
+    await unhideArray([d.adminUploadTGListItem, d.adminTgIdListItem]);
   }
 
   return true;
 };
 
-export const changeHowMuchDisplay = async (buttonClicked) => {
+export const adminHowMuchDisplay = async (buttonClicked) => {
   //hide it first
-  await hideArray([d.urlInputListItem]);
-  await unhideArray([d.itemTypeListItem]);
+  await hideArray([d.adminUrlInputListItem]);
+  await unhideArray([d.adminItemTypeListItem]);
 
   //unhide URL if right button clicked
-  if (buttonClicked === d.scrapeURL.id) {
-    await unhideArray([d.urlInputListItem]);
-    await hideArray([d.itemTypeListItem]);
+  if (buttonClicked === d.adminScrapeURL.id) {
+    await unhideArray([d.adminUrlInputListItem]);
+    await hideArray([d.adminItemTypeListItem]);
   }
 
   //figure out if article Type should be hidden
-  if (d.itemType.value === d.articlesSelect.id) {
-    await unhideArray([d.articleTypeListItem]);
+  if (d.adminItemType.value === d.adminArticlesSelect.id) {
+    await unhideArray([d.adminArticleTypeListItem]);
   }
 
   //figure out if tg chat ID should be hidden
-  if (d.uploadTG.value === d.yesTG.id) {
-    await unhideArray([d.uploadTGListItem, d.tgIdListItem]);
+  if (d.adminUploadTG.value === d.adminYesTG.id) {
+    await unhideArray([d.adminUploadTGListItem, d.adminTgIdListItem]);
   }
 
   return true;
 };
 
 export const changeItemTypeDisplay = async (buttonClicked) => {
-  await hideArray([d.articleTypeListItem]);
+  await hideArray([d.adminArticleTypeListItem]);
 
   //unhide if button clicked
-  if (buttonClicked === d.articlesSelect.id) {
-    await unhideArray([d.articleTypeListItem]);
+  if (buttonClicked === d.adminArticlesSelect.id) {
+    await unhideArray([d.adminArticleTypeListItem]);
   }
 
   //figure out if tg chat ID should be hidden
-  if (d.uploadTG.value === d.yesTG.id) {
-    await unhideArray([d.uploadTGListItem, d.tgIdListItem]);
+  if (d.adminUploadTG.value === d.adminYesTG.id) {
+    await unhideArray([d.adminUploadTGListItem, d.adminTgIdListItem]);
   }
 
   return true;
 };
 
 export const changeTGUploadDisplay = async (buttonClicked) => {
-  await hideArray([d.tgIdListItem]);
+  await hideArray([d.adminTgIdListItem]);
 
-  if (buttonClicked === d.yesTG.id) {
-    await unhideArray([d.tgIdListItem]);
+  if (buttonClicked === d.adminYesTG.id) {
+    await unhideArray([d.adminTgIdListItem]);
   }
 
   //figure out if article Type should be hidden
-  if (d.itemType.value === d.articlesSelect.id) {
-    await unhideArray([d.articleTypeListItem]);
+  if (d.adminItemType.value === d.adminArticlesSelect.id) {
+    await unhideArray([d.adminArticleTypeListItem]);
   }
 
   return true;
@@ -104,12 +104,12 @@ export const displayAdminReturn = async (inputData) => {
   console.log("RETURN DATA");
   console.log(inputData);
 
-  const displayData = await parseDataReturn(inputData);
+  const displayData = await parseAdminDataReturn(inputData);
 
   //clear previous input
-  d.dataReturnElement.innerHTML = "";
+  d.adminDataReturnElement.innerHTML = "";
 
-  d.dataReturnElement.appendChild(displayData);
-  d.dataReturnWrapper.classList.remove("hidden");
+  d.adminDataReturnElement.appendChild(displayData);
+  d.adminDataReturnWrapper.classList.remove("hidden");
   return;
 };

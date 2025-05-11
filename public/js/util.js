@@ -1,4 +1,4 @@
-import d from "./define-things-admin.js";
+import d from "./define-things.js";
 
 export const hideArray = async (inputs) => {
   for (const input of inputs) {
@@ -12,6 +12,8 @@ export const unhideArray = async (inputs) => {
     // input.classList.remove("#fuck-forms li.hidden");
   }
 };
+
+//-------------
 
 export const buildAdminParams = async () => {
   const params = {
