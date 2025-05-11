@@ -1,13 +1,5 @@
-//COMBINES BOTH DISPLAYS INTO 1 bc FUCK YOU THATS WHY
-
 import d from "../define-things.js";
 import { hideArray, unhideArray } from "../util.js";
-import { parseAdminDataReturn } from "../display-return/parse-return.js";
-
-//CHANGE ADMIN DISPLAY SECTION
-
-
-///-----------------------------------------!!!!!
 
 export const runActionButtonDisplay = async (buttonClicked) => {
   //adult way with switch case
