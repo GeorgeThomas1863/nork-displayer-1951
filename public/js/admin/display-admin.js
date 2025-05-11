@@ -95,3 +95,12 @@ export const changeTGUploadDisplay = async (buttonClicked) => {
 
   return true;
 };
+
+//---------------
+
+export const displayAdminReturn = async (adminData) => {
+  if (!adminData) return "NO DATA RECEIVED";
+  
+  console.log("RETURN DATA");
+  console.log(adminData);
+};

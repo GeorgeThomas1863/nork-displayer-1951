@@ -1,7 +1,7 @@
 //import modules
 // import { hideArray, unhideArray } from "../util.js";
 import d from "./define-things-admin.js";
-import { changeCommandDisplay, changeHowMuchDisplay, changeItemTypeDisplay, changeTGUploadDisplay } from "./display-admin.js";
+import { changeCommandDisplay, changeHowMuchDisplay, changeItemTypeDisplay, changeTGUploadDisplay, displayAdminReturn } from "./display-admin.js";
 import { buildAdminParams, sendAdminToBack } from "./submit-admin.js";
 
 const adminSubmit = async (e) => {
@@ -12,10 +12,12 @@ const adminSubmit = async (e) => {
 
   //get data
   const adminData = await sendAdminToBack(adminParams);
-  console.log("ADMIN DATA");
-  console.log(adminData);
 
-  return adminData;
+  //display it (remove variable name)
+  const displayData = await displayAdminReturn(adminData);
+  console.log(displayData);
+
+  return "DONE";
 };
 
 const changeAdminDisplay = async (e) => {

@@ -17,9 +17,6 @@ export const buildAdminParams = async () => {
 export const sendAdminToBack = async (inputParams) => {
   const { route } = inputParams;
 
-  console.log("INPUT PARAMS");
-  console.log(inputParams);
-
   //send all to backend
   try {
     const res = await fetch(route, {
@@ -29,9 +26,7 @@ export const sendAdminToBack = async (inputParams) => {
         "Content-Type": "application/json",
       },
     });
-    const data = await res.json();
-    console.log("RETURN DATA");
-    console.log(data);
+    const data = await res.json(); 
     return data;
   } catch (error) {
     console.log(error);
