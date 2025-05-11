@@ -15,6 +15,8 @@ export const sendAdminCommand = async (req, res) => {
     });
 
     const data = await resAPI.json();
+    console.log("DATA RETURN")
+    console.log(data);
     return res.json(data);
   } catch (error) {
     console.log(error);
