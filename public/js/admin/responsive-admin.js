@@ -1,8 +1,8 @@
 //import modules
 // import { hideArray, unhideArray } from "../util.js";
-import d from "./define-things-admin.js";
+import d from "./admin/define-things-admin.js";
 import { changeCommandDisplay, changeHowMuchDisplay, changeItemTypeDisplay, changeTGUploadDisplay, displayAdminReturn } from "./display-admin.js";
-import { buildAdminParams, sendAdminToBack } from "./submit-admin.js";
+import { buildAdminParams, sendAdminToBack } from "./admin/submit-admin.js";
 
 const adminSubmit = async (e) => {
   e.preventDefault();

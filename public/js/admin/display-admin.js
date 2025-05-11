@@ -1,4 +1,4 @@
-import d from "./define-things-admin.js";
+import d from "./admin/define-things-admin.js";
 import { hideArray, unhideArray } from "../util.js";
 // import { parseDataReturn } from "./display-return/parse-return.js";
 
