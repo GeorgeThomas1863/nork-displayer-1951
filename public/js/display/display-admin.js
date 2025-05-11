@@ -13,12 +13,12 @@ export const adminCommandDisplay = async (buttonClicked) => {
       await unhideArray([d.adminCommandListItem, d.adminHowMuchListItem, d.adminItemTypeListItem, d.adminUploadTGListItem]);
       break;
 
-    case d.stopScrape.id:
+    case d.adminStopScrape.id:
       await unhideArray([d.adminCommandListItem]);
       break;
 
-    case d.scrapeStatus.id:
-    case d.restartAuto.id:
+    case d.adminScrapeStatus.id:
+    case d.adminRestartAuto.id:
       await unhideArray([d.adminCommandListItem, d.adminItemTypeListItem, d.adminUploadTGListItem]);
       break;
   }
