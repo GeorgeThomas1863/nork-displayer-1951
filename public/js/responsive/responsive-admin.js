@@ -36,12 +36,12 @@ const changeAdminDisplay = async (e) => {
 //build map
 const adminDisplayMap = {};
 const displayFunctionsArray = [adminCommandDisplay, adminHowMuchDisplay, adminItemTypeDisplay, adminTGUploadDisplay];
-for (let i = 0; i < d.displayItemsArray.length; i++) {
-  adminDisplayMap[d.displayItemsArray[i].id] = displayFunctionsArray[i];
+for (let i = 0; i < d.adminDisplayItemsArray.length; i++) {
+  adminDisplayMap[d.adminDisplayItemsArray[i].id] = displayFunctionsArray[i];
 }
 
 //click listeners for responsive display
-for (const button of d.displayItemsArray) {
+for (const button of d.adminDisplayItemsArray) {
   button.addEventListener("click", changeAdminDisplay);
 }
 
