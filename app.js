@@ -50,4 +50,4 @@ app.use(CONFIG.expressPicPath, express.static(CONFIG.picPath));
 app.use(routes);
 
 // app.listen(1801);
-app.listen(CONFIG.port);
+app.listen(CONFIG.displayPort);
