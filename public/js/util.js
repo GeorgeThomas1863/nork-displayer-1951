@@ -36,6 +36,9 @@ export const buildMainParams = async () => {
 export const sendToBack = async (inputParams) => {
   const { route } = inputParams;
 
+  console.log("INPUT PARAMS");
+  console.log(inputParams);
+
   //send all to backend
   try {
     const res = await fetch(route, {
