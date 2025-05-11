@@ -98,9 +98,18 @@ export const changeTGUploadDisplay = async (buttonClicked) => {
 
 //---------------
 
-export const displayAdminReturn = async (adminData) => {
-  if (!adminData) return "NO DATA RECEIVED";
-  
+export const displayAdminReturn = async (inputData) => {
+  if (!inputData) return "NO DATA RECEIVED";
+
   console.log("RETURN DATA");
-  console.log(adminData);
+  console.log(inputData);
+
+  const displayData = await parseDataReturn(inputData);
+
+  //clear previous input
+  d.dataReturnElement.innerHTML = "";
+
+  d.dataReturnElement.appendChild(displayData);
+  d.dataReturnWrapper.classList.remove("hidden");
+  return;
 };
