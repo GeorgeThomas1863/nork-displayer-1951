@@ -9,7 +9,7 @@ export const adminCommandDisplay = async (buttonClicked) => {
   //display based on Scrape Command clicked
   switch (buttonClicked) {
     //unhide everything
-    case d.startScrape.id:
+    case d.adminStartScrape.id:
       await unhideArray([d.adminCommandListItem, d.adminHowMuchListItem, d.adminItemTypeListItem, d.adminUploadTGListItem]);
       break;
 
