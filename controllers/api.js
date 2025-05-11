@@ -2,11 +2,14 @@ import CONFIG from "../config/config.js";
 
 //sends command to other app
 export const sendAdminCommand = async (req, res) => {
+  const inputParams = req.body;
+  console.log("INPUT PARAMS");
+  console.log(inputParams);
   //send to other app for parsing
   try {
     const resAPI = await fetch(CONFIG.apiURL, {
       method: "POST",
-      body: JSON.stringify(req.body),
+      body: JSON.stringify(inputParams),
       headers: {
         "Content-Type": "application/json",
       },
