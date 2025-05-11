@@ -1,0 +1,59 @@
+<h1>ADMIN CONTROL</h1>
+<ul id="admin-wrapper">
+  <li id="admin-command-list-item">
+    <label for="admin-command-type">Command</label>
+    <select name="admin-command-type" id="admin-command-type">
+      <option value="admin-start-scrape" id="admin-start-scrape" selected>Start Scrape</option>
+      <option value="admin-stop-scrape" id="admin-stop-scrape">Stop Scrape</option>
+      <option value="admin-scrape-status" id="admin-scrape-status">Get Scrape Status</option>
+      <option value="admin-restart-auto" id="admin-restart-auto">Restart Auto Scraper</option>
+    </select>
+  </li>
+  <li id="admin-how-much-list-item">
+    <label for="admin-how-much">How Much?</label>
+    <select name="admin-how-much" id="admin-how-much">
+      <option value="admin-scrape-new" id="admin-scrape-new" selected>Scrape NEW</option>
+      <option value="admin-scrape-all" id="admin-scrape-all">Scrape ALL</option>
+      <option value="admin-scrape-url" id="admin-scrape-url">Scrape URL</option>
+    </select>
+  </li>
+  <li id="admin-url-input-list-item" class="hidden">
+    <label for="admin-url-input">URL</label>
+    <input type="text" name="admin-url-input" id="admin-url-input" />
+  </li>
+  <li id="admin-item-type-list-item">
+    <label for="admin-item-type">Item Type</label>
+    <select name="admin-item-type" id="admin-item-type">
+      <option value="admin-everything-select" id="admin-everything-select" selected>Everything</option>
+      <option value="admin-articles-select" id="admin-articles-select">Just Articles</option>
+      <option value="admin-picSets-select" id="admin-picSets-select">Just Pic Sets</option>
+      <option value="admin-vidPages-select" id="admin-vidPages-select">Just Vid Pages</option>
+    </select>
+  </li>
+  <li id="admin-article-type-list-item" class="hidden">
+    <label for="admin-article-type">Article Type</label>
+    <select name="admin-article-type" id="admin-article-type">
+      <option value="admin-all-type" id="admin-all-type" selected>All</option>
+      <option value="admin-fatboy" id="admin-fatboy">Revolutionary Activities</option>
+      <option value="admin-top-news" id="admin-top-news">Top News</option>
+      <option value="admin-latest-news" id="admin-latest-news">Latest News</option>
+      <option value="admin-external-news" id="admin-external-news">External News</option>
+      <option value="admin-anecdote" id="admin-anecdote">Revolutionary Anecdotes</option>
+      <option value="admin-people" id="admin-people">Always in Memory of the People</option>
+    </select>
+  </li>
+
+  <li id="admin-upload-tg-list-item">
+    <label for="admin-upload-tg">Upload TG</label>
+    <select name="admin-upload-tg" id="admin-upload-tg">
+      <option value="admin-no-tg" id="admin-no-tg" selected>No</option>
+      <option value="admin-yes-tg" id="admin-yes-tg">Yes</option>
+    </select>
+  </li>
+
+  <li id="admin-tgId-list-item" class="hidden">
+    <label for="admin-tgId">TG Chat ID</label>
+    <input type="text" name="admin-tgId" id="admin-tgId" />
+  </li>
+</ul>
+<button id="admin-submit-button">Submit</button>
