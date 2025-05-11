@@ -29,6 +29,10 @@ export const buildAdminParams = async () => {
   return params;
 };
 
+export const buildMainParams = async () => {
+  console.log("FUCKING BUILD");
+};
+
 export const sendToBack = async (inputParams) => {
   const { route } = inputParams;
 

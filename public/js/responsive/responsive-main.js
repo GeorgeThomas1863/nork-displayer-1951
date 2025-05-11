@@ -3,13 +3,13 @@
 //import modules
 import d from "../define-things.js";
 import { runActionButtonDisplay, runScrapeTypeDisplay, runScrapeToDisplay, displayDataReturn } from "../display/display-main.js";
-import { buildInputParams, sendToBack } from "../util.js";
+import { buildMainParams, sendToBack } from "../util.js";
 
 const scrapeSubmit = async (e) => {
   e.preventDefault();
 
   //get input params
-  const inputParams = await buildInputParams();
+  const inputParams = await buildMainParams();
 
   //get data
   const data = await sendToBack(inputParams);
