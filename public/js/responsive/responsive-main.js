@@ -43,12 +43,12 @@ const changeDisplay = async (e) => {
 };
 
 //action button display
-d.scrapeKcnaActionButton.addEventListener("click", changeDisplay);
-d.trackCryptoActionButton.addEventListener("click", changeDisplay);
+// d.scrapeKcnaActionButton.addEventListener("click", changeDisplay);
+// d.trackCryptoActionButton.addEventListener("click", changeDisplay);
 
-//drop down click listeners
-d.scrapeTypeListItem.addEventListener("click", changeDisplay);
-d.scrapeToListItem.addEventListener("click", changeDisplay);
+// //drop down click listeners
+// d.scrapeTypeListItem.addEventListener("click", changeDisplay);
+// d.scrapeToListItem.addEventListener("click", changeDisplay);
 
-//submit event listener
-d.submitButton.addEventListener("click", scrapeSubmit);
+// //submit event listener
+// d.submitButton.addEventListener("click", scrapeSubmit);
