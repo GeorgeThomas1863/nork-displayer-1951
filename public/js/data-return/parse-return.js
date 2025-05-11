@@ -1,11 +1,12 @@
 import { buildDefaultDisplay } from "./display-default.js";
 
 export const parseAdminDataReturn = async (inputData) => {
+  const { data } = inputData;
   //data container for return
   const adminContainer = document.createElement("div");
   adminContainer.className = "admin-container";
 
-  const defaultData = await buildDefaultDisplay(inputData);
+  const defaultData = await buildDefaultDisplay(data);
 
   adminContainer.append(defaultData);
 
