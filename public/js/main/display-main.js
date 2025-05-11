@@ -1,4 +1,4 @@
-import d from "./define-things-main.js";
+import d from "../define-things.js";
 import { hideArray, unhideArray } from "../util.js";
 // import { parseDataReturn } from "./display-return/parse-return.js";
 

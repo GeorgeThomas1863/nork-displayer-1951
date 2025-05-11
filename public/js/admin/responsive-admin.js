@@ -1,8 +1,8 @@
 //import modules
 // import { hideArray, unhideArray } from "../util.js";
-import d from "./admin/define-things-admin.js";
-import { changeCommandDisplay, changeHowMuchDisplay, changeItemTypeDisplay, changeTGUploadDisplay, displayAdminReturn } from "./display-admin.js";
-import { buildAdminParams, sendAdminToBack } from "./admin/submit-admin.js";
+import d from "../define-things.js";
+import { adminCommandDisplay, adminHowMuchDisplay, adminItemTypeDisplay, adminTGUploadDisplay, displayAdminReturn } from "./display-admin.js";
+import { buildAdminParams, sendToBack } from "../util.js";
 
 const adminSubmit = async (e) => {
   e.preventDefault();
@@ -11,7 +11,7 @@ const adminSubmit = async (e) => {
   const adminParams = await buildAdminParams();
 
   //get data
-  const adminData = await sendAdminToBack(adminParams);
+  const adminData = await sendToBack(adminParams);
 
   //display it (remove variable name)
   const displayData = await displayAdminReturn(adminData);
@@ -19,6 +19,8 @@ const adminSubmit = async (e) => {
 
   return "DONE";
 };
+
+//---------
 
 const changeAdminDisplay = async (e) => {
   e.preventDefault();
@@ -34,7 +36,7 @@ const changeAdminDisplay = async (e) => {
 
 //build map
 const adminDisplayMap = {};
-const displayFunctionsArray = [changeCommandDisplay, changeHowMuchDisplay, changeItemTypeDisplay, changeTGUploadDisplay];
+const displayFunctionsArray = [adminCommandDisplay, adminHowMuchDisplay, adminItemTypeDisplay, adminTGUploadDisplay];
 for (let i = 0; i < d.displayItemsArray.length; i++) {
   adminDisplayMap[d.displayItemsArray[i].id] = displayFunctionsArray[i];
 }

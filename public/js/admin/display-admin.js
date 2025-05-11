@@ -65,7 +65,7 @@ export const adminHowMuchDisplay = async (buttonClicked) => {
   return true;
 };
 
-export const changeItemTypeDisplay = async (buttonClicked) => {
+export const adminItemTypeDisplay = async (buttonClicked) => {
   await hideArray([d.adminArticleTypeListItem]);
 
   //unhide if button clicked
@@ -81,7 +81,7 @@ export const changeItemTypeDisplay = async (buttonClicked) => {
   return true;
 };
 
-export const changeTGUploadDisplay = async (buttonClicked) => {
+export const adminTGUploadDisplay = async (buttonClicked) => {
   await hideArray([d.adminTgIdListItem]);
 
   if (buttonClicked === d.adminYesTG.id) {
