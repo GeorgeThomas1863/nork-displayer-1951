@@ -22,7 +22,7 @@ export const buildDefaultDisplay = async (inputData) => {
   defaultContainer.className = "empty-container";
   defaultElement.className = "empty-text";
 
-  defaultElement.innerHTML = inputData;
+  defaultElement.innerHTML = inputData.textContent;
   defaultContainer.append(defaultElement);
 
   return defaultContainer;
