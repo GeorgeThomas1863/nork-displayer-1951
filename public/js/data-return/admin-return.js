@@ -9,6 +9,7 @@ export const parseAdminDataReturn = async (inputData) => {
   adminContainer.className = "admin-container";
 
   const defaultData = await buildDefaultDisplay(data);
+  const scrapeData = await buildScrapeDataDisplay(data);
 
   adminContainer.append(defaultData);
 
@@ -28,4 +29,9 @@ export const buildDefaultDisplay = async (inputData) => {
   defaultContainer.append(scrapeElement, textElement);
 
   return defaultContainer;
+};
+
+export const buildScrapeDataDisplay = async (inputData) => {
+  console.log("AHHHHHHHHHHH");
+  console.dir(inputData);
 };
