@@ -16,14 +16,16 @@ export const parseAdminDataReturn = async (inputData) => {
 };
 
 export const buildDefaultDisplay = async (inputData) => {
+  const { text, scrapeId } = inputData;
   const defaultContainer = document.createElement("ul");
-  const defaultElement = document.createElement("li");
+  const scrapeElement = document.createElement("li");
+  const textElement = document.createElement("li");
 
-  defaultContainer.className = "empty-container";
-  defaultElement.className = "empty-text";
+  defaultContainer.className = "default-container";
 
-  defaultElement.innerHTML = inputData.textContent;
-  defaultContainer.append(defaultElement);
+  scrapeElement.innerHTML = `SCRAPE ID: ${scrapeId}`;
+  textElement.innerHTML = text;
+  defaultContainer.append(scrapeElement, textElement);
 
   return defaultContainer;
 };
