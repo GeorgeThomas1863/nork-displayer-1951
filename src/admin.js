@@ -13,6 +13,8 @@ export const sendAdminCommand = async (inputParams) => {
       headersTimeout: 3 * 60 * 60 * 1000, // 2 hours (60 min × 60 sec × 1000 ms)
     });
     const data = await resAPI.json();
+    console.log("DATA RETURN");
+    console.log(data);
     return data;
   } catch (e) {
     console.log(e);
