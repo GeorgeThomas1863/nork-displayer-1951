@@ -1,5 +1,12 @@
 import CONFIG from "../config/config.js";
 
+export const runAdminSubmit = async (inputParams) => {
+  const scrapeData = await sendAdminCommand(inputParams);
+  const { scrapeId } = scrapeData;
+
+  const scrapeStats = await getScrapeStats(scrapeId);
+};
+
 //sends command to other app
 export const sendAdminCommand = async (inputParams) => {
   try {
@@ -20,3 +27,8 @@ export const sendAdminCommand = async (inputParams) => {
     console.log(e);
   }
 };
+
+//!!!!!HERE!!!!!!!
+
+//GET SCRAPE STATS FROM MONGO [USE SAME LOOP METHOD]
+export const getScrapeStats = async (scrapeId) => {};
