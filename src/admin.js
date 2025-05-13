@@ -5,11 +5,15 @@ export const runAdminSubmit = async (inputParams) => {
   const scrapeData = await sendAdminCommand(inputParams);
   const { scrapeId } = scrapeData;
 
-  const scrapeStats = await getScrapeStats(scrapeId);
-  const returnObj = { ...scrapeStats, ...scrapeData };
-  console.log("SCRAPE STATS");
-  console.log(returnObj);
-  return returnObj;
+  console.log("SCRAPE DATA")
+  console.log(scrapeData)
+
+  // const scrapeStats = await getScrapeStats(scrapeId);
+  // const returnObj = { ...scrapeStats, ...scrapeData };
+  // console.log("SCRAPE STATS");
+  // console.log(returnObj);
+  // return returnObj;
+  return scrapeData
 };
 
 //sends command to other app
