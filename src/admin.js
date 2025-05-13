@@ -1,10 +1,13 @@
 import CONFIG from "../config/config.js";
+import dbModel from "../models/db-model.js";
 
 export const runAdminSubmit = async (inputParams) => {
   const scrapeData = await sendAdminCommand(inputParams);
   const { scrapeId } = scrapeData;
 
   const scrapeStats = await getScrapeStats(scrapeId);
+  console.log("SCRAPE STATS");
+  console.log(scrapeStats);
 };
 
 //sends command to other app
@@ -28,7 +31,26 @@ export const sendAdminCommand = async (inputParams) => {
   }
 };
 
-//!!!!!HERE!!!!!!!
-
 //GET SCRAPE STATS FROM MONGO [USE SAME LOOP METHOD]
-export const getScrapeStats = async (scrapeId) => {};
+export const getScrapeStats = async (scrapeId) => {
+  const { logArr } = CONFIG;
+
+  const lookupObj = {
+    keyToLookup: "scrapeId",
+    itemValue: scrapeId,
+  };
+
+  const returnObj = {};
+  for (let i = 0; i < logArr.length; i++) {
+    const logItem = logArr[i];
+    console.log("LOG ITEM");
+    console.log(logItem);
+    const loopModel = new dbModel(lookupObj, CONFIG[logItem]);
+    const dataArray = await loopModel.getUniqueArray();
+    console.log("LOOKUP RETURN");
+    console.log(dataArray?.length);
+    returnObj[logItem] = dataArray?.length || 0;
+  }
+
+  return returnObj;
+};

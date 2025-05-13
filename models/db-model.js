@@ -25,6 +25,13 @@ class dbModel {
     const storeData = await this.storeAny();
     return storeData;
   }
+
+  //get stuff
+  async getUniqueArray() {
+    const { keyToLookup, itemValue } = this.dataObject;
+    const dataArray = await db.dbGet().collection(this.collection).findOne({ [keyToLookup]: itemValue }); //prettier-ignore
+    return dataArray;
+  }
 }
 
 export default dbModel;
