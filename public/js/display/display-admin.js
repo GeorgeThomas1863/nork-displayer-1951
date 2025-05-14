@@ -1,6 +1,6 @@
 import d from "../define-things.js";
 import { hideArray, unhideArray } from "../util.js";
-import { parseAdminDataReturn } from "../data-return/admin-return.js";
+import { parseAdminReturn } from "../data-return/admin-parse.js";
 
 export const adminCommandDisplay = async (buttonClicked) => {
   //hide everything first
@@ -101,7 +101,7 @@ export const adminTGUploadDisplay = async (buttonClicked) => {
 export const displayAdminReturn = async (inputData) => {
   if (!inputData) return "NO DATA RECEIVED";
 
-  const displayData = await parseAdminDataReturn(inputData);
+  const displayData = await parseAdminReturn(inputData);
 
   //clear previous input
   d.adminDataReturnElement.innerHTML = "";

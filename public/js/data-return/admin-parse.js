@@ -1,15 +1,15 @@
-export const parseAdminDataReturn = async (inputData) => {
+export const parseAdminReturn = async (inputObj) => {
   console.log("INPUT DATA");
-  console.log(inputData);
+  console.log(inputObj);
 
   //data container for return
   const adminContainer = document.createElement("div");
   adminContainer.className = "admin-container";
 
   // const defaultData = await buildDefaultDisplay(inputData);
-  const scrapeData = await buildScrapeStatsDisplay(inputData);
+  const scrapeData = await buildScrapeStatsDisplay(inputObj);
 
-  adminContainer.append(scrapeData);
+  // adminContainer.append(scrapeData);
 
   return adminContainer;
 };
@@ -30,15 +30,23 @@ export const parseAdminDataReturn = async (inputData) => {
 // };
 
 export const buildScrapeStatsDisplay = async (inputObj) => {
-  // if (!inputData || !inputData.length) return null;
+  if (!inputObj) return null;
 
-  const scrapeStatsContainer = document.createElement("div");
-  scrapeStatsContainer.className = "scrape-stats-container";
+  const { statsArray, apiData } = inputObj;
 
-  for (const key in inputObj) {
-    const value = inputObj[key];
-    console.log("FUCK MY BITCH FACE");
-    console.log(key);
-    console.log(value);
-  }
+  console.log("STATS ARRAY");
+  console.log(statsArray);
+
+  console.log("API DATA");
+  console.log(apiData);
+
+  // const scrapeStatsContainer = document.createElement("div");
+  // scrapeStatsContainer.className = "scrape-stats-container";
+
+  // for (const key in inputObj) {
+  //   const value = inputObj[key];
+  //   console.log("FUCK MY BITCH FACE");
+  //   console.log(key);
+  //   console.log(value);
+  // }
 };

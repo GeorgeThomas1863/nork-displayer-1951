@@ -26,7 +26,16 @@ class dbModel {
     return storeData;
   }
 
-  //get stuff
+  //------------------
+
+  //GET STUFF
+
+  async getAll() {
+    const arrayData = await db.dbGet().collection(this.collection).find().toArray();
+    return arrayData;
+  }
+
+  //unique array
   async getUniqueArray() {
     const { keyToLookup, itemValue } = this.dataObject;
     const dataArray = await db.dbGet().collection(this.collection).findOne({ [keyToLookup]: itemValue }); //prettier-ignore

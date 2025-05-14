@@ -1,4 +1,4 @@
-import { runAdminSubmit } from "../src/admin.js";
+import { runAdminSubmit } from "../src/src-admin.js";
 
 //sends command to other app
 export const adminSubmitRoute = async (req, res) => {
