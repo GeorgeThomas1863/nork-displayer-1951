@@ -5,15 +5,14 @@ export const runAdminSubmit = async (inputParams) => {
   const scrapeData = await sendAdminCommand(inputParams);
   const { scrapeId } = scrapeData;
 
-  console.log("SCRAPE DATA")
-  console.log(scrapeData)
+  console.log("SCRAPE DATA");
+  console.log(scrapeData);
 
-  // const scrapeStats = await getScrapeStats(scrapeId);
-  // const returnObj = { ...scrapeStats, ...scrapeData };
-  // console.log("SCRAPE STATS");
-  // console.log(returnObj);
-  // return returnObj;
-  return scrapeData
+  const scrapeStats = await getScrapeStats(scrapeId);
+  const returnObj = { ...scrapeStats, ...scrapeData };
+  console.log("SCRAPE STATS");
+  console.log(returnObj);
+  return returnObj;
 };
 
 // sends command to other app
@@ -36,8 +35,6 @@ export const sendAdminCommand = async (inputParams) => {
     console.log(e);
   }
 };
-
-
 
 //GET SCRAPE STATS FROM MONGO [USE SAME LOOP METHOD]
 export const getScrapeStats = async (scrapeId) => {

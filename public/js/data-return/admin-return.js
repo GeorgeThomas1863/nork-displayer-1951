@@ -1,15 +1,13 @@
 export const parseAdminDataReturn = async (inputData) => {
-  const { data } = inputData;
-
   console.log("INPUT DATA");
-  console.log(data);
+  console.log(inputData);
 
   //data container for return
   const adminContainer = document.createElement("div");
   adminContainer.className = "admin-container";
 
-  const defaultData = await buildDefaultDisplay(data);
-  const scrapeData = await buildScrapeDataDisplay(data);
+  const defaultData = await buildDefaultDisplay(inputData);
+  const scrapeData = await buildScrapeDataDisplay(inputData);
 
   adminContainer.append(defaultData);
 
