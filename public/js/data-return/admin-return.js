@@ -14,31 +14,31 @@ export const parseAdminDataReturn = async (inputData) => {
   return adminContainer;
 };
 
-export const buildDefaultDisplay = async (inputData) => {
-  const { text, scrapeId } = inputData;
-  const defaultContainer = document.createElement("ul");
-  const scrapeElement = document.createElement("li");
-  const textElement = document.createElement("li");
+// export const buildDefaultDisplay = async (inputData) => {
+//   const { text, scrapeId } = inputData;
+//   const defaultContainer = document.createElement("ul");
+//   const scrapeElement = document.createElement("li");
+//   const textElement = document.createElement("li");
 
-  defaultContainer.className = "default-container";
+//   defaultContainer.className = "default-container";
 
-  scrapeElement.innerHTML = `SCRAPE ID: ${scrapeId}`;
-  textElement.innerHTML = text;
-  defaultContainer.append(scrapeElement, textElement);
+//   scrapeElement.innerHTML = `SCRAPE ID: ${scrapeId}`;
+//   textElement.innerHTML = text;
+//   defaultContainer.append(scrapeElement, textElement);
 
-  return defaultContainer;
-};
+//   return defaultContainer;
+// };
 
-export const buildScrapeStatsDisplay = async (inputData) => {
+export const buildScrapeStatsDisplay = async (inputObj) => {
   // if (!inputData || !inputData.length) return null;
 
   const scrapeStatsContainer = document.createElement("div");
   scrapeStatsContainer.className = "scrape-stats-container";
 
-  for (let i = 0; i < inputData.length; i++) {
-    const [x, y] = inputData[i];
-    console.log("AHHHHHHH");
-    console.log(x);
-    console.log(y);
+  for (const key in inputObj) {
+    const value = inputObj[key];
+    console.log("FUCK MY BITCH FACE");
+    console.log(key);
+    console.log(value);
   }
 };
