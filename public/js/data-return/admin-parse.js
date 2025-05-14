@@ -58,19 +58,22 @@ export const buildStatsDisplay = async (inputArray) => {
       const totalElement = document.createElement("li");
 
       //extract text
-      scrapeElement.innerHTML = `${k} : ${dataObj[k]}`;
-      totalElement.innerHTML = `${k} : ${dataObj[k]}`;
+      if (k.includes("_scrape")) {
+        scrapeElement.innerHTML = `${k} : ${dataObj[k]}`;
+        scrapeList.append(scrapeElement);
+      }
 
-      //append ot list
-      scrapeList.append(scrapeElement);
-      totalList.append(totalElement);
+      if (k.includes("_total")) {
+        totalElement.innerHTML = `${k} : ${dataObj[k]}`;
+        totalList.append(totalElement);
+      }
     }
   }
-  console.log("SCRAPE LIST");
-  console.log(scrapeList);
+  // console.log("SCRAPE LIST");
+  // console.log(scrapeList);
 
   //append both at end to div
-  statsContainer.append(scrapeList);
-  statsContainer.append(totalList);
+  statsContainer.append(scrapeList, totalList);
+  // statsContainer.append(totalList);
   return statsContainer;
 };
