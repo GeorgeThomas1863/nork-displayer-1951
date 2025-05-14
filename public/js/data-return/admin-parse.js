@@ -46,7 +46,7 @@ export const buildStatsDisplay = async (inputArray) => {
   totalList.className = "total-list";
 
   //loop through array
-  for (i = 0; i < inputArray.length; i++) {
+  for (let i = 0; i < inputArray.length; i++) {
     const dataObj = inputArray[i];
     for (const k in dataObj) {
       console.log("FUCK YOU FAGGOT");
