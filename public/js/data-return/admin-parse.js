@@ -66,7 +66,10 @@ export const buildStatsDisplay = async (inputArray) => {
       totalList.append(totalElement);
     }
   }
+  console.log("SCRAPE LIST");
+  console.log(scrapeList);
 
   //append both at end to div
   statsContainer.append(scrapeList, totalList);
+  return statsContainer;
 };
