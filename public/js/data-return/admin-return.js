@@ -6,10 +6,10 @@ export const parseAdminDataReturn = async (inputData) => {
   const adminContainer = document.createElement("div");
   adminContainer.className = "admin-container";
 
-  const defaultData = await buildDefaultDisplay(inputData);
+  // const defaultData = await buildDefaultDisplay(inputData);
   const scrapeData = await buildScrapeStatsDisplay(inputData);
 
-  adminContainer.append(defaultData);
+  adminContainer.append(scrapeData);
 
   return adminContainer;
 };
@@ -30,7 +30,7 @@ export const buildDefaultDisplay = async (inputData) => {
 };
 
 export const buildScrapeStatsDisplay = async (inputData) => {
-  if (!inputData || !inputData.length) return null;
+  // if (!inputData || !inputData.length) return null;
 
   const scrapeStatsContainer = document.createElement("div");
   scrapeStatsContainer.className = "scrape-stats-container";
