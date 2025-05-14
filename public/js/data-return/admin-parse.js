@@ -1,52 +1,72 @@
 export const parseAdminReturn = async (inputObj) => {
+  if (!inputObj) return null;
   console.log("INPUT DATA");
   console.log(inputObj);
 
-  //data container for return
+  const { statsArray, apiData } = inputObj;
+
+  //data container for entire return
   const adminContainer = document.createElement("div");
   adminContainer.className = "admin-container";
 
-  // const defaultData = await buildDefaultDisplay(inputData);
-  const scrapeData = await buildScrapeStatsDisplay(inputObj);
+  const apiContainer = await buildApiDisplay(apiData);
+  const statsContainer = await buildStatsDisplay(statsArray);
 
-  // adminContainer.append(scrapeData);
+  adminContainer.append(apiContainer, statsContainer);
 
   return adminContainer;
 };
 
-// export const buildDefaultDisplay = async (inputData) => {
-//   const { text, scrapeId } = inputData;
-//   const defaultContainer = document.createElement("ul");
-//   const scrapeElement = document.createElement("li");
-//   const textElement = document.createElement("li");
+export const buildApiDisplay = async (inputData) => {
+  const { text, scrapeId } = inputData;
+  const apiContainer = document.createElement("ul");
+  const scrapeElement = document.createElement("li");
+  const textElement = document.createElement("li");
 
-//   defaultContainer.className = "default-container";
+  apiContainer.className = "api-container";
 
-//   scrapeElement.innerHTML = `SCRAPE ID: ${scrapeId}`;
-//   textElement.innerHTML = text;
-//   defaultContainer.append(scrapeElement, textElement);
+  scrapeElement.innerHTML = `SCRAPE ID: ${scrapeId}`;
+  textElement.innerHTML = text;
+  apiContainer.append(scrapeElement, textElement);
 
-//   return defaultContainer;
-// };
+  return apiContainer;
+};
 
-export const buildScrapeStatsDisplay = async (inputObj) => {
-  if (!inputObj) return null;
+export const buildStatsDisplay = async (inputArray) => {
+  if (!inputArray || !inputArray.length) return null;
 
-  const { statsArray, apiData } = inputObj;
+  //build container elements
+  const statsContainer = document.createElement("div");
+  const scrapeList = document.createElement("ul");
+  const totalList = document.createElement("ul");
 
-  console.log("STATS ARRAY");
-  console.log(statsArray);
+  //add classes
+  statsContainer.className = "stats-container";
+  scrapeList.className = "scrape-list";
+  totalList.className = "total-list";
 
-  console.log("API DATA");
-  console.log(apiData);
+  //loop through array
+  for (i = 0; i < inputArray.length; i++) {
+    const dataObj = inputArray[i];
+    for (const k in dataObj) {
+      console.log("FUCK YOU FAGGOT");
+      console.log(k);
+      console.log(dataObj[k]);
 
-  // const scrapeStatsContainer = document.createElement("div");
-  // scrapeStatsContainer.className = "scrape-stats-container";
+      //create elements
+      const scrapeElement = document.createElement("li");
+      const totalElement = document.createElement("li");
 
-  // for (const key in inputObj) {
-  //   const value = inputObj[key];
-  //   console.log("FUCK MY BITCH FACE");
-  //   console.log(key);
-  //   console.log(value);
-  // }
+      //extract text
+      scrapeElement.innerHTML = `${k} : ${dataObj[k]}`;
+      totalElement.innerHTML = `${k} : ${dataObj[k]}`;
+
+      //append ot list
+      scrapeList.append(scrapeElement);
+      totalList.append(totalElement);
+    }
+  }
+
+  //append both at end to div
+  statsContainer.append(scrapeList, totalList);
 };
