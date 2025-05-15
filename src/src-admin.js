@@ -9,17 +9,12 @@ export const runAdminSubmit = async (inputParams) => {
   const apiData = await sendAdminCommand(inputParams);
   const { scrapeId } = apiData;
 
-  console.log("API DATA");
-  console.log(apiData);
-
   const statsArray = await getStatsArray(scrapeId);
   const scrapeObj = {
     statsArray: statsArray,
     apiData: apiData,
   };
-
-  // console.log("SCRAPE OBJECTION");
-  // console.log(scrapeObj);
+  
   return scrapeObj;
 };
 

@@ -20,7 +20,7 @@ export const parseAdminReturn = async (inputObj) => {
 
 export const buildApiDisplay = async (inputData) => {
   // const { text, scrapeId } = inputData;
-  const { text } = inputData;
+  const { textStr } = inputData;
   const apiContainer = document.createElement("ul");
   // const scrapeElement = document.createElement("li");
   const textElement = document.createElement("li");
@@ -28,7 +28,7 @@ export const buildApiDisplay = async (inputData) => {
   apiContainer.className = "api-container";
 
   // scrapeElement.innerHTML = `SCRAPE ID: ${scrapeId}`;
-  textElement.innerHTML = text;
+  textElement.innerHTML = textStr;
   apiContainer.append(textElement);
 
   return apiContainer;
