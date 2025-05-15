@@ -1,5 +1,6 @@
 //import mongo
 import * as db from "../data/db.js";
+import { ObjectId } from "mongodb";
 
 //connect to db AGAIN here just to be safe
 await db.dbConnect();
@@ -38,11 +39,12 @@ class dbModel {
   //unique array
   async getUniqueArray() {
     const { keyToLookup, itemValue } = this.dataObject;
+    const mongoValue = new ObjectId(itemValue);
     console.log("!!!!!!!!!!DB MODEL!!!!!!!!!!!");
-    console.log(keyToLookup);
     console.log(itemValue);
+    console.log(mongoValue);
     console.log(this.collection);
-    const dataArray = await db.dbGet().collection(this.collection).find({ [keyToLookup]: ObjectId(itemValue) }).toArray(); //prettier-ignore
+    const dataArray = await db.dbGet().collection(this.collection).find({ [keyToLookup]: mongoValue }).toArray(); //prettier-ignore
     console.log("DB MODEL RETURN");
     console.log(dataArray);
     return dataArray;
