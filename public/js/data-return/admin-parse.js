@@ -35,15 +35,23 @@ export const buildApiDisplay = async (inputData) => {
 export const buildStatsDisplay = async (inputArray) => {
   if (!inputArray || !inputArray.length) return null;
 
-  //build container elements
+  //build elements
   const statsContainer = document.createElement("div");
   const scrapeList = document.createElement("ul");
   const totalList = document.createElement("ul");
+  const scrapeTitle = document.createElement("h1");
+  const totalTitle = document.createElement("h1");
 
   //add classes
   statsContainer.className = "stats-container";
   scrapeList.className = "scrape-list";
   totalList.className = "total-list";
+
+  //define titles / add to containers
+  scrapeTitle.innerHTML = "ITEMS SCRAPED DURING SCRAPE ID: X";
+  totalTitle.innerHTML = "TOTAL ITEMS SCRAPED";
+  scrapeList.append(scrapeTitle);
+  totalList.append(totalTitle);
 
   //loop through array
   for (let i = 0; i < inputArray.length; i++) {
@@ -60,23 +68,9 @@ export const buildStatsDisplay = async (inputArray) => {
     //append shit
     scrapeList.append(scrapeElement);
     totalList.append(totalElement);
-
-    // //extract text
-    // if (k.includes("_scrape")) {
-    //   scrapeElement.innerHTML = `${k} : ${dataObj[k]}`;
-    //   scrapeList.append(scrapeElement);
-    // }
-
-    // if (k.includes("_total")) {
-    //   totalElement.innerHTML = `${k} : ${dataObj[k]}`;
-    //   totalList.append(totalElement);
-    // }
   }
-  // console.log("SCRAPE LIST");
-  // console.log(scrapeList);
 
   //append both at end to div
   statsContainer.append(scrapeList, totalList);
-  // statsContainer.append(totalList);
   return statsContainer;
 };
