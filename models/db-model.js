@@ -39,14 +39,9 @@ class dbModel {
   //unique array
   async getUniqueArray() {
     const { keyToLookup, itemValue } = this.dataObject;
-    const mongoValue = new ObjectId(itemValue);
-    console.log("!!!!!!!!!!DB MODEL!!!!!!!!!!!");
-    console.log(itemValue);
-    console.log(mongoValue);
-    console.log(this.collection);
+    const mongoValue = new ObjectId(itemValue); //unsure why necessary, but THIS is key step
+
     const dataArray = await db.dbGet().collection(this.collection).find({ [keyToLookup]: mongoValue }).toArray(); //prettier-ignore
-    console.log("DB MODEL RETURN");
-    console.log(dataArray);
     return dataArray;
   }
 }

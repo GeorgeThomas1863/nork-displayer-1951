@@ -45,8 +45,6 @@ export const getStatsArray = async (scrapeId) => {
   const statsArray = [];
   for (let i = 0; i < logArr.length; i++) {
     const logItem = logArr[i];
-    // console.log("LOG ITEM");
-    // console.log(logItem);
 
     //get scrape stats
     const scrapeStatsModel = new dbModel(scrapeStatsObj, CONFIG[logItem]);
@@ -55,12 +53,6 @@ export const getStatsArray = async (scrapeId) => {
     //get total stats (should work bc all collections are unique?) [!!DOUBLE CHECK THAT]
     const totalStatsModel = new dbModel("", CONFIG[logItem]);
     const totalStatsArray = await totalStatsModel.getAll();
-
-    //LOG
-    // console.log("SCRAPE STATS RETURN LENGTH");
-    // console.log(scrapeStatsArray?.length);
-    // console.log("TOTAL STATS RETURN LENGTH");
-    // console.log(totalStatsArray?.length);
 
     //add to obj
     const statsObj = {
