@@ -3,6 +3,8 @@ import axios from "axios";
 import CONFIG from "../config/config.js";
 import dbModel from "../models/db-model.js";
 
+import { keyMapObj } from "../config/map.js";
+
 export const runAdminSubmit = async (inputParams) => {
   const apiData = await sendAdminCommand(inputParams);
   const { scrapeId } = apiData;
@@ -55,13 +57,24 @@ export const getStatsArray = async (scrapeId) => {
     const totalStatsArray = await totalStatsModel.getAll();
 
     //add to obj
+    const keyName = await getStatsKeyName(logItem);
     const statsObj = {
-      [`${logItem}_scrape`]: scrapeStatsArray?.length || 0,
-      [`${logItem}_total`]: totalStatsArray?.length || 0,
+      [`${keyName}_scrape`]: scrapeStatsArray?.length || 0,
+      [`${keyName}_total`]: totalStatsArray?.length || 0,
     };
 
     statsArray.push(statsObj);
   }
 
   return statsArray;
+};
+
+export const getStatsKeyName = async (inputItem) => {
+  //loop through map obj, return match
+  for (const k in keyMapObj) {
+    if (inputItem === k) return keyMapObj[k];
+  }
+
+  //otherwise return null
+  return null;
 };
