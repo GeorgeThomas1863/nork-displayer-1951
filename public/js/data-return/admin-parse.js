@@ -29,7 +29,7 @@ export const buildApiDisplay = async (inputData) => {
 
   // scrapeElement.innerHTML = `SCRAPE ID: ${scrapeId}`;
   textElement.innerHTML = text;
-  apiContainer.append(scrapeElement, textElement);
+  apiContainer.append(textElement);
 
   return apiContainer;
 };
