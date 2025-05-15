@@ -38,7 +38,12 @@ class dbModel {
   //unique array
   async getUniqueArray() {
     const { keyToLookup, itemValue } = this.dataObject;
+    console.log("DB MODEL");
+    console.log(keyToLookup);
+    console.log(itemValue);
     const dataArray = await db.dbGet().collection(this.collection).findOne({ [keyToLookup]: itemValue }); //prettier-ignore
+    console.log("DB MODEL RETURN");
+    console.log(dataArray);
     return dataArray;
   }
 }

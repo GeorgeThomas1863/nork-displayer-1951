@@ -37,10 +37,6 @@ export const sendAdminCommand = async (inputParams) => {
 export const getStatsArray = async (scrapeId) => {
   const { logArr } = CONFIG;
 
-  console.log("GET STATS ARRAY");
-  console.log("!!!! SCRAPE ID");
-  console.log(scrapeId);
-
   const scrapeStatsObj = {
     keyToLookup: "scrapeId",
     itemValue: scrapeId,
