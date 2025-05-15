@@ -14,7 +14,7 @@ export const runAdminSubmit = async (inputParams) => {
     statsArray: statsArray,
     apiData: apiData,
   };
-  
+
   return scrapeObj;
 };
 
