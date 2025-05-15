@@ -59,8 +59,10 @@ export const getStatsArray = async (scrapeId) => {
     //add to obj
     const keyName = await getStatsKeyName(logItem);
     const statsObj = {
-      [`${keyName}_scrape`]: scrapeStatsArray?.length || 0,
-      [`${keyName}_total`]: totalStatsArray?.length || 0,
+      scrapeItem: logItem,
+      keyName: [keyName],
+      scrapeCount: scrapeStatsArray?.length || 0,
+      totalCount: totalStatsArray?.length || 0,
     };
 
     statsArray.push(statsObj);

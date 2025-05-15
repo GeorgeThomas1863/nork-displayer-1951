@@ -49,24 +49,31 @@ export const buildStatsDisplay = async (inputArray) => {
   for (let i = 0; i < inputArray.length; i++) {
     const dataObj = inputArray[i];
     for (const k in dataObj) {
-      console.log("FUCK YOU FAGGOT");
-      console.log(k);
-      console.log(dataObj[k]);
+      const objItem = dataObj[k];
+      const { keyName, scrapeCount, totalCount } = objItem;
 
       //create elements
       const scrapeElement = document.createElement("li");
       const totalElement = document.createElement("li");
 
-      //extract text
-      if (k.includes("_scrape")) {
-        scrapeElement.innerHTML = `${k} : ${dataObj[k]}`;
-        scrapeList.append(scrapeElement);
-      }
+      //define values
+      scrapeElement.innerHTML = `${keyName}: ${scrapeCount}`;
+      totalElement.innerHTML = `${keyName}: ${totalCount}`;
 
-      if (k.includes("_total")) {
-        totalElement.innerHTML = `${k} : ${dataObj[k]}`;
-        totalList.append(totalElement);
-      }
+      //append shit
+      scrapeList.append(scrapeElement);
+      totalList.append(totalElement);
+
+      // //extract text
+      // if (k.includes("_scrape")) {
+      //   scrapeElement.innerHTML = `${k} : ${dataObj[k]}`;
+      //   scrapeList.append(scrapeElement);
+      // }
+
+      // if (k.includes("_total")) {
+      //   totalElement.innerHTML = `${k} : ${dataObj[k]}`;
+      //   totalList.append(totalElement);
+      // }
     }
   }
   // console.log("SCRAPE LIST");
