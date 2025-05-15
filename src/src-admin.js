@@ -3,7 +3,7 @@ import axios from "axios";
 import CONFIG from "../config/config.js";
 import dbModel from "../models/db-model.js";
 
-import { keyMapObj } from "../config/map.js";
+import { keyMapObj } from "../config/map-display.js";
 
 export const runAdminSubmit = async (inputParams) => {
   const apiData = await sendAdminCommand(inputParams);
