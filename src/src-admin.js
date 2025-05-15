@@ -16,31 +16,10 @@ export const runAdminSubmit = async (inputParams) => {
     apiData: apiData,
   };
 
-  console.log("SCRAPE OBJECTION");
-  console.log(scrapeObj);
+  // console.log("SCRAPE OBJECTION");
+  // console.log(scrapeObj);
   return scrapeObj;
 };
-
-// FETCH VERSION
-// export const sendAdminCommand = async (inputParams) => {
-//   try {
-//     const resAPI = await fetch(CONFIG.apiURL, {
-//       method: "POST",
-//       body: JSON.stringify(inputParams),
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
-//       //per claude fetch is weird with timeouts, prob better to use axios
-//       headersTimeout: 3 * 60 * 60 * 1000, // 2 hours (60 min × 60 sec × 1000 ms)
-//     });
-//     const data = await resAPI.json();
-//     console.log("DATA RETURN");
-//     console.log(data);
-//     return data;
-//   } catch (e) {
-//     console.log(e);
-//   }
-// };
 
 //axios version, send command other app, NEED TO TEST
 export const sendAdminCommand = async (inputParams) => {
@@ -57,6 +36,10 @@ export const sendAdminCommand = async (inputParams) => {
 //GET SCRAPE STATS FROM MONGO [USE SAME LOOP METHOD]
 export const getStatsArray = async (scrapeId) => {
   const { logArr } = CONFIG;
+
+  console.log("GET STATS ARRAY");
+  console.log("!!!! SCRAPE ID");
+  console.log(scrapeId);
 
   const scrapeStatsObj = {
     keyToLookup: "scrapeId",
@@ -78,10 +61,10 @@ export const getStatsArray = async (scrapeId) => {
     const totalStatsArray = await totalStatsModel.getAll();
 
     //LOG
-    console.log("SCRAPE STATS RETURN LENGTH");
-    console.log(scrapeStatsArray?.length);
-    console.log("TOTAL STATS RETURN LENGTH");
-    console.log(totalStatsArray?.length);
+    // console.log("SCRAPE STATS RETURN LENGTH");
+    // console.log(scrapeStatsArray?.length);
+    // console.log("TOTAL STATS RETURN LENGTH");
+    // console.log(totalStatsArray?.length);
 
     //add to obj
     const statsObj = {
