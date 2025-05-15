@@ -3,14 +3,15 @@ export const parseAdminReturn = async (inputObj) => {
   console.log("INPUT DATA");
   console.log(inputObj);
 
-  const { statsArray, apiData } = inputObj;
+  // const { statsArray, apiData } = inputObj;
+  const { apiData } = inputObj;
 
   //data container for entire return
   const adminContainer = document.createElement("div");
   adminContainer.className = "admin-container";
 
   const apiContainer = await buildApiDisplay(apiData);
-  const statsContainer = await buildStatsDisplay(statsArray);
+  const statsContainer = await buildStatsDisplay(inputObj);
 
   adminContainer.append(apiContainer, statsContainer);
 
@@ -18,22 +19,25 @@ export const parseAdminReturn = async (inputObj) => {
 };
 
 export const buildApiDisplay = async (inputData) => {
-  const { text, scrapeId } = inputData;
+  // const { text, scrapeId } = inputData;
+  const { text } = inputData;
   const apiContainer = document.createElement("ul");
-  const scrapeElement = document.createElement("li");
+  // const scrapeElement = document.createElement("li");
   const textElement = document.createElement("li");
 
   apiContainer.className = "api-container";
 
-  scrapeElement.innerHTML = `SCRAPE ID: ${scrapeId}`;
+  // scrapeElement.innerHTML = `SCRAPE ID: ${scrapeId}`;
   textElement.innerHTML = text;
   apiContainer.append(scrapeElement, textElement);
 
   return apiContainer;
 };
 
-export const buildStatsDisplay = async (inputArray) => {
-  if (!inputArray || !inputArray.length) return null;
+export const buildStatsDisplay = async (inputObj) => {
+  const { statsArray, apiData } = inputObj;
+
+  if (!statsArray || !statsArray.length) return null;
 
   //build elements
   const statsContainer = document.createElement("div");
@@ -48,14 +52,14 @@ export const buildStatsDisplay = async (inputArray) => {
   totalList.className = "total-list";
 
   //define titles / add to containers
-  scrapeTitle.innerHTML = "ITEMS SCRAPED DURING SCRAPE ID: X";
+  scrapeTitle.innerHTML = "ITEMS SCRAPED DURING SCRAPE ID: " + apiData.scrapeId;
   totalTitle.innerHTML = "TOTAL ITEMS SCRAPED";
   scrapeList.append(scrapeTitle);
   totalList.append(totalTitle);
 
   //loop through array
-  for (let i = 0; i < inputArray.length; i++) {
-    const { keyName, scrapeCount, totalCount } = inputArray[i];
+  for (let i = 0; i < statsArray.length; i++) {
+    const { keyName, scrapeCount, totalCount } = statsArray[i];
 
     //create elements
     const scrapeElement = document.createElement("li");
