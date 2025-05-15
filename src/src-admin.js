@@ -45,8 +45,8 @@ export const getStatsArray = async (scrapeId) => {
   const statsArray = [];
   for (let i = 0; i < logArr.length; i++) {
     const logItem = logArr[i];
-    console.log("LOG ITEM");
-    console.log(logItem);
+    // console.log("LOG ITEM");
+    // console.log(logItem);
 
     //get scrape stats
     const scrapeStatsModel = new dbModel(scrapeStatsObj, CONFIG[logItem]);
