@@ -47,34 +47,30 @@ export const buildStatsDisplay = async (inputArray) => {
 
   //loop through array
   for (let i = 0; i < inputArray.length; i++) {
-    const dataObj = inputArray[i];
-    for (const k in dataObj) {
-      const objItem = dataObj[k];
-      const { keyName, scrapeCount, totalCount } = objItem;
+    const { keyName, scrapeCount, totalCount } = inputArray[i];
 
-      //create elements
-      const scrapeElement = document.createElement("li");
-      const totalElement = document.createElement("li");
+    //create elements
+    const scrapeElement = document.createElement("li");
+    const totalElement = document.createElement("li");
 
-      //define values
-      scrapeElement.innerHTML = `${keyName}: ${scrapeCount}`;
-      totalElement.innerHTML = `${keyName}: ${totalCount}`;
+    //define values
+    scrapeElement.innerHTML = `${keyName}: ${scrapeCount}`;
+    totalElement.innerHTML = `${keyName}: ${totalCount}`;
 
-      //append shit
-      scrapeList.append(scrapeElement);
-      totalList.append(totalElement);
+    //append shit
+    scrapeList.append(scrapeElement);
+    totalList.append(totalElement);
 
-      // //extract text
-      // if (k.includes("_scrape")) {
-      //   scrapeElement.innerHTML = `${k} : ${dataObj[k]}`;
-      //   scrapeList.append(scrapeElement);
-      // }
+    // //extract text
+    // if (k.includes("_scrape")) {
+    //   scrapeElement.innerHTML = `${k} : ${dataObj[k]}`;
+    //   scrapeList.append(scrapeElement);
+    // }
 
-      // if (k.includes("_total")) {
-      //   totalElement.innerHTML = `${k} : ${dataObj[k]}`;
-      //   totalList.append(totalElement);
-      // }
-    }
+    // if (k.includes("_total")) {
+    //   totalElement.innerHTML = `${k} : ${dataObj[k]}`;
+    //   totalList.append(totalElement);
+    // }
   }
   // console.log("SCRAPE LIST");
   // console.log(scrapeList);

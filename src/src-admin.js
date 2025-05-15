@@ -60,7 +60,7 @@ export const getStatsArray = async (scrapeId) => {
     const keyName = await getStatsKeyName(logItem);
     const statsObj = {
       scrapeItem: logItem,
-      keyName: [keyName],
+      keyName: keyName,
       scrapeCount: scrapeStatsArray?.length || 0,
       totalCount: totalStatsArray?.length || 0,
     };
