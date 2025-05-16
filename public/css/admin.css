@@ -17,10 +17,12 @@
   margin-top: 2rem;
 }
 
+.admin-data-return-wrapper {
+  margin-top: 3rem;
+}
 
 /* Main admin container */
 .admin-container {
-  margin-top: 5rem;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -47,7 +49,7 @@
 }
 
 .api-container li {
-  font-size: 2rem;
+  font-size: 1.2rem;
   line-height: 1.5;
   white-space: pre-wrap;
   color: #333;
@@ -74,7 +76,7 @@
 }
 
 .stats-container h1 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 600;
   text-transform: uppercase;
   color: #4361ee;
@@ -102,7 +104,7 @@
 .scrape-list li,
 .total-list li {
   padding: 0.75rem 0;
-  font-size: 2rem;
+  font-size: 1.2rem;
   border-bottom: 0.0625rem solid #f0f0f0;
   display: flex;
   justify-content: space-between;
@@ -113,4 +115,3 @@
 .total-list li:last-child {
   border-bottom: none;
 }
-
