@@ -28,3 +28,118 @@
 #fuck-forms-admin select {
   min-width: 15rem;
 } */
+
+/* Main admin container */
+.admin-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 80rem;
+  margin: 0 auto;
+  background-color: transparent;
+}
+
+/* API Container styling */
+.api-container {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  list-style-type: none;
+  overflow: auto;
+  max-height: 18.75rem;
+  transition: box-shadow 0.3s ease;
+  border-left: 0.25rem solid #4361ee;
+}
+
+.api-container:hover {
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.08);
+}
+
+.api-container li {
+  font-family: "Roboto Mono", monospace;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  color: #333;
+  padding: 0.25rem 0;
+}
+
+/* Stats Container styling */
+.stats-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+}
+
+.scrape-list,
+.total-list {
+  flex: 1 1 20rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  list-style-type: none;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.stats-container h1 {
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #4361ee;
+  margin-bottom: 1rem;
+  letter-spacing: 0.03125rem;
+  border-bottom: 0.125rem solid #e9ecef;
+  padding-bottom: 0.75rem;
+  width: 100%;
+}
+
+.scrape-list:hover,
+.total-list:hover {
+  transform: translateY(-0.1875rem);
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+}
+
+.scrape-list {
+  border-top: 0.25rem solid #4361ee;
+}
+
+.total-list {
+  border-top: 0.25rem solid #38b2ac;
+}
+
+.scrape-list li,
+.total-list li {
+  padding: 0.75rem 0;
+  font-size: 0.9375rem;
+  border-bottom: 0.0625rem solid #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.scrape-list li:last-child,
+.total-list li:last-child {
+  border-bottom: none;
+}
+
+.scrape-list li:not(:first-child)::before,
+.total-list li:not(:first-child)::before {
+  content: "";
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+}
+
+.scrape-list li:not(:first-child)::before {
+  background-color: #4361ee;
+}
+
+.total-list li:not(:first-child)::before {
+  background-color: #38b2ac;
+}
