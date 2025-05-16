@@ -94,11 +94,11 @@
 }
 
 .scrape-list {
-  border: 0.25rem solid #4361ee;
+  border-top: 0.25rem solid #4361ee;
 }
 
 .total-list {
-  border: 0.25rem solid #38b2ac;
+  border-top: 0.25rem solid #38b2ac;
 }
 
 .scrape-list li,
@@ -110,4 +110,3 @@
   justify-content: space-between;
   align-items: center;
 }
-
