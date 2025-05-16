@@ -57,7 +57,6 @@
 }
 
 .api-container li {
-  font-family: "Roboto Mono", monospace;
   font-size: 0.875rem;
   line-height: 1.5;
   white-space: pre-wrap;
@@ -124,7 +123,7 @@
 .total-list li:last-child {
   border-bottom: none;
 }
-
+/* 
 .scrape-list li:not(:first-child)::before,
 .total-list li:not(:first-child)::before {
   content: "";
@@ -142,4 +141,4 @@
 
 .total-list li:not(:first-child)::before {
   background-color: #38b2ac;
-}
+} */
