@@ -17,20 +17,10 @@
   margin-top: 2rem;
 }
 
-/* #fuck-forms-admin label {
-  min-width: 15rem;
-}
-
-#fuck-forms-admin input {
-  min-width: 15rem;
-}
-
-#fuck-forms-admin select {
-  min-width: 15rem;
-} */
 
 /* Main admin container */
 .admin-container {
+  margin-top: 5rem;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -57,7 +47,7 @@
 }
 
 .api-container li {
-  font-size: 0.875rem;
+  font-size: 2rem;
   line-height: 1.5;
   white-space: pre-wrap;
   color: #333;
@@ -84,7 +74,7 @@
 }
 
 .stats-container h1 {
-  font-size: 1rem;
+  font-size: 2rem;
   font-weight: 600;
   text-transform: uppercase;
   color: #4361ee;
@@ -112,7 +102,7 @@
 .scrape-list li,
 .total-list li {
   padding: 0.75rem 0;
-  font-size: 0.9375rem;
+  font-size: 2rem;
   border-bottom: 0.0625rem solid #f0f0f0;
   display: flex;
   justify-content: space-between;
@@ -123,22 +113,4 @@
 .total-list li:last-child {
   border-bottom: none;
 }
-/* 
-.scrape-list li:not(:first-child)::before,
-.total-list li:not(:first-child)::before {
-  content: "";
-  display: inline-block;
-  width: 0.5rem;
-  height: 0.5rem;
-  border-radius: 50%;
-  margin-right: 0.5rem;
-  flex-shrink: 0;
-}
 
-.scrape-list li:not(:first-child)::before {
-  background-color: #4361ee;
-}
-
-.total-list li:not(:first-child)::before {
-  background-color: #38b2ac;
-} */
