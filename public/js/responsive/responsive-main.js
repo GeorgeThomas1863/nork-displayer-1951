@@ -1,14 +1,21 @@
-//-------------------------!!!!
-
 //import modules
 import d from "../define-things.js";
 import { runActionButtonDisplay, runScrapeTypeDisplay, runScrapeToDisplay, displayDataReturn } from "../display/display-main.js";
 import { buildMainParams, sendToBack } from "../util.js";
 
-const getDefaultData = async () => {
-  //SEND TO BACK ON DEFAULT ROUTE
-  //GET DATA FROM BACK
-  //PROCESS ON FRONT END
+const runGetDefaultData = async () => {
+  //create params for default route
+  const inputParams = {
+    route: "/get-default-data",
+  };
+
+  //get data from backend
+  const data = await sendToBack(inputParams);
+
+  //display the returned data
+  if (data) {
+    await displayDataReturn(data);
+  }
 };
 
 const scrapeSubmit = async (e) => {
@@ -48,16 +55,5 @@ const changeDisplay = async (e) => {
   }
 };
 
-// // action button display
-// d.scrapeKcnaActionButton.addEventListener("click", changeDisplay);
-// d.trackCryptoActionButton.addEventListener("click", changeDisplay);
-
-// //drop down click listeners
-// d.scrapeTypeListItem.addEventListener("click", changeDisplay);
-// d.scrapeToListItem.addEventListener("click", changeDisplay);
-
-// //submit event listener
-// d.submitButton.addEventListener("click", scrapeSubmit);
-
 //CALL SEPARATELY TO EXECUTE WHEN PAGE LOADS
-getDefaultData();
+runGetDefaultData();

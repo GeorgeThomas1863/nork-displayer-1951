@@ -1,11 +1,13 @@
 import express from "express";
 
 import { indexDisplay, adminDisplay, display404, display500 } from "../controllers/display.js";
-import { adminSubmitRoute } from "../controllers/api.js";
+import { adminSubmitRoute, getDefaultDataRoute } from "../controllers/api.js";
 
 const router = express.Router();
 
 router.post("/admin-submit-route", adminSubmitRoute);
+
+router.post("/get-default-data", getDefaultDataRoute);
 
 // router.post("/scrape-submit-route", parseCommand);
 
