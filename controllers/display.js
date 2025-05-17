@@ -1,5 +1,5 @@
 export const indexDisplay = async (req, res) => {
-  res.render("index", { data: data });
+  res.render("index");
 };
 
 export const adminDisplay = (req, res) => {
