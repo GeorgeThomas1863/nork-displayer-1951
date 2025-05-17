@@ -7,11 +7,10 @@
     <link rel="stylesheet" href="/css/media-styles.css" /> -->
     <script type="module" src="/js/responsive/responsive-main.js" defer></script>
   </head>
+
   <body>
     <img src="/images/KJU.jpg" alt="fatboy-pic" id="background-pic" />
-    <nav>
-      <div id="action-buttons"><%- include("includes/action-buttons-main.ejs") %></div>
-    </nav>
+    <nav id="drop-down-wrapper"><%- include("includes/drop-down.ejs") %></nav>
     <main>
       <div id="form-wrapper"><%- include("includes/form/article-form.ejs") %> <%- include("includes/form/pic-set-form.ejs") %> <%- include("includes/form/vid-page-form.ejs") %></div>
     </main>
