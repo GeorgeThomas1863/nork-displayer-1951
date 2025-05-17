@@ -57,6 +57,7 @@ nav ul {
 
 #form-wrapper {
   display: flex;
+  justify-content: center;
   margin-top: 2rem;
   width: 80%;
   background-color: white;
@@ -64,10 +65,10 @@ nav ul {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   overflow: hidden;
 }
-
+/* 
 #form-wraper ul {
   margin: 0 auto;
-}
+} */
 
 #fuck-forms li {
   display: flex;
