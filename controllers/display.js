@@ -1,8 +1,8 @@
-import { displayDefaultData } from "../src/src-main.js";
+import { getDefaultData } from "../src/src-main.js";
 
 export const indexDisplay = async (req, res) => {
-  await displayDefaultData();
-  res.render("index");
+  const data = await getDefaultData();
+  res.render("index", { data: data });
 };
 
 export const adminDisplay = (req, res) => {

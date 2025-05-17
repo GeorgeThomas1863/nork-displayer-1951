@@ -64,7 +64,7 @@ h3 {
   display: flex;
   margin-top: 2rem;
   margin-left: 2rem;
-  gap: 1rem;
+  /* gap: 1rem; */
   padding: 1rem;
   justify-content: center;
   width: 90%;
@@ -74,7 +74,8 @@ h3 {
 }
 
 #form-wrapper ul {
-  width: 100%;
+  /* width: 100%; */
+  margin: 1rem;
   padding: 1rem;
   background-color: rgb(245, 245, 245);
   border-radius: 8px;
@@ -109,7 +110,7 @@ h3 {
   border: 2px solid black;
   border-radius: 8px;
   font-family: inherit;
-  min-width: 10rem;
+  min-width: 7rem;
   max-width: 100%;
 }
 
@@ -120,7 +121,7 @@ h3 {
   border: 2px solid black;
   border-radius: 8px;
   font-family: inherit;
-  min-width: 10rem;
+  min-width: 7rem;
   max-width: 100%;
 }
 
