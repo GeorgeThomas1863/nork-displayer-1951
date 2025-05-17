@@ -58,8 +58,8 @@ nav ul {
 #form-wrapper {
   display: flex;
   /* justify-content: center; */
-  margin: 0 auto;
-  /* margin-top: 2rem; */
+  margin: 2rem auto;
+
   width: 80%;
   background-color: white;
   border-radius: 8px;
