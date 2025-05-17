@@ -16,4 +16,6 @@ export const getDefaultData = async () => {
     picSets: picSetArray,
     vidPages: vidPageArray,
   };
+
+  return dataObj;
 };
