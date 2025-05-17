@@ -49,52 +49,53 @@ nav ul {
   gap: 1rem;
 }
 
-/* #content-wrapper {
-  margin-top: 2rem;
-  margin-left: 1rem;
-  width: 45%;
-} */
-
 #form-wrapper {
   display: flex;
   margin: 2rem auto;
   justify-content: center;
+  gap: 2rem;
   max-width: 80%;
   background-color: white;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
-/* 
-#form-wraper ul {
-  margin: 0 auto;
-} */
 
-#fuck-forms li {
+#form-wrapper ul {
+  background-color: rgb(245, 245, 245);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+#form-wrapper li {
   display: flex;
-  align-items: top;
+  align-items: baseline;
+  margin-bottom: 0.5rem;
+}
+
+#form-wrapper h1 {
   margin-bottom: 1rem;
 }
 
-#fuck-forms label {
-  font-size: 2rem;
+#form-wrapper label {
+  font-size: 1.5rem;
   font-weight: bold;
   margin-right: 1rem;
   white-space: nowrap;
-  min-width: 12rem;
+  min-width: 10rem;
   text-align: right;
 }
 
-#fuck-forms input {
+#form-wrapper input {
   flex-grow: 1;
   font-size: 1.5rem;
   height: 2rem;
   border: 2px solid black;
   border-radius: 8px;
   font-family: inherit;
-  min-width: 15rem;
+  min-width: 20rem;
 }
 
-#fuck-forms select {
+#form-wrapper select {
   flex-grow: 1;
   font-size: 1.5rem;
   height: 2.5rem;
