@@ -62,18 +62,20 @@ h3 {
 
 #form-wrapper {
   display: flex;
-  /* margin: 2rem auto; */
   margin-top: 2rem;
   margin-left: 2rem;
+  gap: 1rem;
+  padding: 1rem;
   justify-content: center;
-  gap: 2rem;
-  max-width: 90%;
+  width: 90%;
   background-color: white;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 #form-wrapper ul {
+  width: 100%;
+  padding: 1rem;
   background-color: rgb(245, 245, 245);
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -86,6 +88,7 @@ h3 {
 }
 
 #form-wrapper h1 {
+  font-size: 2rem;
   margin-bottom: 1rem;
 }
 
@@ -94,7 +97,8 @@ h3 {
   font-weight: bold;
   margin-right: 1rem;
   white-space: nowrap;
-  min-width: 10rem;
+  min-width: 7rem;
+  max-width: 100%;
   text-align: right;
 }
 
@@ -105,7 +109,8 @@ h3 {
   border: 2px solid black;
   border-radius: 8px;
   font-family: inherit;
-  min-width: 20rem;
+  min-width: 10rem;
+  max-width: 100%;
 }
 
 #form-wrapper select {
@@ -115,19 +120,18 @@ h3 {
   border: 2px solid black;
   border-radius: 8px;
   font-family: inherit;
-  min-width: 15rem;
+  min-width: 10rem;
+  max-width: 100%;
 }
 
-/* needed bc using id when initially styling li */
-/* #fuck-forms li.hidden {
-  display: none;
-} */
+/* -------------------- */
 
 /* DROP DOWN DISPLAY */
+
 #drop-down {
   position: absolute;
   top: 2rem;
-  right: 4rem;
+  right: 2rem;
 }
 
 #drop-down a span {
