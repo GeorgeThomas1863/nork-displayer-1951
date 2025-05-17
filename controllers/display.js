@@ -1,4 +1,7 @@
-export const indexDisplay = (req, res) => {
+import { displayDefaultData } from "../src/src-main.js";
+
+export const indexDisplay = async (req, res) => {
+  await displayDefaultData();
   res.render("index");
 };
 
