@@ -8,12 +8,12 @@ body {
 }
 
 main {
-  width: 90%;
-  max-width: 1200px;
+  width: 70%;
+  /* max-width: 1200px; */
 }
 
 #content-wrapper {
-  background-color: rgba(245, 245, 245, 0.95);
+  background-color: rgba(245, 245, 245, 0.9);
   border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   padding: 2rem;
