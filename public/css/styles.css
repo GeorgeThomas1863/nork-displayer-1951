@@ -2,6 +2,9 @@
 
 body {
   font-family: "Roboto Condensed", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 #background-pic {
@@ -62,67 +65,99 @@ h3 {
 
 #form-wrapper {
   display: flex;
-  margin-top: 2rem;
-  margin-left: 2rem;
-  /* gap: 1rem; */
-  padding: 1rem;
-  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  justify-content: space-between;
   width: 90%;
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  max-width: 1600px;
+  /* background-color: rgba(255, 255, 255, 0.95); */
+  border-radius: 12px;
+  /* box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); */
 }
 
 #form-wrapper ul {
-  /* width: 100%; */
-  margin: 1rem;
-  padding: 1rem;
-  background-color: rgb(245, 245, 245);
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  flex: 1;
+  min-width: 300px;
+  margin: 0.75rem;
+  padding: 1.5rem;
+  background-color: rgb(235, 235, 235);
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+#form-wrapper ul:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
 #form-wrapper li {
   display: flex;
-  align-items: baseline;
-  margin-bottom: 0.5rem;
-}
-
-#form-wrapper h1 {
-  font-size: 2rem;
+  flex-direction: column;
   margin-bottom: 1rem;
 }
 
+#form-wrapper h1 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #333;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #ddd;
+}
+
 #form-wrapper label {
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: bold;
-  margin-right: 1rem;
-  white-space: nowrap;
-  min-width: 7rem;
-  max-width: 100%;
-  text-align: right;
+  margin-bottom: 0.5rem;
+  color: #444;
 }
 
 #form-wrapper input {
-  flex-grow: 1;
-  font-size: 1.5rem;
-  height: 2rem;
-  border: 2px solid black;
-  border-radius: 8px;
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
   font-family: inherit;
-  min-width: 7rem;
-  max-width: 100%;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+#form-wrapper input:focus {
+  border-color: #666;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+
+#form-wrapper input::placeholder {
+  color: #aaa;
+  font-style: italic;
 }
 
 #form-wrapper select {
-  flex-grow: 1;
-  font-size: 1.5rem;
-  height: 2.5rem;
-  border: 2px solid black;
-  border-radius: 8px;
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
   font-family: inherit;
-  min-width: 7rem;
-  max-width: 100%;
+  appearance: none;
+  background: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23666%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E") no-repeat right 0.75rem center;
+  background-size: 0.8em;
+  background-color: white;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+#form-wrapper select:focus {
+  border-color: #666;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+  outline: none;
 }
 
 /* -------------------- */
@@ -174,4 +209,21 @@ h3 {
 
 .hidden {
   display: none;
+}
+
+#form-wrapper div[id$="data-return-element"] {
+  margin-top: auto;
+}
+
+/* Hide the main article-data-return-element as it's now redundant */
+#form-wrapper > #article-data-return-element {
+  display: none;
+}
+
+#article-wrapper,
+#pic-set-wrapper,
+#vid-page-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
