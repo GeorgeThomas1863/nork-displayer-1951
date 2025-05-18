@@ -1,5 +1,6 @@
 import d from "../define-things.js";
 import { hideArray, unhideArray } from "../util.js";
+import { parseDefaultData } from "../data-return/return-main.js";
 
 export const runActionButtonDisplay = async (buttonClicked) => {
   //adult way with switch case
@@ -49,6 +50,20 @@ export const runScrapeToDisplay = async (buttonClicked) => {
     case d.displayTG.id: //tgId
       await unhideArray([d.tgIdListItem]);
   }
+};
+
+export const displayDefaultData = async (inputData) => {
+  //check if data received
+  if (!inputData) return;
+
+  const displayData = await parseDefaultData(inputData);
+
+  //clear previous input
+  // d.dataReturnElement.innerHTML = "";
+
+  // d.dataReturnElement.appendChild(displayData);
+  // d.dataReturnWrapper.classList.remove("hidden");
+  return;
 };
 
 export const displayDataReturn = async (inputData) => {

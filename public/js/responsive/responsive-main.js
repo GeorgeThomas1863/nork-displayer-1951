@@ -1,6 +1,6 @@
 //import modules
 import d from "../define-things.js";
-import { runActionButtonDisplay, runScrapeTypeDisplay, runScrapeToDisplay, displayDataReturn } from "../display/display-main.js";
+import { runActionButtonDisplay, runScrapeTypeDisplay, runScrapeToDisplay, displayDataReturn, displayDefaultData } from "../display/display-main.js";
 import { buildMainParams, sendToBack } from "../util.js";
 
 const runGetDefaultData = async () => {
@@ -14,7 +14,7 @@ const runGetDefaultData = async () => {
 
   //display the returned data
   if (data) {
-    await displayDataReturn(data);
+    await displayDefaultData(data);
   }
 };
 

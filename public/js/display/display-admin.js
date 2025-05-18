@@ -1,6 +1,6 @@
 import d from "../define-things.js";
 import { hideArray, unhideArray } from "../util.js";
-import { parseAdminReturn } from "../data-return/admin-parse.js";
+import { parseAdminReturn } from "../data-return/return-admin.js";
 
 export const adminCommandDisplay = async (buttonClicked) => {
   //hide everything first
