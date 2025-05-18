@@ -97,6 +97,11 @@ const d = {
   dataReturnElement: document.getElementById("data-return-element"),
   adminDataReturnWrapper: document.getElementById("admin-data-return-wrapper"),
   adminDataReturnElement: document.getElementById("admin-data-return-element"),
+
+  //DATA RETURN ELEMENTS
+  articleDataReturnElement: document.getElementById("article-data-return-element"),
+  picSetDataReturnElement: document.getElementById("pic-set-data-return-element"),
+  vidPageDataReturnElement: document.getElementById("vid-page-data-return-element"),
 };
 
 //add in MAIN array to obj
