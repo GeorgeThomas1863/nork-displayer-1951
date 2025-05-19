@@ -36,9 +36,9 @@ export const parseArticleElement = async (inputObj) => {
 
   const articleElement = document.createElement("div");
   articleElement.className = "article-element";
-  articleElement.innerHTML = article;
+  articleElement.innerHTML = text;
 
-  const { textStr, scrapeId } = inputObj;
+ 
 };
 
 export const parsePicArray = async (inputArray) => {
