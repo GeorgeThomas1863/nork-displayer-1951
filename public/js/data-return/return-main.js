@@ -10,12 +10,12 @@ export const parseDefaultData = async (inputObj) => {
   const { articles, picSets, vidPages } = inputObj;
 
   const articleContainer = await buildArticleArray(articles);
-  d.articleDataReturnElement.innerHTML = "";
 
-  d.articleDataReturnElement.appendChild(articleContainer);
-  d.articleDataReturnElement.classList.remove("hidden");
+  const returnObj = {
+    parsedArticles: articleContainer,
+  };
 
-  return true;
+  return returnObj;
 };
 
 export const parsePicArray = async (inputArray) => {

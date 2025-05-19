@@ -59,10 +59,10 @@ export const displayDefaultData = async (inputData) => {
   const displayData = await parseDefaultData(inputData);
 
   //clear previous input
-  // d.dataReturnElement.innerHTML = "";
+  d.dataReturnElement.innerHTML = "";
 
-  // d.dataReturnElement.appendChild(displayData);
-  // d.dataReturnWrapper.classList.remove("hidden");
+  d.dataReturnElement.appendChild(displayData);
+  d.dataReturnWrapper.classList.remove("hidden");
   return;
 };
 
