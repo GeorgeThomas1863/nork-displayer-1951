@@ -19,8 +19,5 @@ export const getDefaultData = async () => {
     vidPages: vidPageArray,
   };
 
-  console.log("DATA OBJ");
-  console.log(dataObj);
-
   return dataObj;
 };
