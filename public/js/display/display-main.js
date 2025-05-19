@@ -61,7 +61,7 @@ export const displayDefaultData = async (inputData) => {
   //clear previous input
   d.dataReturnElement.innerHTML = "";
 
-  d.dataReturnElement.appendChild(displayData);
+  d.dataReturnElement.appendChild(displayData.parsedArticles);
   d.dataReturnWrapper.classList.remove("hidden");
   return;
 };
