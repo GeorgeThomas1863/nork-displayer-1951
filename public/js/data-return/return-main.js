@@ -12,9 +12,6 @@ export const parseDefaultData = async (inputObj) => {
   mainContainer.className = "main-container";
 };
 
-//!!! HERE !!!
-//BUILD BELOW
-
 export const parseArticleArray = async (inputArray) => {
   if (!inputArray) return null;
 
@@ -24,7 +21,7 @@ export const parseArticleArray = async (inputArray) => {
   for (let i = 0; i < inputArray.length; i++) {
     const articleElement = await parseArticleElement(inputArray[i]);
 
-    articleContainer.appendChild(articleElement);
+    // articleContainer.appendChild(articleElement);
   }
 };
 
