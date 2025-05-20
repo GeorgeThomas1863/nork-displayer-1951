@@ -53,18 +53,20 @@ export const runScrapeToDisplay = async (buttonClicked) => {
 };
 
 export const displayDefaultData = async (inputData) => {
-  //check if data received
+  // Check if data received
   if (!inputData) return;
 
-  const displayData = await parseDefaultData(inputData);
-
-  //clear previous input
+  // Clear previous content
   d.dataReturnElement.innerHTML = "";
-
-  //prob display 6-9 articles
-  d.dataReturnElement.appendChild(displayData.parsedArticles);
-  d.dataReturnWrapper.classList.remove("hidden");
-  return;
+  
+  // Parse and prepare the data for display
+  const displayData = await parseDefaultData(inputData);
+  
+  // If we have parsed articles, add them to the DOM
+  if (displayData && displayData.parsedArticles) {
+    d.dataReturnElement.appendChild(displayData.parsedArticles);
+    d.dataReturnWrapper.classList.remove("hidden");
+  }
 };
 
 export const displayDataReturn = async (inputData) => {

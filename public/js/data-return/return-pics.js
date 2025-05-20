@@ -1,32 +1,69 @@
 import { buildTitleElement, buildDateElement } from "./return-util.js";
+import { buildCollapsible, setupCollapsibleGroup } from "./collapsible.js";
 
 export const buildPicSetArray = async (inputArray) => {
   if (!inputArray) return null;
 
   const picSetContainer = document.createElement("ul");
   picSetContainer.className = "pic-set-container";
+  
+  const collapsibles = [];
+  let isFirst = true;
 
   for (let i = 0; i < inputArray.length; i++) {
-    const picSetElement = await buildPicSetListItem(inputArray[i]);
-    picSetContainer.appendChild(picSetElement);
+    const picSetElement = await buildPicSetListItem(inputArray[i], isFirst);
+    if (picSetElement) {
+      picSetContainer.appendChild(picSetElement);
+      
+      // Store the collapsible components for group functionality
+      const collapsible = picSetElement.querySelector('.collapsible-container');
+      if (collapsible) collapsibles.push(collapsible);
+      
+      isFirst = false;
+    }
   }
+  
+  // Set up the collapsible group behavior
+  setupCollapsibleGroup(collapsibles);
 
   return picSetContainer;
 };
 
-export const buildPicSetListItem = async (inputObj) => {
+export const buildPicSetListItem = async (inputObj, isFirst = false) => {
   const { picArray, title, date } = inputObj;
   if (!picArray || !picArray.length) return null;
 
   const picSetListItem = document.createElement("li");
   picSetListItem.className = "pic-set-list-item";
 
-  //PARSE PICS HERE
+  // Create picture array element
   const picArrayElement = await buildPicArrayElement(picArray);
+  if (!picArrayElement) return null;
+  
+  // Create info container
+  const infoContainer = document.createElement("div");
+  infoContainer.className = "pic-set-info";
+  
   const titleElement = await buildTitleElement(title);
   const dateElement = await buildDateElement(date);
-
-  picSetListItem.appendChild(picArrayElement, titleElement, dateElement);
+  
+  infoContainer.appendChild(titleElement);
+  infoContainer.appendChild(dateElement);
+  
+  // Create content container that includes both info and pictures
+  const contentContainer = document.createElement("div");
+  contentContainer.className = "pic-set-content";
+  contentContainer.appendChild(infoContainer);
+  contentContainer.appendChild(picArrayElement);
+  
+  // Wrap everything in a collapsible
+  const picSetCollapsible = buildCollapsible(
+    title, 
+    contentContainer, 
+    isFirst // First pic set starts expanded
+  );
+  
+  picSetListItem.appendChild(picSetCollapsible);
 
   return picSetListItem;
 };
