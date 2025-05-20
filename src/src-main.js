@@ -32,8 +32,6 @@ const addArticlePicData = async (inputArray) => {
     articlePicArray.push(articleObj);
   }
 
-  console.log("ARTICLE PIC ARRAY!!!", articlePicArray);
-
   return articlePicArray;
 };
 
@@ -55,6 +53,8 @@ const parseArticleObj = async (inputObj) => {
       console.log(e);
     }
   }
+
+  console.log("PIC DATA ARRAY!!!", picDataArray);
 
   articlePicObj.picArray = picDataArray;
 
