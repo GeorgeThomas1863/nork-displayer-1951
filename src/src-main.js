@@ -76,7 +76,7 @@ const getPicData = async (picURL) => {
   console.log("PIC OBJ!!!", picObj);
 
   //checks if pic exists, return null if it doesnt
-  if (!picObj || !picObj.savePath || fs.existsSync(picObj.savePath)) return null;
+  if (!picObj || !picObj.savePath || !fs.existsSync(picObj.savePath)) return null;
 
   return picObj;
 };
