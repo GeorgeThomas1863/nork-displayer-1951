@@ -32,7 +32,7 @@ export const buildArticleListItem = async (inputObj, isFirst) => {
   // articleListItem.append(articleElementCollapse);
 
   //FIX ABOVE
-  articleListItem.append(articleElement);
+  articleListItem.append(picArrayElement, articleElement);
 
   return articleListItem;
 };

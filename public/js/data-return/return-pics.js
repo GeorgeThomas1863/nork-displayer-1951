@@ -15,29 +15,20 @@ export const buildPicSetArray = async (inputArray) => {
 };
 
 export const buildPicSetListItem = async (inputObj) => {
+  const { picArray, title, date } = inputObj;
+  if (!picArray || !picArray.length) return null;
+
   const picSetListItem = document.createElement("li");
   picSetListItem.className = "pic-set-list-item";
 
   //PARSE PICS HERE
-
-  const picSetElement = await buildPicSetElement(inputObj);
-  picSetListItem.appendChild(picSetElement);
-
-  return picSetListItem;
-};
-
-export const buildPicSetElement = async (inputObj) => {
-  const picSetElement = document.createElement("div");
-  picSetElement.className = "pic-set-element";
-
-  const { title, date } = inputObj;
-
+  const picArrayElement = await buildPicArrayElement(picArray);
   const titleElement = await buildTitleElement(title);
   const dateElement = await buildDateElement(date);
 
-  picSetElement.appendChild(titleElement, dateElement);
+  picSetListItem.appendChild(picArrayElement, titleElement, dateElement);
 
-  return picSetElement;
+  return picSetListItem;
 };
 
 //--------------------------------
@@ -70,8 +61,6 @@ export const buildPicListItem = async (inputObj) => {
 
   const picElement = await buildPicElement(savePath);
   picListItem.appendChild(picElement);
-
-  console.log("PIC LIST ITEM!!!", inputObj);
 
   return picListItem;
 };
