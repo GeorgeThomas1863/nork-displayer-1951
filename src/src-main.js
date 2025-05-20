@@ -54,8 +54,6 @@ const parseArticleObj = async (inputObj) => {
     }
   }
 
-  console.log("PIC DATA ARRAY!!!", picDataArray);
-
   articlePicObj.picArray = picDataArray;
 
   return articlePicObj;
