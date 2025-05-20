@@ -55,8 +55,8 @@ export const buildPicArrayElement = async (inputArray) => {
 };
 
 export const buildPicListItem = async (inputObj) => {
+  if (!inputObj || !inputObj.savePath) return null;
   const { savePath } = inputObj;
-  if (!inputObj || !savePath) return null;
 
   const picListItem = document.createElement("li");
   picListItem.className = "pic-list-item";
