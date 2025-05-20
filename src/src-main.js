@@ -1,7 +1,6 @@
+import fs from "fs";
 import CONFIG from "../config/config.js";
 import dbModel from "../models/db-model.js";
-import fs from "fs/promises";
-import path from "path";
 
 export const getDefaultData = async () => {
   const { articles, picSetContent, vidPageContent } = CONFIG;
