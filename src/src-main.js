@@ -1,5 +1,7 @@
 import CONFIG from "../config/config.js";
 import dbModel from "../models/db-model.js";
+import fs from "fs/promises";
+import path from "path";
 
 export const getDefaultData = async () => {
   const { articles, picSetContent, vidPageContent } = CONFIG;
@@ -48,6 +50,7 @@ const parseArticleObj = async (inputObj) => {
     try {
       const picURL = picArray[i];
       const picObj = await getPicData(picURL);
+
       picDataArray.push(picObj);
     } catch (e) {
       console.log(e);
@@ -70,6 +73,9 @@ const getPicData = async (picURL) => {
 
   const picDataModel = new dbModel(lookupParams, picsDownloaded);
   const picObj = await picDataModel.getUniqueItem();
+
+  //checks if pic exists, return null if it doesnt
+  if (!picObj || !picObj.savePath || fs.existsSync(picObj.savePath)) return null;
 
   return picObj;
 };
