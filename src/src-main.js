@@ -74,6 +74,8 @@ const getPicData = async (picURL) => {
   const picDataModel = new dbModel(lookupParams, picsDownloaded);
   const picObj = await picDataModel.getUniqueItem();
 
+  console.log("PIC OBJ!!!", picObj);
+
   //checks if pic exists, return null if it doesnt
   if (!picObj || !picObj.savePath || fs.existsSync(picObj.savePath)) return null;
 
