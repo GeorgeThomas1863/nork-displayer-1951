@@ -27,6 +27,8 @@ import CONFIG from "./config/config.js";
 import routes from "./routes/routes.js";
 // import * as db from "./data/db.js";
 
+const { expressPicPath, picPath, displayPort } = CONFIG;
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
@@ -50,8 +52,8 @@ app.use(cors());
 
 app.use(express.static("public"));
 
-app.use(CONFIG.expressPicPath, express.static(CONFIG.picPath));
+app.use(expressPicPath, express.static(picPath));
 app.use(routes);
 
 // app.listen(1801);
-app.listen(CONFIG.displayPort);
+app.listen(displayPort);

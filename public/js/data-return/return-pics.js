@@ -49,16 +49,38 @@ export const buildPicArrayElement = async (inputArray) => {
   picArrayElement.className = "pic-array-element";
 
   for (let i = 0; i < inputArray.length; i++) {
-    const picElement = await buildPicListItem(inputArray[i]);
-    picArrayElement.appendChild(picElement);
+    const picListItem = await buildPicListItem(inputArray[i]);
+    picArrayElement.appendChild(picListItem);
   }
 };
 
 export const buildPicListItem = async (inputObj) => {
-  const picElement = document.createElement("li");
-  picElement.className = "pic-element";
+  const { savePath } = inputObj;
+  if (!savePath) return null;
+
+  const picListItem = document.createElement("li");
+  picListItem.className = "pic-list-item";
+
+  //ADD pic stats here (scrape date, server, size, etc)
+
+  const picElement = await buildPicElement(savePath);
+  picListItem.appendChild(picElement);
 
   console.log("PIC LIST ITEM!!!", inputObj);
+
+  return picListItem;
+};
+
+export const buildPicElement = async (savePath) => {
+  const picElement = document.createElement("img");
+  picElement.className = "pic-element";
+
+  //define pic path
+  const fileName = savePath.split("/").pop();
+  const picPath = "/kcna-pics/" + fileName;
+
+  picElement.src = picPath;
+  picElement.alt = "KCNA PIC";
 
   return picElement;
 };
