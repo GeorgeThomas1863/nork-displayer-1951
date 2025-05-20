@@ -22,6 +22,7 @@ export const buildArticleListItem = async (inputObj, isFirst) => {
   articleListItem.className = "article-list-item";
 
   //PARSE PICS HERE
+  console.log("11111ARTICLE LIST ITEM!!!!!", inputObj);
 
   const articleElement = await buildArticleElement(inputObj);
   // const articleElementCollapse = await buildCollapseDisplay(inputObj.title, articleElement, isFirst);
