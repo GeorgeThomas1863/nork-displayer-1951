@@ -43,6 +43,8 @@ export const buildPicSetElement = async (inputObj) => {
 //--------------------------------
 
 export const buildPicArrayElement = async (inputArray) => {
+  if (!inputArray || !inputArray.length) return null;
+
   const picArrayElement = document.createElement("ul");
   picArrayElement.className = "pic-array-element";
 

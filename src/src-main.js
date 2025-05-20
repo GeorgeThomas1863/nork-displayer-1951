@@ -8,6 +8,8 @@ export const getDefaultData = async () => {
   const articleArrayRaw = await articleModel.getAll();
   const articleArray = await addArticlePicData(articleArrayRaw);
 
+  console.log("ARTICLE ARRAY!!!", articleArray);
+
   const picSetModel = new dbModel("", picSetContent);
   const picSetArray = await picSetModel.getAll();
 
