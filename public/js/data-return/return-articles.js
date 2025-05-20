@@ -1,4 +1,5 @@
 import { buildTitleElement, buildDateElement, buildTextElement } from "./return-util.js";
+import { buildPicArrayElement } from "./return-pics.js";
 
 export const buildArticleArray = async (inputArray) => {
   if (!inputArray) return null;
@@ -18,11 +19,13 @@ export const buildArticleArray = async (inputArray) => {
 };
 
 export const buildArticleListItem = async (inputObj, isFirst) => {
+  const { picArray } = inputObj;
+
   const articleListItem = document.createElement("li");
   articleListItem.className = "article-list-item";
 
   //PARSE PICS HERE
-  console.log("11111ARTICLE LIST ITEM!!!!!", inputObj);
+  const picArrayElement = await buildPicArrayElement(picArray);
 
   const articleElement = await buildArticleElement(inputObj);
   // const articleElementCollapse = await buildCollapseDisplay(inputObj.title, articleElement, isFirst);

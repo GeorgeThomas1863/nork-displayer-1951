@@ -39,3 +39,24 @@ export const buildPicSetElement = async (inputObj) => {
 
   return picSetElement;
 };
+
+//--------------------------------
+
+export const buildPicArrayElement = async (inputArray) => {
+  const picArrayElement = document.createElement("ul");
+  picArrayElement.className = "pic-array-element";
+
+  for (let i = 0; i < inputArray.length; i++) {
+    const picElement = await buildPicListItem(inputArray[i]);
+    picArrayElement.appendChild(picElement);
+  }
+};
+
+export const buildPicListItem = async (inputObj) => {
+  const picElement = document.createElement("li");
+  picElement.className = "pic-element";
+
+  console.log("PIC LIST ITEM!!!", inputObj);
+
+  return picElement;
+};
