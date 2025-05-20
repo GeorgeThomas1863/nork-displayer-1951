@@ -50,8 +50,13 @@ export const buildPicArrayElement = async (inputArray) => {
 
   for (let i = 0; i < inputArray.length; i++) {
     const picListItem = await buildPicListItem(inputArray[i]);
+    if (!picListItem) continue;
+    console.log("PIC LIST ITEM!!!", picListItem);
+
     picArrayElement.appendChild(picListItem);
   }
+
+  return picArrayElement;
 };
 
 export const buildPicListItem = async (inputObj) => {
