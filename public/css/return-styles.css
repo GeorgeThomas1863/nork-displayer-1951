@@ -126,8 +126,8 @@
   position: relative;
 }
 
-/* COLLAPSIBLE COMPONENT STYLES */
-.collapsible-header {
+/* collapse COMPONENT STYLES */
+.collapse-header {
   display: flex;
   align-items: center;
   padding: 16px 20px;
@@ -141,16 +141,16 @@
   overflow: hidden;
 }
 
-.collapsible-header:hover {
+.collapse-header:hover {
   background-color: #b3d9ff;
 }
 
-.collapsible-header:active {
+.collapse-header:active {
   transform: scale(0.99);
 }
 
 /* Arrow styling - circular background with elegant arrow */
-.collapsible-arrow {
+.collapse-arrow {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -164,7 +164,7 @@
 }
 
 /* Chevron for arrow */
-.collapsible-arrow::before {
+.collapse-arrow::before {
   content: "";
   width: 10px;
   height: 10px;
@@ -175,16 +175,16 @@
 }
 
 /* Expanded state styling */
-.collapsible-arrow.expanded {
+.collapse-arrow.expanded {
   background-color: #e9ecef;
 }
 
-.collapsible-arrow.expanded::before {
+.collapse-arrow.expanded::before {
   transform: rotate(45deg) translate(-1px, -1px);
   border-color: #2c3e50;
 }
 
-.collapsible-title {
+.collapse-title {
   font-size: 1.7rem;
   font-weight: 600;
   color: #2c3e50;
@@ -197,15 +197,15 @@
 }
 
 /* For collapsing pics in articles */
-.article-pic-list-collapse .collapsible-title {
+.article-pic-list-collapse .collapse-title {
   font-size: 1.5rem;
 }
 
-.article-pic-list-collapse .collapsible-arrow {
+.article-pic-list-collapse .collapse-arrow {
   font-size: 1rem;
 }
 
-.article-pic-list-collapse .collapsible-header {
+.article-pic-list-collapse .collapse-header {
   width: 12%;
   margin: 0 auto;
   justify-content: center;
@@ -213,12 +213,12 @@
   padding: 12px 12px;
 }
 
-.article-pic-list-collapse .collapsible-header:hover {
+.article-pic-list-collapse .collapse-header:hover {
   background-color: #b3d9ff;
 }
 
-/* Collapsible content container */
-.collapsible-content {
+/* collapse content container */
+.collapse-content {
   max-height: 100000px;
   transition: max-height 0.5s cubic-bezier(0, 1, 0, 1), opacity 0.3s ease, padding 0.3s ease;
   opacity: 1;
@@ -230,7 +230,7 @@
 }
 
 /* Hidden state */
-.collapsible-content.hidden {
+.collapse-content.hidden {
   max-height: 0;
   opacity: 0;
   padding-top: 0;
@@ -260,4 +260,4 @@
 .empty-text h2 {
   margin-top: 3rem;
   font-size: 2rem;
-} 
+}

@@ -106,7 +106,7 @@ export const displayAdminReturn = async (inputData) => {
   //clear previous input
   d.adminDataReturnElement.innerHTML = "";
 
-  d.adminDataReturnElement.appendChild(displayData);
+  d.adminDataReturnElement.append(displayData);
   d.adminDataReturnWrapper.classList.remove("hidden");
   return;
 };

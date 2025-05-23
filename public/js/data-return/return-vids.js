@@ -1,30 +1,30 @@
 import { buildTitleElement, buildDateElement } from "./return-util.js";
-import { buildCollapsible, setupCollapsibleGroup } from "./collapsible.js";
+import { buildCollapseContainer, defineCollapseItems } from "../collapse.js";
 
 export const buildVidPageArray = async (inputArray) => {
   if (!inputArray) return null;
 
   const vidPageContainer = document.createElement("ul");
   vidPageContainer.className = "vid-page-container";
-  
-  const collapsibles = [];
+
   let isFirst = true;
+  const collapseArray = [];
 
   for (let i = 0; i < inputArray.length; i++) {
     const vidPageElement = await buildVidPageListItem(inputArray[i], isFirst);
     if (vidPageElement) {
-      vidPageContainer.appendChild(vidPageElement);
-      
-      // Store the collapsible components for group functionality
-      const collapsible = vidPageElement.querySelector('.collapsible-container');
-      if (collapsible) collapsibles.push(collapsible);
-      
+      vidPageContainer.append(vidPageElement);
+
+      // Store the collapse components for group functionality
+      const collapseItem = vidPageElement.querySelector(".collapse-container");
+      if (collapseItem) collapseArray.push(collapseItem);
+
       isFirst = false;
     }
   }
-  
-  // Set up the collapsible group behavior
-  setupCollapsibleGroup(collapsibles);
+
+  // Set up the collapse group behavior
+  defineCollapseItems(collapseArray);
 
   return vidPageContainer;
 };
@@ -35,15 +35,18 @@ export const buildVidPageListItem = async (inputObj, isFirst = false) => {
 
   const vidPageElement = await buildVidPageElement(inputObj);
   if (!vidPageElement) return null;
-  
-  // Wrap in collapsible
-  const vidPageCollapsible = buildCollapsible(
-    inputObj.title, 
-    vidPageElement, 
-    isFirst // First video page starts expanded
-  );
-  
-  vidPageListItem.appendChild(vidPageCollapsible);
+
+  // Wrap in collapse
+  const vidPageCollapseObj = {
+    title: title,
+    content: vidPageElement,
+    isExpanded: isFirst,
+    className: "vid-page-collapse",
+  };
+
+  const vidPageCollapseContainer = await buildCollapseContainer(vidPageCollapseObj);
+
+  vidPageListItem.append(vidPageCollapseContainer);
 
   return vidPageListItem;
 };
@@ -57,8 +60,7 @@ export const buildVidPageElement = async (inputObj) => {
   const titleElement = await buildTitleElement(title);
   const dateElement = await buildDateElement(date);
 
-  vidPageElement.appendChild(titleElement);
-  vidPageElement.appendChild(dateElement);
+  vidPageElement.append(titleElement, dateElement);
 
   return vidPageElement;
 };

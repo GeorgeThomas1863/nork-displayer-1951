@@ -1,6 +1,6 @@
 import { buildTitleElement, buildDateElement, buildTextElement } from "./return-util.js";
 import { buildPicArrayElement } from "./return-pics.js";
-import { buildCollapsible, setupCollapsibleGroup } from "./collapsible.js";
+import { buildCollapseContainer, defineCollapseItems } from "../collapse.js";
 
 export const buildArticleArray = async (inputArray) => {
   if (!inputArray) return null;
@@ -9,21 +9,21 @@ export const buildArticleArray = async (inputArray) => {
   articleContainer.className = "article-container";
 
   let isFirst = true;
-  const collapsibles = [];
+  const collapseArray = [];
 
   for (let i = 0; i < inputArray.length; i++) {
     const articleElement = await buildArticleListItem(inputArray[i], isFirst);
-    articleContainer.appendChild(articleElement);
-    
-    // Store the collapsible components for group functionality
-    const collapsible = articleElement.querySelector('.collapsible-container');
-    if (collapsible) collapsibles.push(collapsible);
-    
+    articleContainer.append(articleElement);
+
+    // Store the collapse components for group functionality
+    const collapseItem = articleElement.querySelector(".collapse-container");
+    if (collapseItem) collapseArray.push(collapseItem);
+
     isFirst = false;
   }
-  
-  // Set up the collapsible group behavior
-  setupCollapsibleGroup(collapsibles);
+
+  // Set up the collapse group behavior
+  defineCollapseItems(collapseArray);
 
   return articleContainer;
 };
@@ -36,32 +36,36 @@ export const buildArticleListItem = async (inputObj, isFirst) => {
 
   // Create the article element
   const articleElement = await buildArticleElement(inputObj);
-  
+
   // Create the picture element if exists
   let picArrayElement = null;
   if (picArray && picArray.length) {
     picArrayElement = await buildPicArrayElement(picArray);
-    
-    // Wrap pictures in a collapsible if there are any
+
+    // Wrap pictures in a collapse if there are any
     if (picArrayElement) {
-      const picCollapsible = buildCollapsible(
-        "Show Images", 
-        picArrayElement, 
-        false,
-        "article-pic-list-collapse"
-      );
-      articleListItem.appendChild(picCollapsible);
+      // Create collapse object
+      const picCollapseObj = {
+        title: `${picArray.length} Pics`,
+        content: picArrayElement,
+        isExpanded: false,
+      };
+
+      const picCollapseContainer = await buildCollapseContainer(picCollapseObj);
+      articleListItem.append(picCollapseContainer);
     }
   }
 
   // Wrap the article content in a collapsible
-  const articleCollapsible = buildCollapsible(
-    title, 
-    articleElement, 
-    isFirst // First article starts expanded
-  );
-  
-  articleListItem.appendChild(articleCollapsible);
+  const articleCollapseObj = {
+    title: title,
+    content: articleElement,
+    isExpanded: isFirst,
+    className: "article-element-collapse",
+  };
+
+  const articleCollapseContainer = await buildCollapseContainer(articleCollapseObj);
+  articleListItem.append(articleCollapseContainer);
 
   return articleListItem;
 };
@@ -77,9 +81,7 @@ export const buildArticleElement = async (inputObj) => {
   const dateElement = await buildDateElement(date);
   const textElement = await buildTextElement(text);
 
-  articleElement.appendChild(titleElement);
-  articleElement.appendChild(dateElement);
-  articleElement.appendChild(textElement);
+  articleElement.append(titleElement, dateElement, textElement);
 
   return articleElement;
 };
