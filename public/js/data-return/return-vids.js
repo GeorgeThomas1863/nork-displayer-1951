@@ -30,6 +30,7 @@ export const buildVidPageArray = async (inputArray) => {
 };
 
 export const buildVidPageListItem = async (inputObj, isFirst = false) => {
+  const { title } = inputObj;
   const vidPageListItem = document.createElement("li");
   vidPageListItem.className = "vid-page-list-item";
 
