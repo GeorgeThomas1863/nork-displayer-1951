@@ -18,6 +18,9 @@ export const buildCollapseContainer = (inputObj) => {
   titleElement.className = "collapse-title";
   titleElement.textContent = title;
 
+  // Add arrow and title to header
+  collapseHeader.append(arrow, titleElement);
+
   // Create content wrapper
   const collapseContent = document.createElement("div");
   collapseContent.className = isExpanded ? "collapse-content" : "collapse-content hidden";
@@ -44,35 +47,23 @@ export const defineCollapseItems = (inputArray) => {
     const content = collapseElement.querySelector(".collapse-content");
     const arrow = collapseElement.querySelector(".collapse-arrow");
 
+    if (!header || !content || !arrow) continue;
+
     header.addEventListener("click", () => {
+      // Toggle current collapse
+      arrow.classList.toggle("expanded");
+      content.classList.toggle("hidden");
+
       // Close all other collapsibles in the group
       inputArray.forEach((otherCollapse, otherIndex) => {
         if (i !== otherIndex) {
           const otherContent = otherCollapse.querySelector(".collapse-content");
           const otherArrow = otherCollapse.querySelector(".collapse-arrow");
 
-          otherContent.classList.add("hidden");
-          otherArrow.classList.remove("expanded");
+          if (otherContent) otherContent.classList.add("hidden");
+          if (otherArrow) otherArrow.classList.remove("expanded");
         }
       });
     });
-
-    // header.addEventListener("click", () => {
-    //   // Toggle the clicked item
-    //   // arrow.classList.toggle("expanded");
-    //   // content.classList.toggle("hidden");
-
-    //   // Close all other shit in the group
-    //   for (let k = 0; k < inputArray.length; k++) {
-    //     if (i !== k) {
-    //       const otherElement = inputArray[k];
-    //       const otherContent = otherElement.querySelector(".collapse-content");
-    //       const otherArrow = otherElement.querySelector(".collapse-arrow");
-
-    //       otherContent.classList.add("hidden");
-    //       otherArrow.classList.remove("expanded");
-    //     }
-    //   }
-    // });
   }
 };
