@@ -51,8 +51,8 @@ export const defineCollapseItems = (inputArray) => {
 
     header.addEventListener("click", () => {
       // Toggle current collapse
-      arrow.classList.toggle("expanded");
-      content.classList.toggle("hidden");
+      // arrow.classList.toggle("expanded");
+      // content.classList.toggle("hidden");
 
       // Close all other collapsibles in the group
       inputArray.forEach((otherCollapse, otherIndex) => {
