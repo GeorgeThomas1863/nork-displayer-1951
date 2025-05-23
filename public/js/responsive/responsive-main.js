@@ -1,59 +1,55 @@
 //import modules
 import d from "../define-things.js";
-import { runActionButtonDisplay, runScrapeTypeDisplay, runScrapeToDisplay, displayDataReturn, displayDefaultData } from "../display/display-main.js";
+// import { runActionButtonDisplay, runScrapeTypeDisplay, runScrapeToDisplay, displayDataReturn, displayDefaultData } from "../display/display-main.js";
+import { displayBackendData } from "../display/display-main.js";
 import { buildMainParams, sendToBack } from "../util.js";
 
-const runGetDefaultData = async () => {
-  //create params for default route
-  const inputParams = {
-    route: "/get-default-data",
-  };
-
+const runGetBackendData = async () => {
   //get data from backend
-  const data = await sendToBack(inputParams);
+  const data = await sendToBack({ route: "/get-backend-data" });
 
   //display the returned data
   if (data) {
-    await displayDefaultData(data);
+    await displayBackendData(data);
   }
 };
 
-const scrapeSubmit = async (e) => {
-  e.preventDefault();
+// const scrapeSubmit = async (e) => {
+//   e.preventDefault();
 
-  //get input params
-  const inputParams = await buildMainParams();
+//   //get input params
+//   const inputParams = await buildMainParams();
 
-  //get data
-  const data = await sendToBack(inputParams);
-  console.dir(data);
+//   //get data
+//   const data = await sendToBack(inputParams);
+//   console.dir(data);
 
-  //display data
-  await displayDataReturn(data);
-};
+//   //display data
+//   await displayDataReturn(data);
+// };
 
-const changeDisplay = async (e) => {
-  e.preventDefault();
-  const eventElement = e.target;
-  const buttonClickedId = eventElement.id;
-  const buttonClickedValue = eventElement.value;
+// const changeDisplay = async (e) => {
+//   e.preventDefault();
+//   const eventElement = e.target;
+//   const buttonClickedId = eventElement.id;
+//   const buttonClickedValue = eventElement.value;
 
-  //execute function based on event trigger
-  switch (eventElement.id) {
-    case d.scrapeKcnaActionButton.id:
-    case d.trackCryptoActionButton.id:
-      await runActionButtonDisplay(buttonClickedId);
-      break;
+//   //execute function based on event trigger
+//   switch (eventElement.id) {
+//     case d.scrapeKcnaActionButton.id:
+//     case d.trackCryptoActionButton.id:
+//       await runActionButtonDisplay(buttonClickedId);
+//       break;
 
-    case d.scrapeType.id:
-      await runScrapeTypeDisplay(buttonClickedValue);
-      break;
+//     case d.scrapeType.id:
+//       await runScrapeTypeDisplay(buttonClickedValue);
+//       break;
 
-    case d.scrapeTo.id:
-      await runScrapeToDisplay(buttonClickedValue);
-      break;
-  }
-};
+//     case d.scrapeTo.id:
+//       await runScrapeToDisplay(buttonClickedValue);
+//       break;
+//   }
+// };
 
 //CALL SEPARATELY TO EXECUTE WHEN PAGE LOADS
-runGetDefaultData();
+runGetBackendData();

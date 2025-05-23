@@ -2,7 +2,7 @@ import fs from "fs";
 import CONFIG from "../config/config.js";
 import dbModel from "../models/db-model.js";
 
-export const getDefaultData = async () => {
+export const getBackendData = async () => {
   const { articles, picSetContent, vidPageContent } = CONFIG;
 
   const articleModel = new dbModel("", articles);

@@ -1,5 +1,5 @@
 import { runAdminSubmit } from "../src/src-admin.js";
-import { getDefaultData } from "../src/src-main.js";
+import { getBackendData } from "../src/src-main.js";
 
 //sends command to other app
 export const adminSubmitRoute = async (req, res) => {
@@ -15,12 +15,12 @@ export const adminSubmitRoute = async (req, res) => {
 };
 
 //gets default data from FRONT END
-export const getDefaultDataRoute = async (req, res) => {
+export const getBackendDataRoute = async (req, res) => {
   try {
-    const data = await getDefaultData();
+    const data = await getBackendData();
     res.json(data);
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: "Failed to get default data" });
+    res.status(500).json({ error: "Failed to get backend data" });
   }
 };
