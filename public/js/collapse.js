@@ -47,7 +47,7 @@ export const defineCollapseItems = (inputArray) => {
     const content = collapseElement.querySelector(".collapse-content");
     const arrow = collapseElement.querySelector(".collapse-arrow");
 
-    if (!header || !content || !arrow) continue;
+    // if (!header || !content || !arrow) continue;
 
     header.addEventListener("click", () => {
       // Toggle current collapse
@@ -60,8 +60,8 @@ export const defineCollapseItems = (inputArray) => {
           const otherContent = otherCollapse.querySelector(".collapse-content");
           const otherArrow = otherCollapse.querySelector(".collapse-arrow");
 
-          if (otherContent) otherContent.classList.add("hidden");
-          if (otherArrow) otherArrow.classList.remove("expanded");
+          otherContent.classList.add("hidden");
+          otherArrow.classList.remove("expanded");
         }
       });
     });
