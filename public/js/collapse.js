@@ -45,21 +45,34 @@ export const defineCollapseItems = (inputArray) => {
     const arrow = collapseElement.querySelector(".collapse-arrow");
 
     header.addEventListener("click", () => {
-      // Toggle the clicked item
-      // arrow.classList.toggle("expanded");
-      // content.classList.toggle("hidden");
-
-      // Close all other shit in the group
-      for (let k = 0; k < inputArray.length; k++) {
-        if (i !== k) {
-          const otherElement = inputArray[k];
-          const otherContent = otherElement.querySelector(".collapse-content");
-          const otherArrow = otherElement.querySelector(".collapse-arrow");
+      // Close all other collapsibles in the group
+      inputArray.forEach((otherCollapse, otherIndex) => {
+        if (i !== otherIndex) {
+          const otherContent = otherCollapse.querySelector(".collapse-content");
+          const otherArrow = otherCollapse.querySelector(".collapse-arrow");
 
           otherContent.classList.add("hidden");
           otherArrow.classList.remove("expanded");
         }
-      }
+      });
     });
+
+    // header.addEventListener("click", () => {
+    //   // Toggle the clicked item
+    //   // arrow.classList.toggle("expanded");
+    //   // content.classList.toggle("hidden");
+
+    //   // Close all other shit in the group
+    //   for (let k = 0; k < inputArray.length; k++) {
+    //     if (i !== k) {
+    //       const otherElement = inputArray[k];
+    //       const otherContent = otherElement.querySelector(".collapse-content");
+    //       const otherArrow = otherElement.querySelector(".collapse-arrow");
+
+    //       otherContent.classList.add("hidden");
+    //       otherArrow.classList.remove("expanded");
+    //     }
+    //   }
+    // });
   }
 };
