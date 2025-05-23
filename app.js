@@ -1,12 +1,8 @@
 //TO DO
 
-//DOWNLOAD CURSOR AI
+//fix for loop, fucking keep going
 
-//AHHHHHHHHHHHHHHHHHHHHHHH
-
-//more changes
-
-//BUILD GET DEFAULT DATA
+//fix base default data return (only 10 items)
 
 //Make admin display return data prettier (all working)
 
