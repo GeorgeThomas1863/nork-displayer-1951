@@ -46,8 +46,8 @@ export const defineCollapseItems = (inputArray) => {
 
     header.addEventListener("click", () => {
       // Toggle the clicked item
-      arrow.classList.toggle("expanded");
-      content.classList.toggle("hidden");
+      // arrow.classList.toggle("expanded");
+      // content.classList.toggle("hidden");
 
       // Close all other shit in the group
       for (let k = 0; k < inputArray.length; k++) {
