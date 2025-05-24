@@ -14,6 +14,14 @@ const runGetBackendData = async () => {
   }
 };
 
+//PROB A DUMB WAY OF DOING THIS, but DOING IT ANYWAY
+const expandWrapper = async (e) => {
+  e.preventDefault();
+  const buttonClicked = e.target;
+  console.log("AHHHHHHHHHHHHHHHH");
+  console.log(buttonClicked);
+};
+
 // const scrapeSubmit = async (e) => {
 //   e.preventDefault();
 
@@ -50,6 +58,9 @@ const runGetBackendData = async () => {
 //       break;
 //   }
 // };
+
+//click listeners
+d.articleWrapper.addEventListener("click", expandWrapper);
 
 //CALL SEPARATELY TO EXECUTE WHEN PAGE LOADS
 runGetBackendData();

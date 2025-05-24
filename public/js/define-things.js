@@ -1,3 +1,5 @@
+//NEED TO RE-DO / REORGANIZE
+
 //Defines all frontend dom elements, puts elements into obj for easier seleciton
 const d = {
   //action buttons
