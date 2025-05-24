@@ -16,5 +16,8 @@ export const sortArrayByDate = async (inputArray) => {
     return dateA - dateB;
   });
 
+  console.log("AHHHHHHHHHHHHHHHH");
+  console.log(sortArray.length);
+
   return sortArray;
 };
