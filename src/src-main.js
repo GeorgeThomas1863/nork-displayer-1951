@@ -11,7 +11,7 @@ export const getBackendData = async () => {
   const articleArray = await getArticleArrayByType();
 
   const params = {
-    keyToLookup: "date",
+    sortKey: "date",
     howMany: 10,
   };
 
@@ -31,6 +31,9 @@ export const getBackendData = async () => {
     picSets: picSetArray,
     vidPages: vidPageArray,
   };
+
+  // console.log("DATA OBJ!!!!!");
+  // console.log(dataObj);
 
   return dataObj;
 };
@@ -53,9 +56,6 @@ const getArticleArrayByType = async () => {
 
     articleArray.push(articleData);
   }
-
-  console.log("AHHHHHHHHH ARTICLE ARRAY");
-  console.log(articleArray);
 
   return articleArray;
 };

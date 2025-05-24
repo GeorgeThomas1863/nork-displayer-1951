@@ -53,10 +53,10 @@ class dbModel {
 
   //get last items return as array
   async getLastItemsArray() {
-    const { keyToLookup, howMany } = this.dataObject;
+    const { sortKey, howMany } = this.dataObject;
 
     //get data
-    const dataArray = await db.dbGet().collection(this.collection).find().sort({ [keyToLookup]: -1 }).limit(+howMany).toArray(); //prettier-ignore
+    const dataArray = await db.dbGet().collection(this.collection).find().sort({ [sortKey]: -1 }).limit(+howMany).toArray(); //prettier-ignore
 
     return dataArray;
   }
