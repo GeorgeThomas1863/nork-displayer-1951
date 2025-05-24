@@ -185,6 +185,7 @@ h3 {
   justify-content: space-around;
   width: 3rem;
   height: 3rem;
+  cursor: pointer;
 }
 
 #drop-down-menu-display {
