@@ -21,7 +21,7 @@ export const parseBackendData = async (inputObj) => {
   };
 
   console.log("ARTICLE CONTAINER");
-  console.log(articleContainer);
+  console.log(articleContainer.children.length);
 
   return displayObj;
 
