@@ -21,9 +21,9 @@ const clickHandler = async (e) => {
   if (buttonClickedId === "drop-down-bars") {
     console.log("ALLAHU AKBAR");
   }
-
-  d.displayElement.addEventListener("click", clickHandler);
 };
+
+d.displayElement.addEventListener("click", clickHandler);
 
 //------------------------
 
