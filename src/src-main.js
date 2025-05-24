@@ -5,6 +5,8 @@ import dbModel from "../models/db-model.js";
 export const getBackendData = async () => {
   const { picSetContent, vidPageContent } = CONFIG;
 
+  console.log("FUCK MY FACE");
+
   //loops through type, returning only last 10 of each
   const articleArray = await getArticleArrayByType();
 
