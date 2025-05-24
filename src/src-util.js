@@ -2,7 +2,7 @@ export const sortArrayByDate = async (inputArray) => {
   console.log("FUCK MY FACE");
   console.log(inputArray.length);
   //return null on blank input
-  if (!inputArray || !inputArray.length || !inputArray.date) return null;
+  if (!inputArray) return null;
 
   // Create a copy of the array to avoid modifying the original
   const sortArray = [...inputArray];
