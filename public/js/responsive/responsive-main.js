@@ -1,6 +1,6 @@
 //import modules
 import d from "../define-things.js";
-import { buildActionButtonElement } from "../display/display-main.js";
+
 // import { runActionButtonDisplay, runScrapeTypeDisplay, runScrapeToDisplay, displayDataReturn, displayDefaultData } from "../display/display-main.js";
 // import { displayBackendData } from "../display/display-main.js";
 import { buildMainParams, sendToBack } from "../util.js";
@@ -10,8 +10,6 @@ const clickHandler = async (e) => {
   console.log("AHHHHH");
   e.preventDefault();
   const eventElement = e.target;
-  // const buttonClickedId = eventElement.id;
-  // const buttonClickedValue = eventElement.value;
   const actionType = eventElement.getAttribute("data-action");
 
   switch (actionType) {
@@ -22,17 +20,14 @@ const clickHandler = async (e) => {
 
       break;
     default:
+      return null;
   }
 
   console.log("THING CLICKED");
-  console.log(e);
-  console.log(eventElement);
-  console.log(buttonClickedId);
-  console.log(buttonClickedValue);
+  console.log(actionType);
 };
 
 d.displayElement.addEventListener("click", clickHandler);
-// d.actionButtonElement.addEventListener("click", clickHandler);
 
 //------------------------
 
@@ -47,12 +42,12 @@ const runGetBackendData = async () => {
 };
 
 //PROB A DUMB WAY OF DOING THIS, but DOING IT ANYWAY
-const expandWrapper = async (e) => {
-  e.preventDefault();
-  const buttonClicked = e.target;
-  console.log("AHHHHHHHHHHHHHHHH");
-  console.log(buttonClicked);
-};
+// const expandWrapper = async (e) => {
+//   e.preventDefault();
+//   const buttonClicked = e.target;
+//   console.log("AHHHHHHHHHHHHHHHH");
+//   console.log(buttonClicked);
+// };
 
 // const scrapeSubmit = async (e) => {
 //   e.preventDefault();
