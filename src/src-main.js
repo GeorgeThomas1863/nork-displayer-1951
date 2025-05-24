@@ -1,14 +1,16 @@
 import fs from "fs";
 import CONFIG from "../config/config.js";
 import dbModel from "../models/db-model.js";
+import { sortArrayByDate } from "./src-util.js";
 
 export const getBackendData = async () => {
   const { picSetContent, vidPageContent } = CONFIG;
 
-  console.log("FUCK MY FACE");
-
   //loops through type, returning only last FIVE of each
-  const articleArray = await getArticleArrayByType();
+  const articleArrayRaw = await getArticleArrayByType();
+
+  //resort article array by date
+  const articleArray = await sortArrayByDate(articleArrayRaw);
 
   const params = {
     sortKey: "date",
@@ -26,14 +28,6 @@ export const getBackendData = async () => {
     picSets: picSetArray,
     vidPages: vidPageArray,
   };
-
-  console.log("DATA OBJ COUNTS!!!!!");
-  console.log(articleArray.length);
-  console.log(picSetArray.length);
-  console.log(vidPageArray.length);
-
-  // console.log("DATA OBJ!!!!!");
-  // console.log(dataObj);
 
   return dataObj;
 };
