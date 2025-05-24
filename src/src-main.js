@@ -34,25 +34,24 @@ export const getBackendData = async () => {
 };
 
 const getArticleArrayByType = async () => {
-  const { articleTypeArray, articles } = CONFIG;
+  const { articleTypeArr, articles } = CONFIG;
 
-  const articleArrayByType = [];
-  for (let i = 0; i < articleTypeArray.length; i++) {
-    const articleType = articleTypeArray[i];
+  const articleArray = [];
+  for (let i = 0; i < articleTypeArr.length; i++) {
     const params = {
       keyToLookup: "date",
       howMany: 10,
-      type: articleType,
+      type: articleTypeArr[i],
     };
 
     const articleModel = new dbModel(params, articles);
     const articleArrayRaw = await articleModel.getLastItemsByTypeArray();
-    const articleArray = await addArticlePicData(articleArrayRaw);
+    const articleData = await addArticlePicData(articleArrayRaw);
 
-    articleArrayByType.push(articleArray);
+    articleArray.push(articleData);
   }
 
-  return articleArrayByType;
+  return articleArray;
 };
 
 //add pic data to pic array
