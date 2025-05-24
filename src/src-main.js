@@ -32,6 +32,11 @@ export const getBackendData = async () => {
     vidPages: vidPageArray,
   };
 
+  console.log("DATA OBJ COUNTS!!!!!");
+  console.log(articleArray.length);
+  console.log(picSetArray.length);
+  console.log(vidPageArray.length);
+
   // console.log("DATA OBJ!!!!!");
   // console.log(dataObj);
 
@@ -53,8 +58,7 @@ const getArticleArrayByType = async () => {
     const articleModel = new dbModel(params, articles);
     const articleArrayRaw = await articleModel.getLastItemsByTypeArray();
     const articleData = await addArticlePicData(articleArrayRaw);
-
-    console.log(articleData.length);
+    if (!articleData || !articleData.length) continue;
 
     articleArray.push(...articleData);
   }
