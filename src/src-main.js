@@ -7,18 +7,13 @@ export const getBackendData = async () => {
 
   console.log("FUCK MY FACE");
 
-  //loops through type, returning only last 10 of each
+  //loops through type, returning only last FIVE of each
   const articleArray = await getArticleArrayByType();
 
   const params = {
     sortKey: "date",
-    howMany: 10,
+    howMany: 5,
   };
-
-  //custom params for articles
-  // const articleModel = new dbModel({ keyToLookup: "date", howMany: 120 }, articles);
-  // const articleArrayRaw = await articleModel.getLastItemsArray();
-  // const articleArray = await addArticlePicData(articleArrayRaw);
 
   const picSetModel = new dbModel(params, picSetContent);
   const picSetArray = await picSetModel.getLastItemsArray();
@@ -43,6 +38,7 @@ export const getBackendData = async () => {
   return dataObj;
 };
 
+//GETS LAST 5 OF EACH ARTICLE TYPE
 const getArticleArrayByType = async () => {
   const { articleTypeArr, articles } = CONFIG;
 
@@ -50,7 +46,7 @@ const getArticleArrayByType = async () => {
   for (let i = 0; i < articleTypeArr.length; i++) {
     const params = {
       sortKey: "date",
-      howMany: 10,
+      howMany: 5,
       filterKey: "articleType",
       filterValue: articleTypeArr[i],
     };
