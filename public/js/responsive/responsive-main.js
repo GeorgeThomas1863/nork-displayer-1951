@@ -15,14 +15,10 @@ const clickHandler = async (e) => {
 
   switch (buttonClickedId) {
     case "drop-down-bars":
-      //build the element, append to drop down bars
-      const actionButtonElement = await buildActionButtonElement();
+      //toggle action buttons on or off
+      const actionButtonElement = document.getElementById("action-button-element");
+      actionButtonElement.classList.toggle("hidden");
 
-      //exists bc already built on load
-      const dropDownElement = document.getElementById("drop-down");
-      dropDownElement.appendChild(actionButtonElement);
-
-      console.log("ALLAHU AKBAR");
       break;
     default:
   }
@@ -35,6 +31,7 @@ const clickHandler = async (e) => {
 };
 
 d.displayElement.addEventListener("click", clickHandler);
+// d.actionButtonElement.addEventListener("click", clickHandler);
 
 //------------------------
 

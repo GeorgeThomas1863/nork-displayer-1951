@@ -48,6 +48,10 @@ const buildDropDown = async () => {
   // Assemble the dropdown
   dropDownElement.appendChild(dropDownBars);
 
+  //build action buttons
+  const actionButtonElement = await buildActionButtonElement();
+  dropDownElement.appendChild(actionButtonElement);
+
   return dropDownElement;
 };
 
@@ -67,9 +71,13 @@ const buildDropDown = async () => {
 
 export const buildActionButtonElement = async () => {
   const actionButtonElement = document.createElement("ul");
-  actionButtonElement.id = "action-button-wrapper";
+  actionButtonElement.id = "action-button-element";
+
+  //hidden by default
+  actionButtonElement.classList.add("hidden");
 
   const actionButtonArray = [
+    //hidden by default
     { id: "scrape-kcna-action-button", text: "Scrape KCNA", class: "action-button" },
     { id: "track-crypto-action-button", text: "Track Crypto", class: "action-button" },
   ];
