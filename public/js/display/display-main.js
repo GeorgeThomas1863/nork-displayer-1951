@@ -7,8 +7,8 @@ export const buildDefaultDisplay = async () => {
   const dropDownElement = await buildDropDown();
   d.displayElement.appendChild(dropDownElement);
 
-  const actionButtonsElement = await buildActionButtons();
-  d.displayElement.appendChild(actionButtonsElement);
+  const actionButtonElement = await buildActionButtons();
+  d.displayElement.appendChild(actionButtonElement);
 };
 
 export const displayBackendData = async (inputData) => {
@@ -64,10 +64,22 @@ const buildDropDown = async () => {
 };
 
 const buildActionButtons = async () => {
-  const actionButtonsElement = document.createElement("ul");
-  actionButtonsElement.id = "action-buttons";
+  const actionButtonElement = document.createElement("ul");
+  actionButtonElement.id = "action-button-wrapper";
 
-  return actionButtonsElement;
+  const actionButtonArray = [
+    { id: "scrape-kcna-action-button", text: "Scrape KCNA", class: "action-button" },
+    { id: "track-crypto-action-button", text: "Track Crypto", class: "action-button" },
+  ];
+
+  for (let i = 0; i < actionButtonArray.length; i++) {
+    const actionButton = document.createElement("li");
+    actionButton.id = actionButtonArray[i].id;
+    actionButton.textContent = actionButtonArray[i].text;
+    actionButtonElement.appendChild(actionButton);
+  }
+
+  return actionButtonElement;
 };
 
 // export const runActionButtonDisplay = async (buttonClicked) => {
