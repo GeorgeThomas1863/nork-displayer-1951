@@ -68,14 +68,15 @@ const buildActionButtons = async () => {
   actionButtonElement.id = "action-button-wrapper";
 
   const actionButtonArray = [
-    { id: "scrape-kcna-action-button", text: "Scrape KCNA", class: "action-button" },
-    { id: "track-crypto-action-button", text: "Track Crypto", class: "action-button" },
+    { id: "scrape-kcna-action-button", text: "Scrape KCNA", class: "action-button hidden" },
+    { id: "track-crypto-action-button", text: "Track Crypto", class: "action-button hidden" },
   ];
 
   for (let i = 0; i < actionButtonArray.length; i++) {
     const actionButton = document.createElement("li");
     actionButton.id = actionButtonArray[i].id;
     actionButton.textContent = actionButtonArray[i].text;
+    actionButton.classList.add(actionButtonArray[i].class);
     actionButtonElement.appendChild(actionButton);
   }
 
