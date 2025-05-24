@@ -9,9 +9,6 @@ export const getBackendData = async () => {
   //loops through type, returning only last FIVE of each
   const articleArrayRaw = await getArticleArrayByType();
 
-  console.log("ARTICLE ARRAY RAW");
-  console.log(articleArrayRaw?.length);
-
   //resort article array by date
   const articleArray = await sortArrayByDate(articleArrayRaw);
 
