@@ -54,7 +54,9 @@ const getArticleArrayByType = async () => {
     const articleArrayRaw = await articleModel.getLastItemsByTypeArray();
     const articleData = await addArticlePicData(articleArrayRaw);
 
-    articleArray.push(articleData);
+    console.log(articleData.length);
+
+    articleArray.push(...articleData);
   }
 
   return articleArray;
