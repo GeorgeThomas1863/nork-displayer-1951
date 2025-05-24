@@ -41,9 +41,10 @@ const getArticleArrayByType = async () => {
   const articleArray = [];
   for (let i = 0; i < articleTypeArr.length; i++) {
     const params = {
-      keyToLookup: "date",
+      sortKey: "date",
       howMany: 10,
-      type: articleTypeArr[i],
+      filterKey: "articleType",
+      filterValue: articleTypeArr[i],
     };
 
     const articleModel = new dbModel(params, articles);
@@ -53,7 +54,7 @@ const getArticleArrayByType = async () => {
     articleArray.push(articleData);
   }
 
-  console.log("ARTICLE ARRAY");
+  console.log("AHHHHHHHHH ARTICLE ARRAY");
   console.log(articleArray);
 
   return articleArray;
