@@ -21,6 +21,8 @@ export const buildDateElement = async (date) => {
 };
 
 export const buildTextElement = async (text) => {
+  if (!text) return null;
+
   const textElement = document.createElement("div");
   textElement.className = "article-text";
 
