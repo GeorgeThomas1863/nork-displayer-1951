@@ -86,7 +86,6 @@ const buildFormWrapper = async () => {
   const articleWrapper = await buildArticleWrapper();
   // const picSetWrapper = await buildPicSetWrapper();
   // const vidPageWrapper = await buildVidPageWrapper();
-  
 
   // formWrapperElement.append(articleWrapper, picSetWrapper, vidPageWrapper);
 
@@ -187,13 +186,28 @@ const buildArticleWrapper = async () => {
 
   articleSortByListItem.append(articleSortByLabel, articleSortBySelect);
 
-  //ADD IN THE GET ARTICLE DATA HERE
+  //ADD IN THE GET ARTICLE DATA HERE [refactor]
+  const backendData = await sendToBack({ route: "/get-backend-data" });
+  if (!backendData) return null;
+
+  const parsedData = await parseBackendData(backendData);
+  if (!parsedData || !parsedData.parsedArticles) return null;
 
   // Append all elements to the container
-  articleWrapper.append(h1, articleTypeListItem, articleHowManyListItem, articleSortByListItem);
+  articleWrapper.append(h1, articleTypeListItem, articleHowManyListItem, articleSortByListItem, parsedData.parsedArticles);
 
   return articleWrapper;
 };
+
+// const getBackendData = async () => {
+//   //get data from backend
+//   const data = await ;
+
+//   //display the returned data
+//   if (data) {
+//     await displayBackendData(data);
+//   }
+// };
 
 // export const displayBackendData = async (inputData) => {
 //   // Check if data received

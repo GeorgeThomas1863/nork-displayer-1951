@@ -31,16 +31,6 @@ d.displayElement.addEventListener("click", clickHandler);
 
 //------------------------
 
-const runGetBackendData = async () => {
-  //get data from backend
-  const data = await sendToBack({ route: "/get-backend-data" });
-
-  //display the returned data
-  if (data) {
-    await displayBackendData(data);
-  }
-};
-
 //PROB A DUMB WAY OF DOING THIS, but DOING IT ANYWAY
 // const expandWrapper = async (e) => {
 //   e.preventDefault();
