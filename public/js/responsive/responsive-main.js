@@ -1,5 +1,6 @@
 //import modules
 import d from "../define-things.js";
+import { buildActionButtonElement } from "../display/display-main.js";
 // import { runActionButtonDisplay, runScrapeTypeDisplay, runScrapeToDisplay, displayDataReturn, displayDefaultData } from "../display/display-main.js";
 // import { displayBackendData } from "../display/display-main.js";
 import { buildMainParams, sendToBack } from "../util.js";
@@ -14,6 +15,10 @@ const clickHandler = async (e) => {
 
   switch (buttonClickedId) {
     case "drop-down-bars":
+      //build the element, append to drop down bars
+      const actionButtonElement = await buildActionButtonElement();
+      d.dropDownBars.appendChild(actionButtonElement);
+      
       console.log("ALLAHU AKBAR");
       break;
     default:

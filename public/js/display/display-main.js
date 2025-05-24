@@ -65,7 +65,7 @@ const buildDropDown = async () => {
 
 // dropDownElement.appendChild(dropDownMenu);
 
-const buildActionButtons = async () => {
+export const buildActionButtonElement = async () => {
   const actionButtonElement = document.createElement("ul");
   actionButtonElement.id = "action-button-wrapper";
 
