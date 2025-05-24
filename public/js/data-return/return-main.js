@@ -21,9 +21,9 @@ export const parseBackendData = async (inputObj) => {
   };
 
   console.log("NUMBER OF DISPLAY ITEMS");
-  console.log(displayObj.parsedArticles.length);
-  console.log(displayObj.parsedPicSets.length);
-  console.log(displayObj.parsedVidPages.length);
+  console.log(articleContainer.length);
+  console.log(picSetContainer.length);
+  console.log(vidPageContainer.length);
 
   return displayObj;
 

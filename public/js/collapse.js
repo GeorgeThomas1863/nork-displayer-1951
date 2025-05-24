@@ -44,8 +44,8 @@ export const defineCollapseItems = (inputArray) => {
   for (let i = 0; i < inputArray.length; i++) {
     const collapseElement = inputArray[i];
     const header = collapseElement.querySelector(".collapse-header");
-    const content = collapseElement.querySelector(".collapse-content");
-    const arrow = collapseElement.querySelector(".collapse-arrow");
+    // const content = collapseElement.querySelector(".collapse-content");
+    // const arrow = collapseElement.querySelector(".collapse-arrow");
 
     // if (!header || !content || !arrow) continue;
 
