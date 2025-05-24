@@ -60,6 +60,16 @@ class dbModel {
 
     return dataArray;
   }
+
+  //get last items by TYPE (for articles)
+  async getLastItemsByTypeArray() {
+    const { keyToLookup, howMany, type } = this.dataObject;
+
+    //get data
+    const dataArray = await db.dbGet().collection(this.collection).find({ type: type }).sort({ [keyToLookup]: -1 }).limit(+howMany).toArray(); //prettier-ignore
+
+    return dataArray;
+  }
 }
 
 export default dbModel;

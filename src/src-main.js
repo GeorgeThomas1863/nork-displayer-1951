@@ -3,7 +3,10 @@ import CONFIG from "../config/config.js";
 import dbModel from "../models/db-model.js";
 
 export const getBackendData = async () => {
-  const { articles, picSetContent, vidPageContent } = CONFIG;
+  const { picSetContent, vidPageContent } = CONFIG;
+
+  //loops through type, returning only last 10 of each
+  const articleArray = await getArticleArrayByType();
 
   const params = {
     keyToLookup: "date",
@@ -11,9 +14,9 @@ export const getBackendData = async () => {
   };
 
   //custom params for articles
-  const articleModel = new dbModel({ keyToLookup: "date", howMany: 120 }, articles);
-  const articleArrayRaw = await articleModel.getLastItemsArray();
-  const articleArray = await addArticlePicData(articleArrayRaw);
+  // const articleModel = new dbModel({ keyToLookup: "date", howMany: 120 }, articles);
+  // const articleArrayRaw = await articleModel.getLastItemsArray();
+  // const articleArray = await addArticlePicData(articleArrayRaw);
 
   const picSetModel = new dbModel(params, picSetContent);
   const picSetArray = await picSetModel.getLastItemsArray();
@@ -28,6 +31,28 @@ export const getBackendData = async () => {
   };
 
   return dataObj;
+};
+
+const getArticleArrayByType = async () => {
+  const { articleTypeArray, articles } = CONFIG;
+
+  const articleArrayByType = [];
+  for (let i = 0; i < articleTypeArray.length; i++) {
+    const articleType = articleTypeArray[i];
+    const params = {
+      keyToLookup: "date",
+      howMany: 10,
+      type: articleType,
+    };
+
+    const articleModel = new dbModel(params, articles);
+    const articleArrayRaw = await articleModel.getLastItemsByTypeArray();
+    const articleArray = await addArticlePicData(articleArrayRaw);
+
+    articleArrayByType.push(articleArray);
+  }
+
+  return articleArrayByType;
 };
 
 //add pic data to pic array
