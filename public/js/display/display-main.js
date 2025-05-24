@@ -11,6 +11,8 @@ export const buildDefaultDisplay = async () => {
   d.displayElement.appendChild(actionButtonElement);
 };
 
+//--------------------
+
 export const displayBackendData = async (inputData) => {
   // Check if data received
   if (!inputData) return;

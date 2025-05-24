@@ -4,6 +4,23 @@ import d from "../define-things.js";
 import { displayBackendData } from "../display/display-main.js";
 import { buildMainParams, sendToBack } from "../util.js";
 
+//ADD EVENT / PARSE LISTENERS
+const clickHandler = async (e) => {
+  e.preventDefault();
+  const eventElement = e.target;
+  const buttonClickedId = eventElement.id;
+  const buttonClickedValue = eventElement.value;
+
+  console.log("THING CLICKED");
+  console.log(eventElement);
+  console.log(buttonClickedId);
+  console.log(buttonClickedValue);
+};
+
+d.displayElement.addEventListener("click", clickHandler);
+
+//------------------------
+
 const runGetBackendData = async () => {
   //get data from backend
   const data = await sendToBack({ route: "/get-backend-data" });
