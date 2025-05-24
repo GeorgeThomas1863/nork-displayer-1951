@@ -1,6 +1,6 @@
 //TO DO
 
-//fix for loop, fucking keep going
+//GETTING RID OF EJS
 
 //fix base default data return (only 10 items)
 
