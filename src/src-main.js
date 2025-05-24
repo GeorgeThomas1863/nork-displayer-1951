@@ -10,7 +10,8 @@ export const getBackendData = async () => {
     howMany: 10,
   };
 
-  const articleModel = new dbModel(params, articles);
+  //custom params for articles
+  const articleModel = new dbModel({ keyToLookup: "date", howMany: 120 }, articles);
   const articleArrayRaw = await articleModel.getLastItemsArray();
   const articleArray = await addArticlePicData(articleArrayRaw);
 
