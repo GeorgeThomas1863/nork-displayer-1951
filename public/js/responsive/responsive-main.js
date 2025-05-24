@@ -10,11 +10,12 @@ const clickHandler = async (e) => {
   console.log("AHHHHH");
   e.preventDefault();
   const eventElement = e.target;
-  const buttonClickedId = eventElement.id;
-  const buttonClickedValue = eventElement.value;
+  // const buttonClickedId = eventElement.id;
+  // const buttonClickedValue = eventElement.value;
+  const actionType = eventElement.getAttribute("data-action");
 
-  switch (buttonClickedId) {
-    case "drop-down-bars":
+  switch (actionType) {
+    case "toggle-dropdown":
       //toggle action buttons on or off
       const actionButtonElement = document.getElementById("action-button-element");
       actionButtonElement.classList.toggle("hidden");

@@ -38,10 +38,12 @@ const buildDropDown = async () => {
   // Create bars link element
   const dropDownBars = document.createElement("a");
   dropDownBars.id = "drop-down-bars";
+  dropDownBars.setAttribute("data-action", "toggle-dropdown");
 
   // Create three spans for the bars
   for (let i = 0; i < 3; i++) {
     const span = document.createElement("span");
+    span.setAttribute("data-action", "toggle-dropdown");
     dropDownBars.appendChild(span);
   }
 
