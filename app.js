@@ -1,8 +1,10 @@
 //TO DO
 
-//BUILD FORMS with expand / contract in mind
+//FIX THE ARTICLE WRAPPER CONTAINER
 
-// KEEP GETTING RID OF EJS
+//MAKE ARTICLE CONTAINER COLLAPSIBLE
+
+//--------------
 
 //fix base default data return (only 10 items)
 
