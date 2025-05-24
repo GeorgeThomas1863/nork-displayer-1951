@@ -73,11 +73,15 @@ const buildActionButtons = async () => {
   ];
 
   for (let i = 0; i < actionButtonArray.length; i++) {
-    const actionButton = document.createElement("li");
-    actionButton.id = actionButtonArray[i].id;
-    actionButton.textContent = actionButtonArray[i].text;
-    actionButton.classList.add(actionButtonArray[i].class);
-    actionButtonElement.appendChild(actionButton);
+    const li = document.createElement("li");
+    const button = document.createElement("button");
+    
+    button.id = actionButtonArray[i].id;
+    button.textContent = actionButtonArray[i].text;
+    button.className = actionButtonArray[i].class;
+    
+    li.appendChild(button);
+    actionButtonElement.appendChild(li);
   }
 
   return actionButtonElement;
