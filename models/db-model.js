@@ -50,6 +50,16 @@ class dbModel {
     const dataArray = await db.dbGet().collection(this.collection).find({ [keyToLookup]: mongoValue }).toArray(); //prettier-ignore
     return dataArray;
   }
+
+  //get last items return as array
+  async getLastItemsArray() {
+    const { keyToLookup, howMany } = this.dataObject;
+
+    //get data
+    const dataArray = await db.dbGet().collection(this.collection).find().sort({ [keyToLookup]: -1 }).limit(+howMany).toArray(); //prettier-ignore
+
+    return dataArray;
+  }
 }
 
 export default dbModel;

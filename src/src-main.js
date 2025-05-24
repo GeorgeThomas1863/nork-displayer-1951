@@ -5,15 +5,20 @@ import dbModel from "../models/db-model.js";
 export const getBackendData = async () => {
   const { articles, picSetContent, vidPageContent } = CONFIG;
 
-  const articleModel = new dbModel("", articles);
-  const articleArrayRaw = await articleModel.getAll();
+  const params = {
+    keyToLookup: "date",
+    howMany: 10,
+  };
+
+  const articleModel = new dbModel(params, articles);
+  const articleArrayRaw = await articleModel.getLastItemsArray();
   const articleArray = await addArticlePicData(articleArrayRaw);
 
-  const picSetModel = new dbModel("", picSetContent);
-  const picSetArray = await picSetModel.getAll();
+  const picSetModel = new dbModel(params, picSetContent);
+  const picSetArray = await picSetModel.getLastItemsArray();
 
-  const vidPageModel = new dbModel("", vidPageContent);
-  const vidPageArray = await vidPageModel.getAll();
+  const vidPageModel = new dbModel(params, vidPageContent);
+  const vidPageArray = await vidPageModel.getLastItemsArray();
 
   const dataObj = {
     articles: articleArray,
