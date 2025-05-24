@@ -1,6 +1,6 @@
 export const sortArrayByDate = async (inputArray) => {
   console.log("FUCK MY FACE");
-  console.log(inputArray.length);
+  console.log(inputArray);
   //return null on blank input
   if (!inputArray) return null;
 
@@ -13,11 +13,8 @@ export const sortArrayByDate = async (inputArray) => {
     const dateA = new Date(a.date);
     const dateB = new Date(b.date);
 
-    return dateA - dateB;
+    return dateB - dateA;
   });
-
-  console.log("AHHHHHHHHHHHHHHHH");
-  console.log(sortArray.length);
 
   return sortArray;
 };
