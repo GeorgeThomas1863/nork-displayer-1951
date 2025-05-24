@@ -82,9 +82,11 @@ const buildFormWrapper = async () => {
   const formWrapperElement = document.createElement("div");
   formWrapperElement.id = "form-wrapper";
 
+  //BUILD
   const articleWrapper = await buildArticleWrapper();
   // const picSetWrapper = await buildPicSetWrapper();
   // const vidPageWrapper = await buildVidPageWrapper();
+  
 
   // formWrapperElement.append(articleWrapper, picSetWrapper, vidPageWrapper);
 
