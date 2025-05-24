@@ -16,9 +16,13 @@ const clickHandler = async (e) => {
   console.log(eventElement);
   console.log(buttonClickedId);
   console.log(buttonClickedValue);
-};
 
-d.displayElement.addEventListener("click", clickHandler);
+  if (buttonClickedId === "drop-down") {
+    console.log("ALLAHU AKBAR");
+  }
+
+  d.displayElement.addEventListener("click", clickHandler);
+};
 
 //------------------------
 

@@ -47,20 +47,20 @@ const buildDropDown = async () => {
   }
 
   // Create menu list
-  const dropDownMenu = document.createElement("ul");
-  dropDownMenu.id = "drop-down-menu-display";
+  // const dropDownMenu = document.createElement("ul");
+  // dropDownMenu.id = "drop-down-menu-display";
 
-  // Create menu items
-  const menuItems = ["Scrape KCNA", "Track Crypto"];
-  for (let i = 0; i < menuItems.length; i++) {
-    const li = document.createElement("li");
-    li.textContent = menuItems[i];
-    dropDownMenu.appendChild(li);
-  }
+  // // Create menu items
+  // const menuItems = ["Scrape KCNA", "Track Crypto"];
+  // for (let i = 0; i < menuItems.length; i++) {
+  //   const li = document.createElement("li");
+  //   li.textContent = menuItems[i];
+  //   dropDownMenu.appendChild(li);
+  // }
 
   // Assemble the dropdown
   dropDownElement.appendChild(dropDownBars);
-  dropDownElement.appendChild(dropDownMenu);
+  // dropDownElement.appendChild(dropDownMenu);
 
   return dropDownElement;
 };
