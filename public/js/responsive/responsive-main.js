@@ -12,15 +12,18 @@ const clickHandler = async (e) => {
   const buttonClickedId = eventElement.id;
   const buttonClickedValue = eventElement.value;
 
+  switch (buttonClickedId) {
+    case "drop-down-bars":
+      console.log("ALLAHU AKBAR");
+      break;
+    default:
+  }
+
   console.log("THING CLICKED");
   console.log(e);
   console.log(eventElement);
   console.log(buttonClickedId);
   console.log(buttonClickedValue);
-
-  if (buttonClickedId === "drop-down-bars") {
-    console.log("ALLAHU AKBAR");
-  }
 };
 
 d.displayElement.addEventListener("click", clickHandler);

@@ -7,8 +7,8 @@ export const buildDefaultDisplay = async () => {
   const dropDownElement = await buildDropDown();
   d.displayElement.appendChild(dropDownElement);
 
-  const actionButtonElement = await buildActionButtons();
-  d.displayElement.appendChild(actionButtonElement);
+  // const actionButtonElement = await buildActionButtons();
+  // d.displayElement.appendChild(actionButtonElement);
 };
 
 //--------------------
@@ -70,8 +70,8 @@ const buildActionButtons = async () => {
   actionButtonElement.id = "action-button-wrapper";
 
   const actionButtonArray = [
-    { id: "scrape-kcna-action-button", text: "Scrape KCNA", class: "action-button hidden" },
-    { id: "track-crypto-action-button", text: "Track Crypto", class: "action-button hidden" },
+    { id: "scrape-kcna-action-button", text: "Scrape KCNA", class: "action-button" },
+    { id: "track-crypto-action-button", text: "Track Crypto", class: "action-button" },
   ];
 
   for (let i = 0; i < actionButtonArray.length; i++) {
