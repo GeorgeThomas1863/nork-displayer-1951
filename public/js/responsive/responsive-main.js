@@ -17,8 +17,11 @@ const clickHandler = async (e) => {
     case "drop-down-bars":
       //build the element, append to drop down bars
       const actionButtonElement = await buildActionButtonElement();
-      d.dropDownBars.appendChild(actionButtonElement);
-      
+
+      //exists bc already built on load
+      const dropDownElement = document.getElementById("drop-down");
+      dropDownElement.appendChild(actionButtonElement);
+
       console.log("ALLAHU AKBAR");
       break;
     default:
