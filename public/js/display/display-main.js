@@ -46,24 +46,25 @@ const buildDropDown = async () => {
     dropDownBars.appendChild(span);
   }
 
-  // Create menu list
-  // const dropDownMenu = document.createElement("ul");
-  // dropDownMenu.id = "drop-down-menu-display";
-
-  // // Create menu items
-  // const menuItems = ["Scrape KCNA", "Track Crypto"];
-  // for (let i = 0; i < menuItems.length; i++) {
-  //   const li = document.createElement("li");
-  //   li.textContent = menuItems[i];
-  //   dropDownMenu.appendChild(li);
-  // }
-
   // Assemble the dropdown
   dropDownElement.appendChild(dropDownBars);
-  // dropDownElement.appendChild(dropDownMenu);
 
   return dropDownElement;
 };
+
+// Create menu list
+// const dropDownMenu = document.createElement("ul");
+// dropDownMenu.id = "drop-down-menu-display";
+
+// // Create menu items
+// const menuItems = ["Scrape KCNA", "Track Crypto"];
+// for (let i = 0; i < menuItems.length; i++) {
+//   const li = document.createElement("li");
+//   li.textContent = menuItems[i];
+//   dropDownMenu.appendChild(li);
+// }
+
+// dropDownElement.appendChild(dropDownMenu);
 
 const buildActionButtons = async () => {
   const actionButtonElement = document.createElement("ul");
@@ -77,11 +78,11 @@ const buildActionButtons = async () => {
   for (let i = 0; i < actionButtonArray.length; i++) {
     const li = document.createElement("li");
     const button = document.createElement("button");
-    
+
     button.id = actionButtonArray[i].id;
     button.textContent = actionButtonArray[i].text;
     button.className = actionButtonArray[i].class;
-    
+
     li.appendChild(button);
     actionButtonElement.appendChild(li);
   }

@@ -17,7 +17,7 @@ const clickHandler = async (e) => {
   console.log(buttonClickedId);
   console.log(buttonClickedValue);
 
-  if (buttonClickedId === "drop-down") {
+  if (buttonClickedId === "drop-down-bars") {
     console.log("ALLAHU AKBAR");
   }
 
