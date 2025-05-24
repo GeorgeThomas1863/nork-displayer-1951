@@ -51,6 +51,9 @@ const getArticleArrayByType = async () => {
     articleArray.push(articleData);
   }
 
+  console.log("ARTICLE ARRAY");
+  console.log(articleArray);
+
   return articleArray;
 };
 
