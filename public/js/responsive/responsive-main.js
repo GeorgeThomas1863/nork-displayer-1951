@@ -6,6 +6,7 @@ import { buildMainParams, sendToBack } from "../util.js";
 
 //ADD EVENT / PARSE LISTENERS
 const clickHandler = async (e) => {
+  console.log("AHHHHH");
   e.preventDefault();
   const eventElement = e.target;
   const buttonClickedId = eventElement.id;

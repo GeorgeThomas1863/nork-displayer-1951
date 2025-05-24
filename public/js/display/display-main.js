@@ -13,22 +13,22 @@ export const buildDefaultDisplay = async () => {
 
 //--------------------
 
-export const displayBackendData = async (inputData) => {
-  // Check if data received
-  if (!inputData) return;
+// export const displayBackendData = async (inputData) => {
+//   // Check if data received
+//   if (!inputData) return;
 
-  // Clear previous content
-  d.dataReturnElement.innerHTML = "";
+//   // Clear previous content
+//   d.dataReturnElement.innerHTML = "";
 
-  // Parse and prepare the data for display
-  const displayData = await parseBackendData(inputData);
+//   // Parse and prepare the data for display
+//   const displayData = await parseBackendData(inputData);
 
-  // If we have parsed articles, add them to the DOM
-  if (displayData && displayData.parsedArticles) {
-    d.dataReturnElement.append(displayData.parsedArticles);
-    d.dataReturnWrapper.classList.remove("hidden");
-  }
-};
+//   // If we have parsed articles, add them to the DOM
+//   if (displayData && displayData.parsedArticles) {
+//     d.dataReturnElement.append(displayData.parsedArticles);
+//     d.dataReturnWrapper.classList.remove("hidden");
+//   }
+// };
 
 const buildDropDown = async () => {
   // Create main drop-down container
@@ -37,7 +37,6 @@ const buildDropDown = async () => {
 
   // Create bars link element
   const dropDownBars = document.createElement("a");
-  dropDownBars.href = "#";
   dropDownBars.id = "drop-down-bars";
 
   // Create three spans for the bars
