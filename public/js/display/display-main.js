@@ -6,6 +6,9 @@ export const buildDefaultDisplay = async () => {
   //build drop down
   const dropDownElement = await buildDropDown();
   d.displayElement.appendChild(dropDownElement);
+
+  const actionButtonsElement = await buildActionButtons();
+  d.displayElement.appendChild(actionButtonsElement);
 };
 
 export const displayBackendData = async (inputData) => {
@@ -58,6 +61,13 @@ const buildDropDown = async () => {
   dropDownElement.appendChild(dropDownMenu);
 
   return dropDownElement;
+};
+
+const buildActionButtons = async () => {
+  const actionButtonsElement = document.createElement("ul");
+  actionButtonsElement.id = "action-buttons";
+
+  return actionButtonsElement;
 };
 
 // export const runActionButtonDisplay = async (buttonClicked) => {
