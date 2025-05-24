@@ -222,6 +222,11 @@ h3 {
   display: flex;
   flex-direction: column;
   height: 100%;
+
+  /* PROB REMOVE BELOW */
+  background: transparent;
+  border: none;
+  box-shadow: none;
 }
 
 .hidden {
