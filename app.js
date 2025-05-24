@@ -1,8 +1,8 @@
 //TO DO
 
-//GETTING RID OF EJS
+//BUILD FORMS with expand / contract in mind
 
-// balls test
+// KEEP GETTING RID OF EJS
 
 //fix base default data return (only 10 items)
 
