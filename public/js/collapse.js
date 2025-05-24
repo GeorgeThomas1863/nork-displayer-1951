@@ -44,17 +44,9 @@ export const defineCollapseItems = (inputArray) => {
   for (let i = 0; i < inputArray.length; i++) {
     const collapseElement = inputArray[i];
     const header = collapseElement.querySelector(".collapse-header");
-    // const content = collapseElement.querySelector(".collapse-content");
-    // const arrow = collapseElement.querySelector(".collapse-arrow");
-
-    // if (!header || !content || !arrow) continue;
 
     header.addEventListener("click", () => {
-      // Toggle current collapse
-      // arrow.classList.toggle("expanded");
-      // content.classList.toggle("hidden");
-
-      // Close all other collapsibles in the group
+      // collapse shit
       for (let j = 0; j < inputArray.length; j++) {
         if (i !== j) {
           const otherCollapse = inputArray[j];
