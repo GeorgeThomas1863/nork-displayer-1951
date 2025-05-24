@@ -12,6 +12,7 @@ const clickHandler = async (e) => {
   const buttonClickedValue = eventElement.value;
 
   console.log("THING CLICKED");
+  console.log(e);
   console.log(eventElement);
   console.log(buttonClickedId);
   console.log(buttonClickedValue);
