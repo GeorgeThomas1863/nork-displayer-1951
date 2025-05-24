@@ -20,6 +20,11 @@ export const parseBackendData = async (inputObj) => {
     parsedVidPages: vidPageContainer,
   };
 
+  console.log("NUMBER OF DISPLAY ITEMS");
+  console.log(displayObj.parsedArticles.length);
+  console.log(displayObj.parsedPicSets.length);
+  console.log(displayObj.parsedVidPages.length);
+
   return displayObj;
 
   // // Create a wrapper to hold all data

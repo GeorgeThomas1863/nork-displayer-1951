@@ -55,15 +55,16 @@ export const defineCollapseItems = (inputArray) => {
       // content.classList.toggle("hidden");
 
       // Close all other collapsibles in the group
-      inputArray.forEach((otherCollapse, otherIndex) => {
-        if (i !== otherIndex) {
+      for (let j = 0; j < inputArray.length; j++) {
+        if (i !== j) {
+          const otherCollapse = inputArray[j];
           const otherContent = otherCollapse.querySelector(".collapse-content");
           const otherArrow = otherCollapse.querySelector(".collapse-arrow");
 
           otherContent.classList.add("hidden");
           otherArrow.classList.remove("expanded");
         }
-      });
+      }
     });
   }
 };
