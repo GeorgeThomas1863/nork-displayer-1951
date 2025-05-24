@@ -2,6 +2,10 @@
 
 //Defines all frontend dom elements, puts elements into obj for easier seleciton
 const d = {
+  //ONLY 2 ELEMENTS
+  displayWrapper: document.getElementById("display-wrapper"),
+  displayElement: document.getElementById("display-element"),
+
   //action buttons
   scrapeKcnaActionButton: document.getElementById("scrape-kcna-action-button"),
   trackCryptoActionButton: document.getElementById("track-crypto-action-button"),

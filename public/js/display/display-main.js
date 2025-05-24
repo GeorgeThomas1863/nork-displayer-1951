@@ -2,6 +2,12 @@ import d from "../define-things.js";
 // import { hideArray, unhideArray } from "../util.js";
 import { parseBackendData } from "../data-return/return-main.js";
 
+export const buildDefaultDisplay = async () => {
+  //build drop down
+  const dropDownElement = await buildDropDown();
+  d.displayElement.appendChild(dropDownElement);
+};
+
 export const displayBackendData = async (inputData) => {
   // Check if data received
   if (!inputData) return;
@@ -17,6 +23,41 @@ export const displayBackendData = async (inputData) => {
     d.dataReturnElement.append(displayData.parsedArticles);
     d.dataReturnWrapper.classList.remove("hidden");
   }
+};
+
+const buildDropDown = async () => {
+  // Create main drop-down container
+  const dropDownElement = document.createElement("div");
+  dropDownElement.id = "drop-down";
+
+  // Create bars link element
+  const dropDownBars = document.createElement("a");
+  dropDownBars.href = "#";
+  dropDownBars.id = "drop-down-bars";
+
+  // Create three spans for the bars
+  for (let i = 0; i < 3; i++) {
+    const span = document.createElement("span");
+    dropDownBars.appendChild(span);
+  }
+
+  // Create menu list
+  const dropDownMenu = document.createElement("ul");
+  dropDownMenu.id = "drop-down-menu-display";
+
+  // Create menu items
+  const menuItems = ["Scrape KCNA", "Track Crypto"];
+  for (let i = 0; i < menuItems.length; i++) {
+    const li = document.createElement("li");
+    li.textContent = menuItems[i];
+    dropDownMenu.appendChild(li);
+  }
+
+  // Assemble the dropdown
+  dropDownElement.appendChild(dropDownBars);
+  dropDownElement.appendChild(dropDownMenu);
+
+  return dropDownElement;
 };
 
 // export const runActionButtonDisplay = async (buttonClicked) => {
@@ -82,3 +123,5 @@ export const displayBackendData = async (inputData) => {
 //   d.dataReturnWrapper.classList.remove("hidden");
 //   return;
 // };
+
+buildDefaultDisplay();

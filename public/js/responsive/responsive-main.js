@@ -60,7 +60,7 @@ const expandWrapper = async (e) => {
 // };
 
 //click listeners
-d.articleWrapper.addEventListener("click", expandWrapper);
+// d.articleWrapper.addEventListener("click", expandWrapper);
 
 //CALL SEPARATELY TO EXECUTE WHEN PAGE LOADS
-runGetBackendData();
+// runGetBackendData();
