@@ -83,10 +83,13 @@ const buildFormWrapper = async () => {
   formWrapperElement.id = "form-wrapper";
 
   const articleWrapper = await buildArticleWrapper();
-  const picSetWrapper = await buildPicSetWrapper();
-  const vidPageWrapper = await buildVidPageWrapper();
+  // const picSetWrapper = await buildPicSetWrapper();
+  // const vidPageWrapper = await buildVidPageWrapper();
 
-  formWrapperElement.append(articleWrapper, picSetWrapper, vidPageWrapper);
+  // formWrapperElement.append(articleWrapper, picSetWrapper, vidPageWrapper);
+
+  //REMOVE ONCE WE HAVE THE OTHER WRAPPERS
+  formWrapperElement.append(articleWrapper);
 
   return formWrapperElement;
 };
