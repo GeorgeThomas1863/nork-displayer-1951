@@ -104,6 +104,11 @@ const d = {
   articleDataReturnElement: document.getElementById("article-data-return-element"),
   picSetDataReturnElement: document.getElementById("pic-set-data-return-element"),
   vidPageDataReturnElement: document.getElementById("vid-page-data-return-element"),
+
+  //TYPE WRAPPERS
+  articleWrapper: document.getElementById("article-wrapper"),
+  picSetWrapper: document.getElementById("pic-set-wrapper"),
+  vidPageWrapper: document.getElementById("vid-page-wrapper"),
 };
 
 //add in MAIN array to obj
