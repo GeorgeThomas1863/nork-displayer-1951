@@ -200,8 +200,8 @@ const buildArticleWrapper = async () => {
   //return articleWrapper if no backend data
 
   console.log("AHHHHHHHHHHHHHHHHHHHHHHH");
-  console.log(parsedArticleArray.length);
-  console.log(parsedArticleArray[0]);
+  console.log(parsedArticleArray);
+
 
   // const articleElementArray = Array.from(parsedData.parsedArticles.children);
 
