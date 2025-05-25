@@ -98,8 +98,13 @@ const buildFormWrapper = async () => {
 };
 
 const buildArticleWrapper = async () => {
+  //final wrapper
   const articleWrapper = document.createElement("ul");
   articleWrapper.id = "article-wrapper";
+
+  //working temp wrapper
+  const tempWrapper = document.createElement("div");
+  tempWrapper.id = "temp-wrapper";
 
   // Create h1 element
   const h1 = document.createElement("h1");
@@ -188,22 +193,25 @@ const buildArticleWrapper = async () => {
 
   articleSortByListItem.append(articleSortByLabel, articleSortBySelect);
 
-  articleWrapper.append(h1, articleTypeListItem, articleHowManyListItem, articleSortByListItem);
+  tempWrapper.append(h1, articleTypeListItem, articleHowManyListItem, articleSortByListItem);
 
   //GET BACKEND ARTICLE DATA, add to wrapper
   const backendArticleData = await getBackendData("articles");
   if (backendArticleData && backendArticleData.parsedArticles && backendArticleData.parsedArticles.children) {
-    articleWrapper.append(...backendArticleData.parsedArticles.children);
+    tempWrapper.append(...backendArticleData.parsedArticles.children);
   }
 
-  // const articleCollapseObj = {
-  //   title: "ARTICLES",
-  //   content: articleWrapper,
-  //   isExpanded: true,
-  //   className: "article-wrapper-collapse",
-  // };
+  //build collapse container
+  const articleCollapseObj = {
+    title: "ARTICLES",
+    content: tempWrapper,
+    isExpanded: true,
+    className: "article-wrapper-collapse",
+  };
 
-  // const articleWrapperContainer = await buildCollapseContainer(articleCollapseObj);
+  //add to final wrapper
+  const collapseContainer = await buildCollapseContainer(articleCollapseObj);
+  articleWrapper.append(collapseContainer);
 
   return articleWrapper;
 };
