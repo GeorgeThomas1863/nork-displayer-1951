@@ -57,22 +57,17 @@ export const buildArticleElement = async (inputObj) => {
   const articleElement = document.createElement("article");
   articleElement.className = "article-element";
 
-  // Create the picture element first if it exists (appears right after collapse header)
+  // Add pictures directly without collapse if they exist
   if (picArray && picArray.length) {
     const picArrayElement = await buildPicArrayElement(picArray);
-
-    // Wrap pictures in a collapse if there are any
+    
     if (picArrayElement) {
-      // Create collapse object
-      const picCollapseObj = {
-        title: `${picArray.length} Pics`,
-        content: picArrayElement,
-        isExpanded: false,
-        className: "article-pic-list-collapse",
-      };
-
-      const picCollapseContainer = await buildCollapseContainer(picCollapseObj);
-      articleElement.append(picCollapseContainer);
+      // Add a simple header to indicate pictures
+      const picHeader = document.createElement("div");
+      picHeader.className = "article-pic-header";
+      picHeader.textContent = `${picArray.length} Picture${picArray.length > 1 ? 's' : ''}`;
+      
+      articleElement.append(picHeader, picArrayElement);
     }
   }
 

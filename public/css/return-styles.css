@@ -83,10 +83,22 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
-  padding: 0;
+  padding: 1rem 0;
   margin: 0 auto;
   list-style: none;
   width: 100%;
+}
+
+/* Simple header for pictures in articles */
+.article-pic-header {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 1.5rem 0 1rem 0;
+  padding: 0.5rem 1rem;
+  background-color: #f8f9fa;
+  border-left: 4px solid #3b82f6;
+  border-radius: 4px;
 }
 
 /* List item container for pictures */
@@ -197,27 +209,7 @@
   text-align: left; /* Left-align all collapse titles */
 }
 
-/* For collapsing pics in articles */
-.article-pic-list-collapse .collapse-title {
-  font-size: 1.5rem;
-}
-
-.article-pic-list-collapse .collapse-arrow {
-  font-size: 1rem;
-}
-
-.article-pic-list-collapse .collapse-header {
-  width: auto; /* Allow natural width for text */
-  min-width: 120px; /* Ensure minimum width for readability */
-  margin: 0 auto;
-  justify-content: center;
-  background-color: #e2e2e2;
-  padding: 12px 16px; /* Increase horizontal padding */
-}
-
-.article-pic-list-collapse .collapse-header:hover {
-  background-color: #b3d9ff;
-}
+/* Removed obsolete picture collapse styling */
 
 /* collapse content container */
 .collapse-content {
@@ -231,22 +223,7 @@
   border-radius: 8px;
 }
 
-/* Remove extra styling for pic collapse content to preserve original pic sizes */
-.article-pic-list-collapse .collapse-content {
-  background-color: transparent !important;
-  box-shadow: none !important;
-  border-radius: 0 !important;
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
-/* Also remove any additional styling from the pic array container inside articles */
-.article-element .article-pic-list-collapse {
-  background-color: transparent;
-  margin: 1rem 0;
-}
-
-/* Remove any extra backgrounds from pic containers in article elements */
+/* Picture container styling for articles */
 .article-element .pic-array-element {
   background-color: transparent;
   padding: 1rem 0;
