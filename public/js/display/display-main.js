@@ -85,28 +85,28 @@ const buildFormWrapper = async () => {
   formWrapperElement.id = "form-wrapper";
 
   //BUILD
-  const articleTempWrapper = await buildArticleWrapper();
+  const articleWrapper = await buildArticleWrapper();
   console.log("ARTICLE TEMP WRAPPER");
-  console.log(articleTempWrapper);
+  console.log(articleWrapper);
   // const picSetWrapper = await buildPicSetWrapper();
   // const vidPageWrapper = await buildVidPageWrapper();
 
   //build collapse container HERE
   const articleCollapseObj = {
     title: "ARTICLES",
-    content: articleTempWrapper,
+    content: articleWrapper,
     isExpanded: true,
     className: "article-wrapper-collapse",
   };
 
   //add to final wrapper
-  const articleWrapper = await buildCollapseContainer(articleCollapseObj);
+  const articleCollapseContainer = await buildCollapseContainer(articleCollapseObj);
   console.log("ARTICLE WRAPPER");
-  console.log(articleWrapper);
+  console.log(articleCollapseContainer);
   // formWrapperElement.append(articleWrapper, picSetWrapper, vidPageWrapper);
 
   //REMOVE ONCE WE HAVE THE OTHER WRAPPERS
-  formWrapperElement.append(articleWrapper);
+  formWrapperElement.append(articleCollapseContainer);
 
   return formWrapperElement;
 };
