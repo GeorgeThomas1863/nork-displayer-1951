@@ -85,9 +85,20 @@ const buildFormWrapper = async () => {
   formWrapperElement.id = "form-wrapper";
 
   //BUILD
-  const articleWrapper = await buildArticleWrapper();
+  const articleTempWrapper = await buildArticleWrapper();
   // const picSetWrapper = await buildPicSetWrapper();
   // const vidPageWrapper = await buildVidPageWrapper();
+
+  //build collapse container HERE
+  const articleCollapseObj = {
+    title: "ARTICLES",
+    content: articleTempWrapper,
+    isExpanded: true,
+    className: "article-wrapper-collapse",
+  };
+
+  //add to final wrapper
+  const articleWrapper = await buildCollapseContainer(articleCollapseObj);
 
   // formWrapperElement.append(articleWrapper, picSetWrapper, vidPageWrapper);
 
@@ -196,17 +207,6 @@ const buildArticleWrapper = async () => {
   if (backendArticleData && backendArticleData.parsedArticles && backendArticleData.parsedArticles.children) {
     articleWrapper.append(...backendArticleData.parsedArticles.children);
   }
-
-  // //build collapse container
-  // const articleCollapseObj = {
-  //   title: "ARTICLES",
-  //   content: articleWrapper,
-  //   isExpanded: true,
-  //   className: "article-wrapper-collapse",
-  // };
-
-  // //add to final wrapper
-  // const collapseContainer = await buildCollapseContainer(articleCollapseObj);
 
   return articleWrapper;
 };
