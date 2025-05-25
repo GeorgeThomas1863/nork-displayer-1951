@@ -14,7 +14,7 @@ export const buildDefaultDisplay = async () => {
 
   //build main display
   const formWrapperElement = await buildFormWrapper();
-  d.displayElement.appendChild(formWrapperElement);
+  // d.displayElement.appendChild(formWrapperElement);
 };
 
 //--------------------------------
@@ -210,9 +210,9 @@ const buildArticleWrapper = async () => {
 
   const articleWrapperContainer = await buildCollapseContainer(articleCollapseObj);
 
-  // d.displayElement.append(articleCollapseContainer);
+  d.displayElement.append(articleWrapperContainer);
 
-  return articleWrapperContainer;
+  return true;
 };
 
 // const getBackendData = async () => {
