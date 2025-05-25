@@ -197,18 +197,18 @@ const buildArticleWrapper = async () => {
     articleWrapper.append(...backendArticleData.parsedArticles.children);
   }
 
-  //build collapse container
-  const articleCollapseObj = {
-    title: "ARTICLES",
-    content: articleWrapper,
-    isExpanded: true,
-    className: "article-wrapper-collapse",
-  };
+  // //build collapse container
+  // const articleCollapseObj = {
+  //   title: "ARTICLES",
+  //   content: articleWrapper,
+  //   isExpanded: true,
+  //   className: "article-wrapper-collapse",
+  // };
 
-  //add to final wrapper
-  const collapseContainer = await buildCollapseContainer(articleCollapseObj);
+  // //add to final wrapper
+  // const collapseContainer = await buildCollapseContainer(articleCollapseObj);
 
-  return collapseContainer;
+  return articleWrapper;
 };
 
 //get and parse backend data
