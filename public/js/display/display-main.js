@@ -193,15 +193,17 @@ const buildArticleWrapper = async () => {
   const backendData = await sendToBack({ route: "/get-backend-data" });
 
   //PARSE BACKEND DATA
-  const parsedBackendData = await parseBackendData(backendData);
-  const parsedArticleArray = parsedBackendData?.parsedArticles;
-  if (!parsedBackendData || !parsedArticleArray) return articleWrapper;
+  const parsedBackendObj = await parseBackendData(backendData);
+
+  if (!parsedBackendObj || !parsedBackendObj.parsedArticles || !parsedBackendObj.parsedArticles.children) return articleWrapper;
+
+  //otherwise append it
+  articleWrapper.append(...parsedBackendObj.parsedArticles.children);
 
   //return articleWrapper if no backend data
 
   console.log("AHHHHHHHHHHHHHHHHHHHHHHH");
   console.log(parsedArticleArray);
-
 
   // const articleElementArray = Array.from(parsedData.parsedArticles.children);
 
