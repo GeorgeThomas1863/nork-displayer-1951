@@ -211,7 +211,7 @@ const buildArticleWrapper = async () => {
 
   //add to final wrapper
   const collapseContainer = await buildCollapseContainer(articleCollapseObj);
-  articleWrapper.append(...collapseContainer);
+  articleWrapper.append(...collapseContainer.children);
 
   return articleWrapper;
 };
