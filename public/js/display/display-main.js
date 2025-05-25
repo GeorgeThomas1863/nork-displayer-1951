@@ -104,7 +104,7 @@ const buildFormWrapper = async () => {
   const articleCollapseContainer = await buildCollapseContainer(articleCollapseObj);
   console.log("ARTICLE COLLAPSE CONTAINER");
   console.log(articleCollapseContainer);
-  console.log(...articleCollapseContainer);
+  // console.log(...articleCollapseContainer);
 
   // formWrapperElement.append(articleWrapper, picSetWrapper, vidPageWrapper);
 
