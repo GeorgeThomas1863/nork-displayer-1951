@@ -207,9 +207,8 @@ const buildArticleWrapper = async () => {
 
   //add to final wrapper
   const collapseContainer = await buildCollapseContainer(articleCollapseObj);
-  articleWrapper.append(collapseContainer);
 
-  return articleWrapper;
+  return collapseContainer;
 };
 
 //get and parse backend data
