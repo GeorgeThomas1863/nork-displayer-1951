@@ -1,8 +1,7 @@
 //TO DO
 
-//STABLE
 
-//MAKE ARTICLE CONTAINER COLLAPSIBLE
+//MAKE ARTICLE CONTAINER COLLAPSIBLE (just look at how other shit is done and copy)
 
 //--------------
 
