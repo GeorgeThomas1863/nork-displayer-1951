@@ -187,15 +187,30 @@ const buildArticleWrapper = async () => {
 
   articleSortByListItem.append(articleSortByLabel, articleSortBySelect);
 
-  //ADD IN THE GET ARTICLE DATA HERE [refactor]
+  articleWrapper.append(h1, articleTypeListItem, articleHowManyListItem, articleSortByListItem);
+
+  //GET BACKEND DATA
   const backendData = await sendToBack({ route: "/get-backend-data" });
-  if (!backendData) return null;
 
-  const parsedData = await parseBackendData(backendData);
-  if (!parsedData || !parsedData.parsedArticles) return null;
+  //PARSE BACKEND DATA
+  const parsedBackendData = await parseBackendData(backendData);
+  const parsedArticleArray = parsedBackendData?.parsedArticles;
+  if (!parsedBackendData || !parsedArticleArray) return articleWrapper;
 
-  // Append all elements to the container
-  articleWrapper.append(h1, articleTypeListItem, articleHowManyListItem, articleSortByListItem, parsedData.parsedArticles);
+  //return articleWrapper if no backend data
+
+  console.log("AHHHHHHHHHHHHHHHHHHHHHHH");
+  console.log(parsedArticleArray);
+
+  // const articleElementArray = Array.from(parsedData.parsedArticles.children);
+
+  // // Append the form controls first
+
+  // // Then append individual article elements directly from the parsed container
+  // const articleElements = Array.from(parsedData.parsedArticles.children);
+  // for (const element of articleElements) {
+  //   articleWrapper.appendChild(element);
+  // }
 
   return articleWrapper;
 };

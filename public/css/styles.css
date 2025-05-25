@@ -211,10 +211,7 @@ h3 {
   margin-top: auto;
 }
 
-/* Hide the main article-data-return-element as it's now redundant */
-#form-wrapper > #article-data-return-element {
-  display: none;
-}
+
 
 #article-wrapper,
 #pic-set-wrapper,
