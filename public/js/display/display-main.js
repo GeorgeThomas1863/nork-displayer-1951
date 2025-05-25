@@ -86,6 +86,8 @@ const buildFormWrapper = async () => {
 
   //BUILD
   const articleTempWrapper = await buildArticleWrapper();
+  console.log("ARTICLE TEMP WRAPPER");
+  console.log(articleTempWrapper);
   // const picSetWrapper = await buildPicSetWrapper();
   // const vidPageWrapper = await buildVidPageWrapper();
 
@@ -99,7 +101,8 @@ const buildFormWrapper = async () => {
 
   //add to final wrapper
   const articleWrapper = await buildCollapseContainer(articleCollapseObj);
-
+  console.log("ARTICLE WRAPPER");
+  console.log(articleWrapper);
   // formWrapperElement.append(articleWrapper, picSetWrapper, vidPageWrapper);
 
   //REMOVE ONCE WE HAVE THE OTHER WRAPPERS
