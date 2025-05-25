@@ -237,6 +237,94 @@
   padding-bottom: 0;
 }
 
+/* SPECIFIC STYLES FOR ARTICLE WRAPPER COLLAPSE */
+.article-wrapper-collapse {
+  /* Make the collapse container match the original ul styling */
+  flex: 1 1 20%;
+  min-width: 20%;
+  margin: 0.75rem;
+  padding: 0; /* Remove padding since we'll add it to content */
+  background-color: transparent; /* Remove background since content will have it */
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: none; /* Remove shadow since content will have it */
+}
+
+.article-wrapper-collapse:hover {
+  transform: translateY(-5px);
+  box-shadow: none; /* Let the content handle shadow on hover */
+}
+
+.article-wrapper-collapse .collapse-header {
+  /* Make header match the ul styling */
+  background-color: rgb(235, 235, 235);
+  border-radius: 10px 10px 0 0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  margin: 0;
+  padding: 1.5rem;
+}
+
+.article-wrapper-collapse .collapse-header:hover {
+  background-color: rgb(220, 220, 220); /* Slightly darker on hover */
+}
+
+.article-wrapper-collapse .collapse-content {
+  /* Make content area seamless with header */
+  background-color: rgb(235, 235, 235);
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  margin: 0;
+  padding: 0 1.5rem 1.5rem 1.5rem; /* Top padding removed since header provides it */
+}
+
+.article-wrapper-collapse .collapse-content #article-wrapper {
+  /* Reset the nested ul styling to prevent double styling */
+  background-color: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
+  flex: none;
+  min-width: auto;
+}
+
+.article-wrapper-collapse .collapse-content #article-wrapper:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* Apply hover effect to the entire collapse container instead */
+.article-wrapper-collapse:hover .collapse-header {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.article-wrapper-collapse:hover .collapse-content {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Style the collapse title to match the original h1 styling */
+.article-wrapper-collapse .collapse-title {
+  font-size: 1.8rem;
+  margin: 0;
+  text-align: center;
+  color: #333;
+  padding: 0;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 0.5rem;
+  white-space: normal; /* Allow text wrapping */
+  max-width: 100%;
+  letter-spacing: -0.01em;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+/* Adjust arrow positioning for article wrapper */
+.article-wrapper-collapse .collapse-arrow {
+  margin-right: 1rem;
+}
+
 /* Empty container styling */
 .empty-container {
   margin-top: 3rem;
