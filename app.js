@@ -2,6 +2,8 @@
 
 //FIX COLLAPSE DROPDOWN SO IT DOESNT DUPLOCATE THE TITLE
 
+//keep collapse the same, just fucking fix this
+
 //ADD IN PICS / PIC SET / VID PAGE SECTIONS
 
 //--------------
