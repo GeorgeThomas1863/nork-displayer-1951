@@ -200,7 +200,18 @@ const buildArticleWrapper = async () => {
   //otherwise append it
   articleWrapper.append(...parsedBackendObj.parsedArticles.children);
 
-  return articleWrapper;
+  const articleCollapseObj = {
+    title: "ARTICLES",
+    content: articleWrapper,
+    isExpanded: true,
+    className: "article-wrapper-collapse",
+  };
+
+  const articleWrapperContainer = await buildCollapseContainer(articleCollapseObj);
+
+  // d.displayElement.append(articleCollapseContainer);
+
+  return articleWrapperContainer;
 };
 
 // const getBackendData = async () => {
