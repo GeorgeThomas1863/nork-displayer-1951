@@ -190,27 +190,32 @@ const buildArticleWrapper = async () => {
 
   articleWrapper.append(h1, articleTypeListItem, articleHowManyListItem, articleSortByListItem);
 
-  //GET BACKEND DATA
-  const backendData = await sendToBack({ route: "/get-backend-data" });
+  //GET BACKEND ARTICLE DATA, add to wrapper
+  const backendArticleData = await getBackendData("articles");
+  if (backendArticleData && backendArticleData.parsedArticles && backendArticleData.parsedArticles.children) {
+    articleWrapper.append(...backendArticleData.parsedArticles.children);
+  }
+
+  // const articleCollapseObj = {
+  //   title: "ARTICLES",
+  //   content: articleWrapper,
+  //   isExpanded: true,
+  //   className: "article-wrapper-collapse",
+  // };
+
+  // const articleWrapperContainer = await buildCollapseContainer(articleCollapseObj);
+
+  return articleWrapper;
+};
+
+//get and parse backend data
+const getBackendData = async () => {
+  const backendDataObj = await sendToBack({ route: "/get-backend-data" });
 
   //PARSE BACKEND DATA
-  const parsedBackendObj = await parseBackendData(backendData);
+  const parsedObj = await parseBackendData(backendDataObj);
 
-  if (!parsedBackendObj || !parsedBackendObj.parsedArticles || !parsedBackendObj.parsedArticles.children) return articleWrapper;
-
-  //otherwise append it
-  articleWrapper.append(...parsedBackendObj.parsedArticles.children);
-
-  const articleCollapseObj = {
-    title: "ARTICLES",
-    content: articleWrapper,
-    isExpanded: true,
-    className: "article-wrapper-collapse",
-  };
-
-  const articleWrapperContainer = await buildCollapseContainer(articleCollapseObj);
-
-  return articleWrapperContainer;
+  return parsedObj;
 };
 
 // const getBackendData = async () => {
