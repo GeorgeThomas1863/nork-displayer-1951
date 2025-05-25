@@ -71,17 +71,16 @@ export const buildArticleListItem = async (inputObj, isFirst) => {
 };
 
 export const buildArticleElement = async (inputObj) => {
-  const { title, date, text } = inputObj;
+  const { date, text } = inputObj;
 
   const articleElement = document.createElement("article");
   articleElement.className = "article-element";
 
-  // Create and append title
-  const titleElement = await buildTitleElement(title);
+  // Create and append date and text (title is now handled by collapse header)
   const dateElement = await buildDateElement(date);
   const textElement = await buildTextElement(text);
 
-  articleElement.append(titleElement, dateElement, textElement);
+  articleElement.append(dateElement, textElement);
 
   return articleElement;
 };

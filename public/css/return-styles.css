@@ -264,6 +264,7 @@
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   margin: 0;
   padding: 1.5rem;
+  justify-content: center; /* Center the header content */
 }
 
 .article-wrapper-collapse .collapse-header:hover {
@@ -308,7 +309,7 @@
 .article-wrapper-collapse .collapse-title {
   font-size: 1.8rem;
   margin: 0;
-  text-align: center;
+  text-align: left; /* Left-align the title text */
   color: #333;
   padding: 0;
   border-bottom: 2px solid #ddd;

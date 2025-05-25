@@ -119,10 +119,6 @@ const buildArticleWrapper = async () => {
   const articleWrapper = document.createElement("ul");
   articleWrapper.id = "article-wrapper";
 
-  // Create h1 element
-  const h1 = document.createElement("h1");
-  h1.textContent = "ARTICLES";
-
   // Create first list item (Article Type)
   const articleTypeListItem = document.createElement("li");
   articleTypeListItem.id = "article-type-list-item";
@@ -206,7 +202,7 @@ const buildArticleWrapper = async () => {
 
   articleSortByListItem.append(articleSortByLabel, articleSortBySelect);
 
-  articleWrapper.append(h1, articleTypeListItem, articleHowManyListItem, articleSortByListItem);
+  articleWrapper.append(articleTypeListItem, articleHowManyListItem, articleSortByListItem);
 
   //GET BACKEND ARTICLE DATA, add to wrapper
   const backendArticleData = await getBackendData("articles");
