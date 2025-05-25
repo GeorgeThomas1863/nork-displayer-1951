@@ -200,18 +200,6 @@ const buildArticleWrapper = async () => {
   //otherwise append it
   articleWrapper.append(...parsedBackendObj.parsedArticles.children);
 
-  //return articleWrapper if no backend data
-
-  // const articleElementArray = Array.from(parsedData.parsedArticles.children);
-
-  // // Append the form controls first
-
-  // // Then append individual article elements directly from the parsed container
-  // const articleElements = Array.from(parsedData.parsedArticles.children);
-  // for (const element of articleElements) {
-  //   articleWrapper.appendChild(element);
-  // }
-
   return articleWrapper;
 };
 
