@@ -202,9 +202,6 @@ const buildArticleWrapper = async () => {
 
   //return articleWrapper if no backend data
 
-  console.log("AHHHHHHHHHHHHHHHHHHHHHHH");
-  console.log(parsedArticleArray);
-
   // const articleElementArray = Array.from(parsedData.parsedArticles.children);
 
   // // Append the form controls first
