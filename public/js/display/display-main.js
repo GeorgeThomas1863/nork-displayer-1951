@@ -84,10 +84,11 @@ const buildFormWrapper = async () => {
   const formWrapperElement = document.createElement("div");
   formWrapperElement.id = "form-wrapper";
 
+  let articleWrapper;
+
   //BUILD
-  const articleWrapper = await buildArticleWrapper();
-  console.log("ARTICLE TEMP WRAPPER");
-  console.log(articleWrapper);
+  articleWrapper = await buildArticleWrapper();
+
   // const picSetWrapper = await buildPicSetWrapper();
   // const vidPageWrapper = await buildVidPageWrapper();
 
@@ -100,13 +101,12 @@ const buildFormWrapper = async () => {
   };
 
   //add to final wrapper
-  const articleCollapseContainer = await buildCollapseContainer(articleCollapseObj);
-  console.log("ARTICLE WRAPPER");
-  console.log(articleCollapseContainer);
+  articleWrapper = await buildCollapseContainer(articleCollapseObj);
+
   // formWrapperElement.append(articleWrapper, picSetWrapper, vidPageWrapper);
 
   //REMOVE ONCE WE HAVE THE OTHER WRAPPERS
-  formWrapperElement.append(articleCollapseContainer);
+  formWrapperElement.append(articleWrapper);
 
   return formWrapperElement;
 };
