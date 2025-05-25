@@ -1,7 +1,8 @@
 //TO DO
 
+//FIX COLLAPSE DROPDOWN SO IT DOESNT DUPLOCATE THE TITLE
 
-//MAKE ARTICLE CONTAINER COLLAPSIBLE (just look at how other shit is done and copy)
+//ADD IN PICS / PIC SET / VID PAGE SECTIONS
 
 //--------------
 
