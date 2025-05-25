@@ -265,7 +265,7 @@
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   margin: 0;
   padding: 1.5rem;
-  justify-content: center; /* Center the header content */
+  justify-content: flex-start; /* Left-align the header content (arrow + title) */
 }
 
 .article-wrapper-collapse .collapse-header:hover {

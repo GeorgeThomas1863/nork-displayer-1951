@@ -57,13 +57,7 @@ export const buildArticleElement = async (inputObj) => {
   const articleElement = document.createElement("article");
   articleElement.className = "article-element";
 
-  // Create and append date and text (title is now handled by collapse header)
-  const dateElement = await buildDateElement(date);
-  const textElement = await buildTextElement(text);
-
-  articleElement.append(dateElement, textElement);
-
-  // Create the picture element if exists and add it inside the article
+  // Create the picture element first if it exists (appears right after collapse header)
   if (picArray && picArray.length) {
     const picArrayElement = await buildPicArrayElement(picArray);
 
@@ -81,6 +75,12 @@ export const buildArticleElement = async (inputObj) => {
       articleElement.append(picCollapseContainer);
     }
   }
+
+  // Then append date and text after pictures (title is handled by collapse header)
+  const dateElement = await buildDateElement(date);
+  const textElement = await buildTextElement(text);
+
+  articleElement.append(dateElement, textElement);
 
   return articleElement;
 };
