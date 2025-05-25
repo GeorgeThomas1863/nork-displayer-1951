@@ -29,32 +29,13 @@ export const buildArticleArray = async (inputArray) => {
 };
 
 export const buildArticleListItem = async (inputObj, isFirst) => {
-  const { picArray, title } = inputObj;
+  const { title } = inputObj;
 
   const articleListItem = document.createElement("li");
   articleListItem.className = "article-list-item";
 
-  // Create the article element
+  // Create the article element (now includes pictures inside)
   const articleElement = await buildArticleElement(inputObj);
-
-  // Create the picture element if exists
-  let picArrayElement = null;
-  if (picArray && picArray.length) {
-    picArrayElement = await buildPicArrayElement(picArray);
-
-    // Wrap pictures in a collapse if there are any
-    if (picArrayElement) {
-      // Create collapse object
-      const picCollapseObj = {
-        title: `${picArray.length} Pics`,
-        content: picArrayElement,
-        isExpanded: false,
-      };
-
-      const picCollapseContainer = await buildCollapseContainer(picCollapseObj);
-      articleListItem.append(picCollapseContainer);
-    }
-  }
 
   // Wrap the article content in a collapsible
   const articleCollapseObj = {
@@ -71,7 +52,7 @@ export const buildArticleListItem = async (inputObj, isFirst) => {
 };
 
 export const buildArticleElement = async (inputObj) => {
-  const { date, text } = inputObj;
+  const { date, text, picArray } = inputObj;
 
   const articleElement = document.createElement("article");
   articleElement.className = "article-element";
@@ -81,6 +62,25 @@ export const buildArticleElement = async (inputObj) => {
   const textElement = await buildTextElement(text);
 
   articleElement.append(dateElement, textElement);
+
+  // Create the picture element if exists and add it inside the article
+  if (picArray && picArray.length) {
+    const picArrayElement = await buildPicArrayElement(picArray);
+
+    // Wrap pictures in a collapse if there are any
+    if (picArrayElement) {
+      // Create collapse object
+      const picCollapseObj = {
+        title: `${picArray.length} Pics`,
+        content: picArrayElement,
+        isExpanded: false,
+        className: "article-pic-list-collapse",
+      };
+
+      const picCollapseContainer = await buildCollapseContainer(picCollapseObj);
+      articleElement.append(picCollapseContainer);
+    }
+  }
 
   return articleElement;
 };

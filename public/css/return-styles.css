@@ -194,6 +194,7 @@
   max-width: calc(100% - 42px);
   letter-spacing: -0.01em;
   line-height: 1.4;
+  text-align: left; /* Left-align all collapse titles */
 }
 
 /* For collapsing pics in articles */
