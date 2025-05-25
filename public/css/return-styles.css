@@ -233,11 +233,23 @@
 
 /* Remove extra styling for pic collapse content to preserve original pic sizes */
 .article-pic-list-collapse .collapse-content {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Also remove any additional styling from the pic array container inside articles */
+.article-element .article-pic-list-collapse {
   background-color: transparent;
-  box-shadow: none;
-  border-radius: 0;
-  padding: 0;
-  margin: 0;
+  margin: 1rem 0;
+}
+
+/* Remove any extra backgrounds from pic containers in article elements */
+.article-element .pic-array-element {
+  background-color: transparent;
+  padding: 1rem 0;
 }
 
 /* Hidden state */
@@ -335,6 +347,11 @@
 /* Adjust arrow positioning for article wrapper */
 .article-wrapper-collapse .collapse-arrow {
   margin-right: 1rem;
+}
+
+/* Ensure individual article titles are left-aligned */
+.article-element-collapse .collapse-title {
+  text-align: left !important; /* Force left-align for individual article titles */
 }
 
 /* Empty container styling */
